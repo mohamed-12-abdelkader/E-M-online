@@ -1,0 +1,166 @@
+body {
+  direction: rtl;
+}
+
+/* HTML: <div class="ribbon">Your text content</div> */
+.ribbon {
+  color: white;
+}
+.ribbon {
+  --s: 1.8em; /* the ribbon size */
+  --d: 0.8em; /* the depth */
+  --c: 0.8em; /* the cutout part */
+
+  padding: 0 calc(var(--s) + 0.5em) var(--d);
+  line-height: 1.8;
+  background: conic-gradient(
+        at left var(--s) bottom var(--d),
+        #0000 25%,
+        #0008 0 37.5%,
+        #0004 0
+      )
+      0 /50% 100% no-repeat,
+    conic-gradient(
+        at right var(--s) bottom var(--d),
+        #0004 62.5%,
+        #0008 0 75%,
+        #0000 0
+      )
+      100%/50% 100% no-repeat;
+  clip-path: polygon(
+    0 var(--d),
+    var(--s) var(--d),
+    var(--s) 0,
+    calc(100% - var(--s)) 0,
+    calc(100% - var(--s)) var(--d),
+    100% var(--d),
+    calc(100% - var(--c)) calc(50% + var(--d) / 2),
+    100% 100%,
+    calc(100% - var(--s) - var(--d)) 100%,
+    calc(100% - var(--s) - var(--d)) calc(100% - var(--d)),
+    calc(var(--s) + var(--d)) calc(100% - var(--d)),
+    calc(var(--s) + var(--d)) 100%,
+    0 100%,
+    var(--c) calc(50% + var(--d) / 2)
+  );
+  background-color: #3b82f6; /* the main color */
+  width: fit-content;
+}
+
+.links-container {
+}
+.links-container div {
+  height: auto;
+  width: 200px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: end;
+  text-decoration: none;
+}
+.links-container div:hover {
+  transform: scale(1.1);
+  color: #3b82f6;
+  border: solid 2px #3b82f6;
+}
+
+.links-container div h5 {
+  font: size 25px;
+  margin-right: 15px;
+  text-decoration: none !important;
+}
+.links-container a {
+  text-decoration: none !important;
+}
+.conatainer-profile {
+  background-color: white;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  border-radius: 20px;
+}
+.conatainer-profile .row {
+  width: 100% !important;
+  height: auto;
+  background-color: #fff;
+}
+
+.icone {
+  color: #3b82f6;
+  margin-left: 5px;
+}
+
+.container-aitem {
+  direction: rtl;
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* تحديد عرض العناصر بنسبة 1:2 */
+  height: auto;
+  margin: 50px auto;
+}
+
+.aitem-1 {
+  padding: 20px;
+}
+
+.aitem-2 {
+  padding: 20px;
+}
+
+.active-link {
+  background-color: #3b82f6 !important;
+  color: white !important;
+  border-radius: 8px; /* إضافة حواف مستديرة */
+  padding: 8px; /* إضافة تباعد داخلي */
+  cursor: pointer;
+}
+
+/* HTML: <div class="ribbon">Your text content</div> */
+.ribbon2 {
+}
+.ribbon2 {
+  --r: 0.8em; /* control the cutout */
+
+  border-block: 0.5em solid #0000;
+  padding-inline: calc(var(--r) + 0.25em) 0.5em;
+  line-height: 1.8;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 100%,
+    0 calc(100% - 0.25em),
+    var(--r) 50%,
+    0 0.25em
+  );
+  background: radial-gradient(0.2em 50% at right, #000a, #0000) border-box,
+    #2699dc padding-box; /* the color  */
+  width: fit-content;
+}
+
+@media screen and (max-width: 450px) {
+  .container-aitem {
+    display: block;
+  }
+  .div-link {
+    width: 180px !important;
+  }
+  .font {
+    font-size: 15px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-aitem {
+    display: block;
+  }
+
+  .links-container {
+    width: 250px !important;
+    margin: auto !important;
+  }
+}

@@ -1,19 +1,19 @@
-import { useState } from "react";
 import { toast } from "react-toastify";
 import baseUrl from "../../api/baseUrl";
+import { useState } from "react";
 
-const useAddVideo = () => {
+const useAddExam = () => {
   const token = localStorage.getItem("token");
 
-  const [videoloading, setLoading] = useState(false);
-  const [video, setVideo] = useState("");
+  const [examloading, setLoading] = useState(false);
+  const [number, setNamber] = useState("");
   const [lo_id, setLo_id] = useState("");
   const [lg_id, setLg_id] = useState("");
   const [name, setName] = useState("");
 
-  const handleAddVideo = async (e) => {
+  const handleAddExam = async (e) => {
     e.preventDefault();
-    if (!video || !name) {
+    if (!number || !name) {
       toast.warn("يجب   ادخال كل البيانات  "); // "Please fill in the code fields"
       return; // Prevent unnecessary processing if required fields are empty
     }
@@ -22,7 +22,7 @@ const useAddVideo = () => {
       setLoading(true);
 
       const data = {
-        video,
+        number,
         name,
       };
 
@@ -35,13 +35,13 @@ const useAddVideo = () => {
       }
 
       // Pass the token and data in the request
-      const response = await baseUrl.post(`api/lecture/video`, data, {
+      const response = await baseUrl.post(`api/lecture/exam`, data, {
         headers: {
           token: token,
         },
       });
 
-      toast.success("تم   اضافة الفيديو  بنجاح    "); // "Video uploaded successfully"
+      toast.success("تم   اضافة الامتحان  بنجاح    "); // "Video uploaded successfully"
       console.log(response);
       setTimeout(() => {
         window.location.reload();
@@ -54,20 +54,20 @@ const useAddVideo = () => {
       setLg_id("");
       setLo_id("");
       setName("");
-      setVideo("");
+      setNamber("");
     }
   };
 
   return [
-    videoloading,
-    handleAddVideo,
-    video,
+    examloading,
+    handleAddExam,
+    number,
     name,
     setLg_id,
     setLo_id,
     setName,
-    setVideo,
+    setNamber,
   ];
 };
 
-export default useAddVideo;
+export default useAddExam;

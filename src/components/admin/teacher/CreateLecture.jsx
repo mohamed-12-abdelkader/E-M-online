@@ -11,12 +11,12 @@ const CreateLecture = () => {
 
     description,
     setDescription,
-
+    grad_id,
     setGrade,
     price,
     setPrice,
     loading,
-    error,
+
     handleSubmit,
     onImageChange,
     img,
@@ -119,9 +119,12 @@ const CreateLecture = () => {
         </Select>
       </div>
       <div className="text-center my-3">
-        <Button colorScheme="blue" onClick={handleSubmit}>
-          {" "}
-          انشاء المحاضرة{" "}
+        <Button
+          colorScheme="blue"
+          onClick={handleSubmit}
+          isDisabled={loading || !image || !description || !grad_id}
+        >
+          {loading ? <Spinner /> : " انشاء المحاضرة"}
         </Button>
       </div>
     </div>

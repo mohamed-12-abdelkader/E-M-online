@@ -114,10 +114,11 @@ const TeacherDetails = () => {
               <div className="flex flex-wrap my-3">
                 {lectures.map((lectre) => {
                   return (
-                    <Card key={lectre.id} className="w-[350px] m-3">
+                    <Card key={lectre.id} className="w-[330px] m-3">
                       <CardBody>
                         <img
                           src={lectre.cover_image}
+                          className="h-[220px] w-[100%]"
                           alt="Green double couch with wooden legs"
                         />
                         <div className="my-2">

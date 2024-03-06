@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import baseUrl from "../../../api/baseUrl";
 import { useState } from "react";
 import GitClasses from "../../../Hooks/teacher/GitClasses";
-import GitGroup from "../../../Hooks/teacher/GitGroup";
+import GitGroup from "../../../Hooks/groups/GitGroup";
 import JoinStudent from "../../../Hooks/teacher/JoinStudent";
 
 const AddStudent = () => {

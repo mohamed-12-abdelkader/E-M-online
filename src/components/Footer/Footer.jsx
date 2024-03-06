@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="flex items-center justify-center h-[250px] mt-[50px]  bg-blue-500">
       <div>
         <div className="text-center">
-          <h1 className="font-bold text-white md:text-2xl">
+          <h1 className="font-bold text-white md:text-xl">
             استمتع بدروس الثانوية العامة واحصل على دعم تعليمى مميز
           </h1>
         </div>

@@ -44,7 +44,7 @@ const LoginHome = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-wrap w-[90%] m-auto my-5 ">
+          <div className="flex flex-wrap justify-center w-[90%] m-auto my-5 ">
             {teachers.map((teacher) => (
               <Link key={teacher.id} to={`teacher/${teacher.id}`}>
                 <Card className="w-[330px] border m-2">
@@ -52,6 +52,7 @@ const LoginHome = () => {
                     <img
                       src={teacher.image}
                       alt="Green double couch with wooden legs"
+                      className="h-[250px] w-[100%]"
                     />
                     <div className="flex justify-between ">
                       <h1 color="blue.600" className="font-bold mt-2">

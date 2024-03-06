@@ -53,6 +53,7 @@ const AllTeacher = () => {
                 <img
                   src={teacher.image}
                   alt="Green double couch with wooden legs"
+                  className="h-[220px] w-[100%]"
                 />
                 <div className="flex justify-between ">
                   <h1 color="blue.600" className="font-bold mt-2">

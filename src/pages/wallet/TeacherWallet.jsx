@@ -23,7 +23,16 @@ const TeacherWallet = () => {
   }
   if (!wallet[0]) {
     // Handle the case when wallet is empty
-    return <div>No wallet data available</div>;
+    return (
+      <div
+        style={{ minHeight: "70vh" }}
+        className="flex justify-center items-center"
+      >
+        <div className="ribbon2">
+          <h1 className="font-bold m-2 text-white">No wallet data available</h1>
+        </div>
+      </div>
+    );
   }
   return (
     <div className="mt-[150px] " style={{ minHeight: "50vh" }}>

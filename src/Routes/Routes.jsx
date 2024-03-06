@@ -22,6 +22,10 @@ import AddQuestion from "../components/admin/teacher/AddQuestion";
 import TeacherLecture from "../components/teacher/TeacherLecture";
 import Lectures from "../components/teacher/Lectures";
 import TeacherWallet from "../pages/wallet/TeacherWallet";
+import MyGroups from "../pages/groups/MyGroups";
+import Groups from "../pages/groups/Groups";
+import GroupDetails from "../pages/groups/GroupDetails";
+import AddTeacher from "../components/admin/AddTeacher";
 
 const AppRouter = () => {
   return (
@@ -35,6 +39,7 @@ const AppRouter = () => {
 
         <Route path="/admin/*" element={<Admin />}>
           <Route path="management" element={<AdminMange />} />
+          <Route path="addteacher" element={<AddTeacher />} />
           <Route path="create_code" element={<AdminCreateCode />} />
           <Route path="cridet" element={<AdminTeacherBalances />} />
           <Route path="create_lecture" element={<CreateLecture />} />
@@ -54,6 +59,10 @@ const AppRouter = () => {
         <Route path="/teacher_lecture/*" element={<TeacherLecture />}>
           <Route path="lectures/:id" element={<Lectures />} />
         </Route>
+        <Route path="/my_groups" element={<MyGroups />}>
+          <Route path="group/:id" element={<Groups />} />
+        </Route>
+        <Route path="/group/:id" element={<GroupDetails />} />
       </Routes>
     </div>
   );

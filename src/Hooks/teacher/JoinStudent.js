@@ -32,7 +32,15 @@ const JoinStudent = () => {
         toast.success("تم   اضافة الطالب    بنجاح");
       } catch (error) {
         console.error("Error logging in:", error);
-        toast.error("فشل  انشاء المجموعة  ");
+        if (
+          error.response.data.msg === "This student is already in this group."
+        ) {
+          toast.error("   هذا الطالب موجود بالفعل فى هذة المجموعة   ");
+        } else if (
+          error.response.data.msg == "This student is not registered."
+        ) {
+          toast.error("هذا الحساب ليس موجود على المنصة ");
+        }
         console.log(error);
       } finally {
         setLoading(false);

@@ -1,18 +1,29 @@
 import { useState } from "react";
-import baseUrl from "../../api/baseUrl";
 import avatar from "../../img/th.jpeg";
-
+import baseUrl from "../../api/baseUrl";
 import { toast } from "react-toastify";
 
-const useAddLecture = () => {
+const useAddTeacher = () => {
   const token = localStorage.getItem("token");
-  const [image, setImage] = useState(avatar);
-  const [description, setDescription] = useState("");
-  const [grad_id, setGrade] = useState("");
-  const [price, setPrice] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const [image, setImage] = useState("");
+  const [name, setName] = useState("");
+  const [mail, setMail] = useState("");
+  const [pass, setPass] = useState("");
+  const [subject, setSubject] = useState("");
+  const [description, setDescription] = useState("");
+  const [facebook, setFacebook] = useState("");
+  const [tele, setTele] = useState("");
   const [img, setImg] = useState(avatar);
+  const [classes, setSelectedGrades] = useState([1, 2, 3]);
+  const handleCheckboxChange = (value) => {
+    if (classes.includes(value)) {
+      setSelectedGrades(classes.filter((grade) => grade !== value));
+    } else {
+      setSelectedGrades([...classes, value]);
+    }
+  };
+
   const onImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       const reader = new FileReader();
@@ -34,12 +45,14 @@ const useAddLecture = () => {
     const formData = new FormData();
     formData.append("image", image);
     formData.append("description", description);
-    formData.append("grad_id", grad_id);
-
+    formData.append("name", name);
+    formData.append("mail", mail);
+    formData.append("pass", pass);
+    formData.append("subject", subject);
+    formData.append("facebook", facebook);
+    formData.append("tele", tele);
+    classes.map((classe) => formData.append("classes", classe));
     // Check if price exists before appending it to formData
-    if (price !== "") {
-      formData.append("price", price);
-    }
 
     const headers = {
       "Content-Type": "multipart/form-data",
@@ -47,17 +60,16 @@ const useAddLecture = () => {
     };
 
     try {
-      const response = await baseUrl.post("api/lecture/add", formData, {
+      const response = await baseUrl.post("api/teacher/add", formData, {
         headers,
       });
 
       if (response.status === 200) {
         // Success
         setLoading(false);
-        toast.success("تم اضافة المحاضرة بنجاح ");
+        toast.success("تم اضافة المدرس  بنجاح ");
         console.log(response);
       } else {
-        // Error handling
         setLoading(false);
       }
     } catch (error) {
@@ -65,11 +77,6 @@ const useAddLecture = () => {
       console.log(error);
     } finally {
       setLoading(false);
-      setImage("");
-      setGrade("");
-      setDescription("");
-      setPrice("");
-      setImg(avatar);
     }
   };
 
@@ -88,21 +95,29 @@ const useAddLecture = () => {
     return new File([blob], filename, { type: mime });
   };
 
-  return {
-    image,
+  return [
+    name,
+    setName,
+    onImageChange,
 
+    img,
+    mail,
+    setMail,
+    pass,
+    setPass,
+
+    setSubject,
     description,
     setDescription,
-    grad_id,
-    setGrade,
-    price,
-    setPrice,
-    loading,
 
+    facebook,
+    setFacebook,
+    tele,
+    setTele,
+    handleCheckboxChange,
     handleSubmit,
-    onImageChange,
-    img,
-  };
+    loading,
+  ];
 };
 
-export default useAddLecture;
+export default useAddTeacher;

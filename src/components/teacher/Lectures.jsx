@@ -80,6 +80,7 @@ const Lectures = () => {
                     <img
                       src={lectre.image}
                       alt="Green double couch with wooden legs"
+                      className="h-[220px] w-[100%]"
                     />
 
                     <div spacing="3" className="flex justify-between mt-4">
@@ -96,10 +97,18 @@ const Lectures = () => {
                   <hr />
 
                   <div className="my-3 flex justify-center">
-                    <Button className="m-2" colorScheme="blue">
-                      {" "}
-                      دخول المحاضرة{" "}
-                    </Button>
+                    <Link
+                      to={
+                        lectre.price
+                          ? `/lecture/${lectre.id}`
+                          : `/lecture_center/${lectre.id}`
+                      }
+                    >
+                      <Button className="m-2" colorScheme="blue">
+                        {" "}
+                        دخول المحاضرة{" "}
+                      </Button>
+                    </Link>
                     <Button
                       className="m-2"
                       colorScheme="red"

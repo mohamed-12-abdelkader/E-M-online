@@ -1,5 +1,6 @@
 import { Button, Card, CardBody, Skeleton, Stack } from "@chakra-ui/react";
 import GitMyLecture from "../../Hooks/student/GitMyLecture";
+import { Link } from "react-router-dom";
 
 const MyLecture = () => {
   const [myLectureLoading, myLecture] = GitMyLecture();
@@ -45,6 +46,7 @@ const MyLecture = () => {
                     <CardBody>
                       <img
                         src={lectre.cover_image}
+                        className="h-[220px] w-[100%]"
                         alt="Green double couch with wooden legs"
                       />
                       <div className="my-2"></div>
@@ -64,13 +66,21 @@ const MyLecture = () => {
                     <hr />
 
                     <div className="my-3 text-center">
-                      <Button
-                        colorScheme="blue"
-                        variant="outline"
-                        className="w-[90%] m-auto"
+                      <Link
+                        to={
+                          lectre.price
+                            ? `/lecture/${lectre.id}`
+                            : `/lecture_center/${lectre.id}`
+                        }
                       >
-                        دخول للمحاضرة{" "}
-                      </Button>
+                        <Button
+                          colorScheme="blue"
+                          variant="outline"
+                          className="w-[90%] m-auto"
+                        >
+                          دخول للمحاضرة{" "}
+                        </Button>
+                      </Link>
                     </div>
                   </Card>
                 );

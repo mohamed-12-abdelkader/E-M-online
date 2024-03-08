@@ -15,7 +15,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import GitTeacherDetails from "../../Hooks/teacher/GitTeacherDetails";
 import GitLecture from "../../Hooks/student/GitLecture";
 import React, { useState } from "react";
@@ -114,7 +114,7 @@ const TeacherDetails = () => {
               <div className="flex flex-wrap my-3">
                 {lectures.map((lectre) => {
                   return (
-                    <Card key={lectre.id} className="w-[330px] m-3">
+                    <Card key={lectre.id} className="w-[320px] m-3">
                       <CardBody>
                         <img
                           src={lectre.cover_image}
@@ -138,13 +138,15 @@ const TeacherDetails = () => {
 
                       <div className="my-3 text-center">
                         {lectre.open ? (
-                          <Button
-                            colorScheme="blue"
-                            variant="outline"
-                            className="w-[90%] m-auto"
-                          >
-                            دخول للمحاضرة{" "}
-                          </Button>
+                          <Link to={`/lecture/${lectre.id}`}>
+                            <Button
+                              colorScheme="blue"
+                              variant="outline"
+                              className="w-[90%] m-auto"
+                            >
+                              دخول للمحاضرة{" "}
+                            </Button>
+                          </Link>
                         ) : (
                           <div>
                             {" "}

@@ -46,7 +46,7 @@ const AllTeacher = () => {
           </div>
         </div>
       ) : (
-        <div className="flex flex-wrap w-[90%] m-auto my-5 justify-center">
+        <div className="flex flex-wrap w-[90%] m-auto my-5 ">
           {teachers.map((teacher) => (
             <Card key={teacher.id} className="w-[330px] border m-2">
               <CardBody>

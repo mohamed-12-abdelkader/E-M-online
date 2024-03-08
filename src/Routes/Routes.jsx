@@ -26,6 +26,9 @@ import MyGroups from "../pages/groups/MyGroups";
 import Groups from "../pages/groups/Groups";
 import GroupDetails from "../pages/groups/GroupDetails";
 import AddTeacher from "../components/admin/AddTeacher";
+import LecturDetails from "../pages/leacter/LecturDetails";
+import LectureCenterDetails from "../pages/leacter/LectureCenterDetails";
+import Vedio from "../pages/leacter/Vedio";
 
 const AppRouter = () => {
   return (
@@ -54,7 +57,10 @@ const AppRouter = () => {
         <Route path="/teacher_wallet" element={<TeacherWallet />} />
         <Route path="/teacher/:id" element={<TeacherDetails />} />
         <Route path="/my_lecture" element={<MyLecture />} />
+        <Route path="/vedio" element={<Vedio />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/lecture/:id" element={<LecturDetails />} />
+        <Route path="/lecture_center/:id" element={<LectureCenterDetails />} />
         {""}
         <Route path="/teacher_lecture/*" element={<TeacherLecture />}>
           <Route path="lectures/:id" element={<Lectures />} />

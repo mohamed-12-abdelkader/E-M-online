@@ -21,6 +21,7 @@ import GitLecture from "../../Hooks/student/GitLecture";
 import React, { useState } from "react";
 
 import BuyLecture from "../../Hooks/student/BuyLecture";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 const TeacherDetails = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
@@ -40,6 +41,7 @@ const TeacherDetails = () => {
         <Skeleton height="20px" />
         <Skeleton height="20px" />
         <Skeleton height="20px" />
+        <ScrollToTop />
       </Stack>
     );
   }
@@ -243,6 +245,7 @@ const TeacherDetails = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

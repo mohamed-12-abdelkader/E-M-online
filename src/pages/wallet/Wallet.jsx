@@ -9,6 +9,7 @@ import {
 import React from "react";
 import WalletModal from "../../components/modal/WalletModal";
 import MyWallet from "../../Hooks/student/MyWallet";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 const Wallet = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [walletLoading, mytwallet] = MyWallet();
@@ -84,20 +85,20 @@ const Wallet = () => {
               <h1 className="font-bold md:text-xl">
                 تواصل معنا من خلال هذة الارقام على الواتساب لشحن المحفظة{" "}
               </h1>
-              <div>
-                <h1 className="flex font-bold my-5">
-                  <IoLogoWhatsapp className="m-1 text-green-600" />
+              <div className="flex">
+                <h1 className="flex font-bold m-2 my-5">
+                  <IoLogoWhatsapp className="m-1 text-green-600 " />
                   01111272393
                 </h1>
-                <h1 className="flex font-bold my-5">
-                  <IoLogoWhatsapp className="m-1 text-green-600" />
+                <h1 className="flex font-bold m-2 my-5">
+                  <IoLogoWhatsapp className="m-1 text-green-600 " />
                   01227145090
                 </h1>
-                <h1 className="flex font-bold my-5">
+                <h1 className="flex font-bold m-2 my-5">
                   <IoLogoWhatsapp className="m-1 text-green-600" />
                   01111272393
                 </h1>
-                <h1 className="flex font-bold my-5">
+                <h1 className="flex font-bold m-2 my-5">
                   <IoLogoWhatsapp className="m-1 text-green-600" />
                   01111272393
                 </h1>
@@ -111,6 +112,7 @@ const Wallet = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import GitClasses from "../../Hooks/teacher/GitClasses";
 import { Button, Skeleton, Stack } from "@chakra-ui/react";
 import { Link, Outlet } from "react-router-dom";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 
 const MyGroups = () => {
   const [classesLoading, classes] = GitClasses();
@@ -48,6 +49,7 @@ const MyGroups = () => {
         </div>
         <Outlet />
       </div>
+      <ScrollToTop />
     </div>
   );
 };

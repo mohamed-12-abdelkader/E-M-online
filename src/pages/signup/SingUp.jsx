@@ -1,5 +1,6 @@
 import { Select, Input, Button, Spinner } from "@chakra-ui/react";
 import StudentSignUp from "../../Hooks/auth/StudentSignUp";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 
 const SingUp = () => {
   const [
@@ -111,6 +112,7 @@ const SingUp = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

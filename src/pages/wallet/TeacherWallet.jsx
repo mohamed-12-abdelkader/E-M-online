@@ -3,6 +3,7 @@ import { FaBookmark } from "react-icons/fa";
 import { GrGroup } from "react-icons/gr";
 import GitTeacherWallet from "../../Hooks/teacher/TeacherWallet";
 import { Skeleton, Stack } from "@chakra-ui/react";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 const TeacherWallet = () => {
   const [walletLoading, wallet] = GitTeacherWallet();
   {
@@ -17,6 +18,7 @@ const TeacherWallet = () => {
           <Skeleton height="20px" />
           <Skeleton height="20px" />
           <Skeleton height="20px" />
+          <ScrollToTop />
         </Stack>
       </div>
     );
@@ -61,6 +63,7 @@ const TeacherWallet = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

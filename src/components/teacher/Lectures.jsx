@@ -87,7 +87,7 @@ const Lectures = () => {
                       <div>
                         <h1 className="font-bold"> {lectre.description} </h1>
                       </div>
-                      {lectre.price ? (
+                      {lectre.price || lectre.price == 0 ? (
                         <h1 className="font-bold text-blue-500"> online </h1>
                       ) : (
                         <h1 className="font-bold text-red-500"> center </h1>
@@ -99,7 +99,7 @@ const Lectures = () => {
                   <div className="my-3 flex justify-center">
                     <Link
                       to={
-                        lectre.price
+                        lectre.price || lectre.price == 0
                           ? `/lecture/${lectre.id}`
                           : `/lecture_center/${lectre.id}`
                       }

@@ -5,11 +5,15 @@ import { FaVideo } from "react-icons/fa6";
 import GitLectureCenterDetails from "../../Hooks/student/GitLectureCenterDetails";
 import GitLectureCeterTdetails from "../../Hooks/teacher/GitLectureCeterTdetails";
 import LectureDetailsBase from "./LectureDetailsBase";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 const LectureCenterDetails = () => {
-  const { id } = useParams();
-  const [lectureLoading, lectures] = GitLectureCenterDetails({ id: id });
-  const [lectureLoadingt, lecturest] = GitLectureCeterTdetails({ id: id });
+  const { lectureId } = useParams();
+  const [lectureLoading, lectures] = GitLectureCenterDetails({ id: lectureId });
+  const [lectureLoadingt, lecturest] = GitLectureCeterTdetails({
+    id: lectureId,
+  });
   const videosToMap = lectures.videos || lecturest.videos || [];
+  console.log(lecturest);
   if (lectureLoading || lectureLoadingt) {
     return (
       <Stack className="w-[90%] m-auto mt-[150px]" style={{ height: "60vh" }}>
@@ -27,12 +31,14 @@ const LectureCenterDetails = () => {
   return (
     <div className="mt-[150px]">
       <LectureDetailsBase
+        id={lectureId}
         videosToMap={videosToMap}
         lectureTLoading={lectureLoadingt}
         lectureLoading={lectureLoading}
         lectures={lectures}
         lecturesT={lecturest}
       />
+      <ScrollToTop />
     </div>
   );
 };

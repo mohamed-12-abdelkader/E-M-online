@@ -29,6 +29,10 @@ import AddTeacher from "../components/admin/AddTeacher";
 import LecturDetails from "../pages/leacter/LecturDetails";
 import LectureCenterDetails from "../pages/leacter/LectureCenterDetails";
 import Vedio from "../pages/leacter/Vedio";
+import Exam from "../pages/exam/Exam";
+import AllResult from "../components/admin/teacher/AllResult";
+import ExamTeacher from "../pages/exam/ExamTeacher";
+import StudentResult from "../components/admin/teacher/StudentResult";
 
 const AppRouter = () => {
   return (
@@ -51,16 +55,28 @@ const AppRouter = () => {
           <Route path="add_student" element={<AddStudent />} />
           <Route path="addexam" element={<AddExam />} />
           <Route path="add_question" element={<AddQuestion />} />
+          <Route path="result/" element={<AllResult />}>
+            <Route path="all_result/:resId" element={<StudentResult />} />
+          </Route>
         </Route>
         <Route path="/code" element={<Code />} />
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/teacher_wallet" element={<TeacherWallet />} />
         <Route path="/teacher/:id" element={<TeacherDetails />} />
         <Route path="/my_lecture" element={<MyLecture />} />
-        <Route path="/vedio" element={<Vedio />} />
+        <Route path="/exam/:examId" element={<Exam />} />
+        <Route path="/teacher_exam/:examId" element={<ExamTeacher />} />
+
         <Route path="/profile" element={<Profile />} />
-        <Route path="/lecture/:id" element={<LecturDetails />} />
-        <Route path="/lecture_center/:id" element={<LectureCenterDetails />} />
+        <Route path="/lecture/:id/" element={<LecturDetails />}>
+          <Route path="video/:videoId" element={<Vedio />} />
+        </Route>
+        <Route
+          path="/lecture_center/:lectureId/"
+          element={<LectureCenterDetails />}
+        >
+          <Route path="video/:videoId" element={<Vedio />} />
+        </Route>
         {""}
         <Route path="/teacher_lecture/*" element={<TeacherLecture />}>
           <Route path="lectures/:id" element={<Lectures />} />

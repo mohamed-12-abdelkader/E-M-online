@@ -1,6 +1,7 @@
 import { Button, Card, CardBody, Skeleton, Stack } from "@chakra-ui/react";
 import GitMyLecture from "../../Hooks/student/GitMyLecture";
 import { Link } from "react-router-dom";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 
 const MyLecture = () => {
   const [myLectureLoading, myLecture] = GitMyLecture();
@@ -28,7 +29,7 @@ const MyLecture = () => {
       </div>
     );
   }
-
+  console.log(myLecture);
   return (
     <div className="mt-[150px]">
       <div className="w-[90%] m-auto border shadow">
@@ -37,12 +38,12 @@ const MyLecture = () => {
             <h1 className="font-bold m-2 big-font">my lecture </h1>
           </div>
         </div>
-        <div>
+        <div className="w-[95%] m-auto">
           {myLecture ? (
             <div className="flex flex-wrap my-3">
               {myLecture.map((lectre) => {
                 return (
-                  <Card key={lectre.id} className="w-[340px] m-3">
+                  <Card key={lectre.id} className="w-[320px] m-3">
                     <CardBody>
                       <img
                         src={lectre.cover_image}
@@ -59,7 +60,10 @@ const MyLecture = () => {
                           </h1>
                         </div>
                         {lectre.group_description ? (
-                          <h1 className="font-bold"> محاضرة سنتر </h1>
+                          <h1 className="font-bold text-red-500">
+                            {" "}
+                            محاضرة سنتر{" "}
+                          </h1>
                         ) : null}
                       </div>
                     </CardBody>
@@ -68,9 +72,9 @@ const MyLecture = () => {
                     <div className="my-3 text-center">
                       <Link
                         to={
-                          lectre.price
-                            ? `/lecture/${lectre.id}`
-                            : `/lecture_center/${lectre.id}`
+                          lectre.group_description
+                            ? `/lecture_center/${lectre.id}`
+                            : `/lecture/${lectre.id}`
                         }
                       >
                         <Button
@@ -95,6 +99,7 @@ const MyLecture = () => {
           )}
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

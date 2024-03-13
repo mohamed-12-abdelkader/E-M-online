@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import AdminLinks from "../../components/admin/AdminLinks";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 
 const Admin = () => {
   const [currentLink, setCurrentLink] = useState("");
@@ -28,6 +29,7 @@ const Admin = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

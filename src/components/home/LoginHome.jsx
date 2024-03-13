@@ -44,10 +44,10 @@ const LoginHome = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-wrap justify-center w-[90%] m-auto my-5 ">
+          <div className=" flex justify-center md:flex flex-wrap  w-[90%] m-auto my-5 ">
             {teachers.map((teacher) => (
               <Link key={teacher.id} to={`teacher/${teacher.id}`}>
-                <Card className="w-[330px] border m-2">
+                <Card className="w-[340px] border m-2">
                   <CardBody>
                     <img
                       src={teacher.image}

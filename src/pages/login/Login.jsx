@@ -1,6 +1,7 @@
 import { Button, Input, Spinner } from "@chakra-ui/react";
 import useLogin from "../../Hooks/auth/useLogin";
 import { Link } from "react-router-dom";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 
 const Login = () => {
   const [
@@ -85,6 +86,7 @@ const Login = () => {
           </Link>
         </h1>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

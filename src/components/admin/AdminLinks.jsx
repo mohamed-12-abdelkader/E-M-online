@@ -62,6 +62,11 @@ const AdminLinks = ({ currentLink, setCurrentLink }) => {
       link: "اضافة اسئلة للامتحان  ",
       path: "/admin/add_question",
     },
+    {
+      id: Math.random(),
+      link: "  نتائج الامتحانات   ",
+      path: "/admin/result",
+    },
     // ... (remaining links)
   ];
 

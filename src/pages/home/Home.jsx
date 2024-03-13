@@ -5,6 +5,7 @@ import SectionFour from "../../components/home/SectionFour";
 import AllTeacher from "../../components/teacher/AllTeacher";
 import UserType from "../../Hooks/auth/userType";
 import LoginHome from "../../components/home/LoginHome";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 
 const Home = () => {
   const [userData, isAdmin, isTeacher, student] = UserType();
@@ -24,6 +25,7 @@ const Home = () => {
           <AllTeacher />
         </div>
       )}
+      <ScrollToTop />
     </div>
   );
 };

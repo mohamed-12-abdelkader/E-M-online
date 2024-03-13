@@ -2,6 +2,7 @@ import { Button, Input, Spinner } from "@chakra-ui/react";
 import baseUrl from "../../api/baseUrl";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 const VerifyCode = () => {
   const [mail, setMail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -65,6 +66,7 @@ const VerifyCode = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

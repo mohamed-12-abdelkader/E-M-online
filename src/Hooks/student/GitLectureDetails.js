@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import baseUrl from "../../api/baseUrl";
+import { toast } from "react-toastify";
 
 const GitLectureDetails = ({ id }) => {
   const token = localStorage.getItem("token");
@@ -17,6 +18,12 @@ const GitLectureDetails = ({ id }) => {
       } catch (error) {
         console.log(error);
         console.log("Error fetching data");
+        if (
+          error.response.data.msg ==
+          "You do not have permission to access this lecture content."
+        ) {
+          toast.error(" انت لست مشترك فى هذة المحاضرة ");
+        }
       } finally {
         setLoading(false);
       }

@@ -46,9 +46,9 @@ const AllTeacher = () => {
           </div>
         </div>
       ) : (
-        <div className="flex flex-wrap w-[90%] m-auto my-5 ">
+        <div className="flex flex-wrap w-[85%] m-auto my-5 ">
           {teachers.map((teacher) => (
-            <Card key={teacher.id} className="w-[330px] border m-2">
+            <Card key={teacher.id} className="w-[320px] border m-2">
               <CardBody>
                 <img
                   src={teacher.image}

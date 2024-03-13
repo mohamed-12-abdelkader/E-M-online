@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Input, Spinner } from "@chakra-ui/react";
 import { toast } from "react-toastify";
 import baseUrl from "../../api/baseUrl";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 
 const ResetPassword = () => {
   const [code, setCode] = useState("");
@@ -97,6 +98,7 @@ const ResetPassword = () => {
           </Button>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

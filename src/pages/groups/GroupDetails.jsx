@@ -22,8 +22,9 @@ import GitClasses from "../../Hooks/teacher/GitClasses";
 import GitTeacherLecture from "../../Hooks/teacher/GitTeacherLecture";
 import { toast } from "react-toastify";
 import baseUrl from "../../api/baseUrl";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
+import OpenLectureToGroup from "../../Hooks/groups/OpenLecture";
 const GroupDetails = () => {
-  const token = localStorage.getItem("token");
   const [classesLoading, classes] = GitClasses();
   const { id } = useParams();
   const [studentLoading, students] = GitGroupStudent({ id: id });
@@ -31,12 +32,12 @@ const GroupDetails = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedStudent, setSelectedStudent] = useState(null);
   const cancelRef = React.useRef();
+  const [handleOpenLecture, l_id, setL_id, g_id, setGrad, loadingOpen] =
+    OpenLectureToGroup({ id: id });
   const [deleteStudentLoading, deleteStudent] = DeleateStudentGroup({
     group_id: id,
   });
-  const [loadingOpen, setLoading] = useState(false);
-  const [g_id, setGrad] = useState("");
-  const [l_id, setL_id] = useState("");
+
   const [
     mergedLectures,
     lecturesCenter,
@@ -44,33 +45,6 @@ const GroupDetails = () => {
     lectureLoading,
     lectureCenterLoading,
   ] = GitTeacherLecture({ id: g_id });
-
-  const handleOpenLecture = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      // Pass the token in the headers
-      const response = await baseUrl.post(
-        `api/groups/openlecture/group`,
-        { g_id: id, l_id },
-        {
-          headers: {
-            token: token,
-            // Add any additional headers if needed
-          },
-        }
-      );
-
-      localStorage.setItem("code", JSON.stringify(response.data));
-      toast.success("تم   فتح المحاضرة   بنجاح");
-    } catch (error) {
-      console.error("Error logging in:", error);
-      toast.error("فشل  فح المحاضرة   ");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   if (studentLoading) {
     return (
@@ -255,6 +229,7 @@ const GroupDetails = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

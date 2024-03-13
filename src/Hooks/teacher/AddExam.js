@@ -13,10 +13,6 @@ const useAddExam = () => {
 
   const handleAddExam = async (e) => {
     e.preventDefault();
-    if (!number || !name) {
-      toast.warn("يجب   ادخال كل البيانات  "); // "Please fill in the code fields"
-      return; // Prevent unnecessary processing if required fields are empty
-    }
 
     try {
       setLoading(true);
@@ -43,9 +39,6 @@ const useAddExam = () => {
 
       toast.success("تم   اضافة الامتحان  بنجاح    "); // "Video uploaded successfully"
       console.log(response);
-      setTimeout(() => {
-        window.location.reload();
-      }, 500);
     } catch (error) {
       console.error(error);
       toast.error("An error occurred. Please try again later.");

@@ -1,11 +1,8 @@
-import { Button, Skeleton, Stack } from "@chakra-ui/react";
-
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import GitLectureDetails from "../../Hooks/student/GitLectureDetails";
-import { FaVideo } from "react-icons/fa6";
 import GitLecturTdetails from "../../Hooks/teacher/GitLecturTdetails";
 import LectureDetailsBase from "./LectureDetailsBase";
-
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 const LecturDetails = () => {
   const { id } = useParams();
   const [lectureLoading, lectures] = GitLectureDetails({ id: id });
@@ -18,12 +15,14 @@ const LecturDetails = () => {
   return (
     <div className="mt-[150px]">
       <LectureDetailsBase
+        id={id}
         videosToMap={videosToMap}
         lectureTLoading={lectureTLoading}
         lectureLoading={lectureLoading}
         lectures={lectures}
         lecturesT={lecturesT}
       />
+      <ScrollToTop />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import GitGroup from "../../Hooks/groups/GitGroup";
 import { Skeleton, Stack } from "@chakra-ui/react";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 const Groups = () => {
   const { id } = useParams();
   const [groupsLoading, groups] = GitGroup({ id: id });
@@ -63,6 +64,7 @@ const Groups = () => {
           <div></div>
         )}
       </div>
+      <ScrollToTop />
     </div>
   );
 };

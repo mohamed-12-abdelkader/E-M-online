@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import baseUrl from "../../api/baseUrl";
+import { toast } from "react-toastify";
 
 const GitLectureCenterDetails = ({ id }) => {
   const token = localStorage.getItem("token");

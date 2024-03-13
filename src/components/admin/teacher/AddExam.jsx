@@ -24,6 +24,7 @@ const AddExam = () => {
     lectureCenterLoading,
   ] = GitTeacherLecture({ id: grad });
   const [classesLoading, classes] = GitClasses();
+
   return (
     <div>
       <div className="text-center">
@@ -64,7 +65,9 @@ const AddExam = () => {
           }}
           className="my-2"
           placeholder={
-            lectureCenterLoading ? "جار تحميل الصفوف..." : " اختر  الصف  "
+            lectureCenterLoading
+              ? "جار تحميل المحاضرات ..."
+              : " اختر  المحاضرة   "
           }
           size="lg"
           style={{ direction: "ltr" }}
@@ -88,7 +91,9 @@ const AddExam = () => {
             setLo_id(e.target.value);
           }}
           className="my-2"
-          placeholder={lectureLoading ? "جار تحميل الصفوف..." : " اختر  الصف  "}
+          placeholder={
+            lectureLoading ? "جار تحميل المحاضرات ..." : " اختر  المحاضرة   "
+          }
           size="lg"
           style={{ direction: "ltr" }}
           disabled={lectureLoading}
@@ -127,7 +132,7 @@ const AddExam = () => {
         <div className="my-3 text-center">
           <Button colorScheme="blue" onClick={handleAddExam}>
             {" "}
-            {examloading ? <Spinner /> : " اضافة الطالب "}
+            {examloading ? <Spinner /> : " اضافة امتحان  "}
           </Button>
         </div>
       </div>

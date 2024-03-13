@@ -34,7 +34,7 @@ const AddStudent = () => {
         <Select
           className="my-2"
           placeholder={
-            classesLoading ? "جار تحميل الصفوف..." : " اختر صف المحاضرة "
+            classesLoading ? "جار تحميل المجموعات ..." : " اختر صف المجموعة  "
           }
           size="lg"
           style={{ direction: "ltr" }}

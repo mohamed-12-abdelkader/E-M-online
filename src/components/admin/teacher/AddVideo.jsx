@@ -129,7 +129,7 @@ const AddVideo = () => {
       </div>
       <div className="text-center my-3">
         <Button colorScheme="blue" onClick={handleAddVideo}>
-          {videoloading ? <Spinner /> : "انشاء المحاضرة "}
+          {videoloading ? <Spinner /> : " اضافة فيديو  "}
         </Button>
       </div>
     </div>

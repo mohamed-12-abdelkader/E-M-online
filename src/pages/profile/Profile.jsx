@@ -2,6 +2,7 @@ import { IoPersonCircleSharp } from "react-icons/io5";
 import { MdAttachEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 const Profile = () => {
   const user = JSON.parse(localStorage.getItem("user")); // Parse the JSON string
   console.log(user);
@@ -63,6 +64,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

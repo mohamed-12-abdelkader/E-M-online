@@ -3,7 +3,7 @@ import GitAllTeacher from "../../Hooks/teacher/GitAllTeacher";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { Card, CardBody, Skeleton, Stack } from "@chakra-ui/react";
-
+import { Slide, Zoom } from "react-awesome-reveal";
 const AllTeacher = () => {
   const [loading, teachers] = GitAllTeacher();
 

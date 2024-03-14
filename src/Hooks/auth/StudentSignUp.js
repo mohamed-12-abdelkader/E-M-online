@@ -59,6 +59,7 @@ const StudentSignUp = () => {
         pass,
         grad,
         phone,
+        ip: window.location.hostname,
       });
 
       // هنا يمكنك إضافة المنطق الخاص بعملية تسجيل الدخول

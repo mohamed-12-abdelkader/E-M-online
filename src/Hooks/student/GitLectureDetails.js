@@ -18,12 +18,6 @@ const GitLectureDetails = ({ id }) => {
       } catch (error) {
         console.log(error);
         console.log("Error fetching data");
-        if (
-          error.response.data.msg ==
-          "You do not have permission to access this lecture content."
-        ) {
-          toast.error(" انت لست مشترك فى هذة المحاضرة ");
-        }
       } finally {
         setLoading(false);
       }

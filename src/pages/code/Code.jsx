@@ -21,7 +21,7 @@ const Code = () => {
                   className="h-[100px] w-[300px] border shadow m-2 p-3"
                 >
                   <div>
-                    <h1 className="font-bold my-3">كود الشحن : {code.code}</h1>
+                    <h1 className="font-bold my-3">كود الشحن :  {code.code}</h1>
                     <h1 className="font-bold my-3">
                       قيمة كود الشحن :{code.value} جنية
                     </h1>

@@ -55,7 +55,9 @@ const useAddLecture = () => {
         // Success
         setLoading(false);
         toast.success("تم اضافة المحاضرة بنجاح ");
-        console.log(response);
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       } else {
         // Error handling
         setLoading(false);
@@ -69,7 +71,6 @@ const useAddLecture = () => {
       setGrade("");
       setDescription("");
       setPrice("");
-      setImg(avatar);
     }
   };
 

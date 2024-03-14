@@ -36,6 +36,7 @@ const Login = () => {
             <h1 className="font-bold mt-5 mb-2">ادخل كلمة السر </h1>
             <Input
               className=""
+              type="password"
               placeholder="ادخل كلمة السر  "
               size="lg"
               value={pass}

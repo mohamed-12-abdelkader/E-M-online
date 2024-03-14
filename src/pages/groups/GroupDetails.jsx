@@ -2,6 +2,9 @@ import { Link, useParams } from "react-router-dom";
 import GitGroupStudent from "../../Hooks/groups/GitGroupStudent";
 import { GoArrowLeft } from "react-icons/go";
 import {
+  AlertDialogBody,
+  AlertDialogFooter,
+  AlertDialogHeader,
   Button,
   Skeleton,
   Spinner,
@@ -32,6 +35,7 @@ const GroupDetails = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedStudent, setSelectedStudent] = useState(null);
   const cancelRef = React.useRef();
+
   const [handleOpenLecture, l_id, setL_id, g_id, setGrad, loadingOpen] =
     OpenLectureToGroup({ id: id });
   const [deleteStudentLoading, deleteStudent] = DeleateStudentGroup({
@@ -136,7 +140,11 @@ const GroupDetails = () => {
               )}
             </Select>
             <div className="text-center">
-              <Button colorScheme="blue" onClick={handleOpenLecture}>
+              <Button
+                colorScheme="blue"
+                onClick={handleOpenLecture}
+                isDisabled={!g_id || !l_id}
+              >
                 {" "}
                 {loadingOpen ? <Spinner /> : " فتح المحاضرة "}
               </Button>

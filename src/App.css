@@ -120,8 +120,7 @@ body {
 }
 
 /* HTML: <div class="ribbon">Your text content</div> */
-.ribbon2 {
-}
+
 .ribbon2 {
   --r: 0.8em; /* control the cutout */
 

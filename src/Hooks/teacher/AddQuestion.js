@@ -47,6 +47,11 @@ const useAddQuestion = () => {
       formData.append("correctAnswer", correctAnswer);
       formData.append("degree", degree);
 
+      // Check if the user selected an image
+      if (image !== avatar) {
+        formData.append("image", image);
+      }
+
       const headers = {
         token: token,
       };
@@ -70,7 +75,14 @@ const useAddQuestion = () => {
       console.error(error);
     } finally {
       setLoading(false);
-      setImage(avatar);
+      setImage("");
+      setDegree("");
+      setAnswer1("");
+      setAnswer2("");
+      setAnswer3("");
+      setAnswer4("");
+      setCorrect("");
+      setQuestion("");
     }
   };
 

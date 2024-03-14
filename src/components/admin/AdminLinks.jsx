@@ -28,6 +28,11 @@ const AdminLinks = ({ currentLink, setCurrentLink }) => {
       link: "ارصدة المدرسين",
       path: "/admin/cridet",
     },
+    {
+      id: Math.random(),
+      link: " فتح جهاز للطالب",
+      path: "/admin/open_phone",
+    },
   ];
 
   const teacherLinks = [

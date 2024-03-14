@@ -9,6 +9,7 @@ const SectionOne = () => {
         </div>
         <div className="text-white text-center">
           <h1 className="big-font text-5xl ">E-M online</h1>
+
           <h1 className="font-bold text-xl">
             {" "}
             استمتع بدروس الثانوية العامة واحصل على دعم تعليمى مميز{" "}

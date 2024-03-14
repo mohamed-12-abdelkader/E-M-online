@@ -68,15 +68,27 @@ const useAddTeacher = () => {
         // Success
         setLoading(false);
         toast.success("تم اضافة المدرس  بنجاح ");
-        console.log(response);
+        setTimeout(() => {
+          window.location.reload("");
+        }, 500);
       } else {
         setLoading(false);
       }
     } catch (error) {
-      toast.error("حدث خطأ أثناء إضافة المحاضرة ");
+      toast.error("حدث خطأ أثناء إضافة المدرس  ");
       console.log(error);
     } finally {
       setLoading(false);
+      setDescription("");
+      setName("");
+      setPass("");
+      setFacebook("");
+      setMail("");
+      setImage("");
+      setSelectedGrades("");
+      setSubject(null);
+      setTele("");
+      setSelectedGrades("");
     }
   };
 

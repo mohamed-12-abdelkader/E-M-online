@@ -4,9 +4,9 @@ const UserType = () => {
   const [userData, setUserData] = useState(
     JSON.parse(localStorage.getItem("user"))
   );
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [isTeacher, setIsTeacher] = useState(false);
-  const [student, setStudent] = useState(false);
+  const [isAdmin, setIsAdmin] = useState();
+  const [isTeacher, setIsTeacher] = useState();
+  const [student, setStudent] = useState();
 
   useEffect(() => {
     if (userData != null) {

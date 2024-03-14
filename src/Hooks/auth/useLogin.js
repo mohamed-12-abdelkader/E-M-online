@@ -36,7 +36,10 @@ const useLogin = () => {
       }
 
       // إذا كان المستخدم نوع "user"، قم بإرسال الـ IP
-      const requestData = userType === "user" ? { mail, pass } : { mail, pass };
+      const requestData =
+        userType === "user"
+          ? { mail, pass, ip: window.location.hostname }
+          : { mail, pass };
 
       const response = await baseUrl.post(`${loginApi}`, requestData);
 

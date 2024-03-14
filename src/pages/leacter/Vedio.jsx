@@ -1,12 +1,52 @@
 import { Skeleton, Stack } from "@chakra-ui/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
 import GitVedio from "../../Hooks/student/GitVedio";
+import { DefaultPlayer as Video } from "react-html5video";
+import "react-html5video/dist/styles.css";
 const Vedio = () => {
   const { videoId } = useParams();
 
   const [vedioLoading, vdiourl] = GitVedio({ id: videoId });
+  const [currentTime, setCurrentTime] = useState(0);
+  const playerRef = useRef(null);
+
+  const handlePlayPause = () => {
+    if (playerRef.current) {
+      if (playerRef.current.isPlaying()) {
+        playerRef.current.pause();
+      } else {
+        playerRef.current.play();
+      }
+    }
+  };
+
+  const handleForward = () => {
+    if (playerRef.current) {
+      const newTime = currentTime + 10;
+      playerRef.current.seekTo(newTime, "seconds");
+      setCurrentTime(newTime);
+    }
+  };
+
+  const handleRewind = () => {
+    if (playerRef.current) {
+      const newTime = currentTime - 10;
+      playerRef.current.seekTo(newTime, "seconds");
+      setCurrentTime(newTime);
+    }
+  };
+
+  const handleQualityChange = (quality) => {
+    if (playerRef.current) {
+      playerRef.current.getInternalPlayer().setPlaybackQuality(quality);
+    }
+  };
+
+  const handleProgress = (state) => {
+    setCurrentTime(state.playedSeconds);
+  };
   if (vedioLoading) {
     return (
       <div style={{ minHeight: "60vh" }} className="flex items-center">
@@ -22,14 +62,20 @@ const Vedio = () => {
   }
   console.log("id", vdiourl.video);
   return (
-    <div className="flex justify-center my-[50px]">
-      <div className="w-[100%]">
-        <iframe
-          src="https://iframe.mediadelivery.net/play/209681/d006cabb-54ee-4043-9794-d4b46c816be7"
-          allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
-          allowfullscreen="true"
-          className="w-[70%] m-auto h-[500px]"
-        ></iframe>
+    <div>
+      <ReactPlayer
+        ref={playerRef}
+        url="https://youtu.be/soylbvulfL0?si=qowwEfX9eqi6TLnU"
+        controls
+        onProgress={handleProgress}
+      />
+      <div>
+        <button onClick={handlePlayPause}>تشغيل/إيقاف</button>
+        <button onClick={handleForward}>تقديم 10 ثواني</button>
+        <button onClick={handleRewind}>تأخير 10 ثواني</button>
+        <button onClick={() => handleQualityChange("1080p")}>1080p</button>
+        <button onClick={() => handleQualityChange("720p")}>720p</button>
+        <button onClick={() => handleQualityChange("480p")}>480p</button>
       </div>
     </div>
   );

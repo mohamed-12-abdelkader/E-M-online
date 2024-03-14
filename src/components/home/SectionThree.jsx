@@ -1,4 +1,5 @@
 import { ListItem, UnorderedList } from "@chakra-ui/react";
+import { Slide, Zoom } from "react-awesome-reveal";
 const SectionThree = () => {
   return (
     <div className="my-[70px]">
@@ -7,6 +8,7 @@ const SectionThree = () => {
           <div className="flex justify-center">
             <h1 className="font-bold text-xl"> ماذا نقدم للمدرس ؟</h1>
           </div>
+
           <div className="mt-[50px]">
             <UnorderedList>
               <ListItem className="font-bold m-1">
@@ -25,6 +27,7 @@ const SectionThree = () => {
             </UnorderedList>
           </div>
         </div>
+
         <div>
           <img src="vector2-480x291.png" className="h-[250px]" />
         </div>

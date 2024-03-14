@@ -2,16 +2,16 @@ import { toast } from "react-toastify";
 import baseUrl from "../../api/baseUrl";
 import { useEffect, useState } from "react";
 
-const GitVedio = ({ id }) => {
+const GitVediot = ({ id }) => {
   const token = localStorage.getItem("token");
-  const [vdiourl, setVedio] = useState("");
-  const [vedioLoading, setLoading] = useState(false);
+  const [vdiourlt, setVedio] = useState("");
+  const [vedioLoadingt, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await baseUrl.get(`api/lecture/video/${id}`, {
+        const response = await baseUrl.get(`api/lecture/videot/${id}`, {
           headers: { token: token },
         });
         setVedio(response.data);
@@ -31,7 +31,7 @@ const GitVedio = ({ id }) => {
 
     fetchData();
   }, []);
-  return [vedioLoading, vdiourl];
+  return [vedioLoadingt, vdiourlt];
 };
 
-export default GitVedio;
+export default GitVediot;

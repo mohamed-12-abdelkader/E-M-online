@@ -75,7 +75,7 @@ const Lectures = () => {
           {mergedLectures && mergedLectures.length > 0 ? (
             <div className="flex flex-wrap m-auto">
               {mergedLectures.map((lectre) => (
-                <Card key={lectre.id} className="w-[330px] m-3">
+                <Card key={lectre.id} className="w-[90%] md:w-[330px] m-3">
                   <CardBody>
                     <img
                       src={lectre.image}

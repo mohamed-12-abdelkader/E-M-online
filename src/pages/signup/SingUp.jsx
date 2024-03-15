@@ -64,6 +64,7 @@ const SingUp = () => {
             />
             <h1 className="font-bold m-2"> كلمة السر </h1>
             <Input
+              type="password"
               placeholder="كلمة السر "
               size="lg"
               className="m-2"
@@ -72,6 +73,7 @@ const SingUp = () => {
             />
             <h1 className="font-bold m-2"> تاكيد كلمة السر </h1>
             <Input
+              type="password"
               placeholder="تاكيد كلمة السر "
               size="lg"
               className="m-2"

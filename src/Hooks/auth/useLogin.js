@@ -9,6 +9,17 @@ const useLogin = () => {
   const [loading, setLoading] = useState(false);
   const [userType, setUserType] = useState("user"); // افتراضياً نوع المستخدم عادي
 
+  function generateString() {
+    var chars =
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    var string = "";
+    for (var i = 0; i < 30; i++) {
+      var randomIndex = Math.floor(Math.random() * chars.length);
+      string += chars[randomIndex];
+    }
+    return string;
+  }
+
   const mailChange = (e) => {
     setMail(e.target.value);
   };
@@ -32,13 +43,17 @@ const useLogin = () => {
       } else if (userType === "teacher") {
         loginApi = "api/teacher/login";
       } else {
+        if (!localStorage.getItem("ip")) {
+          var generatedString = generateString(); // تأكد من تعريف الدالة generateString()
+          localStorage.setItem("ip", generatedString); // استخدم generatedString بدلاً من generateString
+        }
         loginApi = "api/user/login";
       }
 
       // إذا كان المستخدم نوع "user"، قم بإرسال الـ IP
       const requestData =
         userType === "user"
-          ? { mail, pass, ip: window.location.hostname }
+          ? { mail, pass, ip: localStorage.getItem("ip") }
           : { mail, pass };
 
       const response = await baseUrl.post(`${loginApi}`, requestData);
@@ -63,8 +78,10 @@ const useLogin = () => {
       console.error("Error logging in:", error.response.data.msg);
       if (error.response.data.msg == "You must login from the same device") {
         toast.error("لقد تجاوزت الحد المسموح لك من الاجهزة ");
+        return;
       } else if (error.response.data.msg == " Invalid username or password") {
         toast.error("بيانات المستخدم غير صحيحة ");
+        return;
       }
     } finally {
       setLoading(false);

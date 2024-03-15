@@ -77,11 +77,11 @@ export default function Nav() {
           className="mt-1"
         >
           <Link to="/">
-            <Box className="big-font text-xl ">E-M online</Box>
+            <Box className="big-font md:text-xl ">E-M online</Box>
           </Link>
 
           <Flex alignItems={"center"}>
-            <Stack direction={"row"} spacing={7}>
+            <Stack direction={"row"} spacing={2}>
               <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? <FaMoon /> : <FaSun />}{" "}
                 {/* استخدام react-icons بدلاً من @chakra-ui/icons */}

@@ -1,9 +1,8 @@
 import { Skeleton, Stack } from "@chakra-ui/react";
-import { useRef, useState } from "react";
-import ReactPlayer from "react-player";
+
 import { useParams } from "react-router-dom";
 import GitVedio from "../../Hooks/student/GitVedio";
-import { DefaultPlayer as Video } from "react-html5video";
+
 import "react-html5video/dist/styles.css";
 import GitVediot from "../../Hooks/teacher/GitVediot";
 const Vedio = () => {
@@ -11,8 +10,6 @@ const Vedio = () => {
 
   const [vedioLoading, vdiourl] = GitVedio({ id: videoId });
   const [vedioLoadingt, vdiourlt] = GitVediot({ id: videoId });
-  const [currentTime, setCurrentTime] = useState(0);
-  const playerRef = useRef(null);
 
   if (vedioLoading || vedioLoadingt) {
     return (

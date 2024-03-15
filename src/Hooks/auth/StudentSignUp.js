@@ -11,6 +11,17 @@ const StudentSignUp = () => {
   const [grad, setGrad] = useState("");
   const [loading, setLoading] = useState("");
 
+  function generateString() {
+    var chars =
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    var string = "";
+    for (var i = 0; i < 30; i++) {
+      var randomIndex = Math.floor(Math.random() * chars.length);
+      string += chars[randomIndex];
+    }
+    return string;
+  }
+
   const handleFnameChange = (e) => {
     setFname(e.target.value);
   };
@@ -48,7 +59,14 @@ const StudentSignUp = () => {
       toast.warn(" يجب اكمال البيانات ");
     }
     e.preventDefault();
+    var generatedString = generateString();
 
+    if (localStorage.getItem("ip")) {
+      toast.error("هذا الجهاز له حساب من قبل");
+    } else {
+      var generatedString = generateString(); // تأكد من تعريف الدالة generateString()
+      localStorage.setItem("ip", generatedString); // استخدم generatedString بدلاً من generateString
+    }
     try {
       setLoading(true);
 
@@ -59,7 +77,7 @@ const StudentSignUp = () => {
         pass,
         grad,
         phone,
-        ip: window.location.hostname,
+        ip: localStorage.getItem("ip"),
       });
 
       // هنا يمكنك إضافة المنطق الخاص بعملية تسجيل الدخول
@@ -75,12 +93,15 @@ const StudentSignUp = () => {
     } catch (error) {
       // يمكنك إظهار رسالة خطأ باستخدام toast
 
-      console.error("Error logging in:", error.response.data.msg);
-      if (error.response.data.msg == "You must login from the same device") {
+      console.error("Error logging in:", error);
+      if (
+        error.response.data.msg ===
+        'duplicate key value violates unique constraint "usersip_pkey"'
+      ) {
         toast.error("لقد تجاوزت الحد المسموح لك من الاجهزة ");
-      } else if (error.response.data.msg == " Invalid username or password") {
+      } else if (error.response.data.msg === " Invalid username or password") {
         toast.error("بيانات المستخدم غير صحيحة ");
-      } else if (error.response.data.msg == "This user already registered") {
+      } else if (error.response.data.msg === "This user already registered") {
         toast.error("هذا الايميل موجود بالفعل على المنصة ");
       }
     } finally {

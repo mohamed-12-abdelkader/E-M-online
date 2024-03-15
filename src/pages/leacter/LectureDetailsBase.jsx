@@ -87,12 +87,16 @@ const LectureDetailsBase = ({
             {videosToMap.map((video) => (
               <div
                 key={video.id}
-                className="w-[100%] border shadow h-[70px] my-5 p-3 flex justify-between items-center"
+                className="w-[100%] border shadow  my-5 p-3 flex justify-between items-center"
               >
                 <h1 className="font-bold"> {video.v_name} </h1>
-                <div className="flex">
-                  <Link to={`video/${video.id}`} className="mx-1">
-                    <Button colorScheme="blue" variant="outline">
+                <div className="md:flex">
+                  <Link to={`video/${video.id}`}>
+                    <Button
+                      colorScheme="blue"
+                      variant="outline"
+                      className="m-2"
+                    >
                       {" "}
                       شاهد الفيديو{" "}
                     </Button>
@@ -106,7 +110,7 @@ const LectureDetailsBase = ({
                           setSelectedVedio(video);
                           onOpen();
                         }}
-                        className="mx-1"
+                        className="m-2"
                       >
                         حذف الفيديو
                       </Button>

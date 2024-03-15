@@ -163,3 +163,16 @@ body {
     margin: auto !important;
   }
 }
+
+.fixed-button {
+  position: fixed;
+  bottom: 20px; /* يمكنك تعديل هذه القيمة حسب الرغبة */
+  right: 20px; /* يمكنك تعديل هذه القيمة حسب الرغبة */
+
+  color: #fff; /* لون النص داخل الزر */
+  padding: 10px 20px; /* هذه القيمة تحدد حجم الزر */
+  border: none;
+  border-radius: 5px; /* لتحديد شكل حواف الزر */
+  cursor: pointer;
+  z-index: 1000; /* لضمان ظهور الزر فوق العناصر الأخرى */
+}

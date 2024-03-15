@@ -56,7 +56,14 @@ const AppRouter = () => {
         <Route path="/verify_code" element={<VerifyCode />} />
         <Route path="/rest_pass" element={<ResetPassword />} />
 
-        <Route path="/admin/*" element={<Admin />}>
+        <Route
+          path="/admin/*"
+          element={
+            <ProtectedRoute auth={isAdmin || isTeacher}>
+              <Admin />
+            </ProtectedRoute>
+          }
+        >
           <Route element={<ProtectedRoute auth={isAdmin} />}>
             <Route path="management" element={<AdminMange />} />
             <Route path="addteacher" element={<AddTeacher />} />

@@ -58,6 +58,10 @@ const Login = () => {
             />
             <h1 className="m-1 font-bold"> ادمن </h1>
           </div>
+          <div className="flex ">
+            <input type="checkbox" />
+            <h1 className="m-1 font-bold"> طالب </h1>
+          </div>
 
           <div className="flex ">
             <input

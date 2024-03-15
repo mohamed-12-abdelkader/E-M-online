@@ -10,14 +10,11 @@ const Footer = () => {
           </h1>
         </div>
         <div className="flex justify-center  my-3">
-          <a href="#">
+          <a href="https://www.facebook.com/profile.php?id=61556280021487&mibextid=kFxxJD">
             <FaFacebookSquare className="text-4xl text-white mx-2" />
           </a>
           <a href="#">
             <FaYoutube className="text-4xl text-red-500 mx-2" />
-          </a>
-          <a href="#">
-            <FaTelegramPlane className="text-4xl text-white mx-2" />
           </a>
         </div>
       </div>

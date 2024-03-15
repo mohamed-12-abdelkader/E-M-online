@@ -7,6 +7,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Footer from "./components/Footer/Footer.jsx";
 import "react-toastify/dist/ReactToastify.css";
+import WhatsButton from "./components/whatsButton/WhatsButton.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -14,9 +15,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Router>
         <Nav />
         <App />
+        <WhatsButton />
         <Footer />
       </Router>
     </ChakraProvider>
-    ,
   </React.StrictMode>
 );

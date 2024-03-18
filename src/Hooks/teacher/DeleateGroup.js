@@ -20,7 +20,6 @@ const DeleateGroup = () => {
         window.location.href = "/my_groups";
       }, 500);
     } catch (error) {
-      console.error("Error deleting teacher:", error);
       toast.error("فشل حذف المجموعة  ");
     } finally {
       setDeleteLoading(false);

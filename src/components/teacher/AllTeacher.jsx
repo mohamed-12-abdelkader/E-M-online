@@ -26,8 +26,6 @@ const AllTeacher = () => {
     );
   }
 
-  console.log(teachers);
-
   return (
     <div className="">
       <div className="flex justify-center">

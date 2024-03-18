@@ -47,7 +47,6 @@ const useAddVideo = () => {
         window.location.reload();
       }, 500);
     } catch (error) {
-      console.error(error);
       toast.error("An error occurred. Please try again later.");
     } finally {
       setLoading(false);

@@ -75,7 +75,7 @@ const useLogin = () => {
     } catch (error) {
       // يمكنك إظهار رسالة خطأ باستخدام toast
       toast.error("بيانات المستخدم غير صحيحة ");
-      console.error("Error logging in:", error.response.data.msg);
+
       if (error.response.data.msg == "You must login from the same device") {
         toast.error("لقد تجاوزت الحد المسموح لك من الاجهزة ");
         return;

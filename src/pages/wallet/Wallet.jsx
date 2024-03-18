@@ -14,7 +14,7 @@ const Wallet = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [walletLoading, mytwallet] = MyWallet();
   const cancelRef = React.useRef();
-  console.log(mytwallet);
+
   return (
     <div className="mt-[150px]">
       <div className="w-[90%] m-auto border shadow p-5">

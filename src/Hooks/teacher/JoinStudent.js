@@ -31,7 +31,6 @@ const JoinStudent = () => {
         localStorage.setItem("code", JSON.stringify(response.data));
         toast.success("تم   اضافة الطالب    بنجاح");
       } catch (error) {
-        console.error("Error logging in:", error);
         if (
           error.response.data.msg === "This student is already in this group."
         ) {

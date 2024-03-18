@@ -13,7 +13,7 @@ const LectureCenterDetails = () => {
     id: lectureId,
   });
   const videosToMap = lectures.videos || lecturest.videos || [];
-  console.log(lecturest);
+
   if (lectureLoading || lectureLoadingt) {
     return (
       <Stack className="w-[90%] m-auto mt-[150px]" style={{ height: "60vh" }}>
@@ -27,7 +27,7 @@ const LectureCenterDetails = () => {
       </Stack>
     );
   }
-  console.log("lectures", lectures);
+
   return (
     <div className="mt-[150px]">
       <LectureDetailsBase

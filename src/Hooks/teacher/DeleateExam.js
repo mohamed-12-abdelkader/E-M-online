@@ -20,7 +20,6 @@ const DeleateExam = () => {
         window.location.reload();
       }, 500);
     } catch (error) {
-      console.error("Error deleting teacher:", error);
       toast.error("فشل حذف المجموعة  ");
     } finally {
       setDeleteLoading(false);

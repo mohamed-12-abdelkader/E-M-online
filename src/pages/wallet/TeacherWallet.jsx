@@ -6,9 +6,7 @@ import { Skeleton, Stack } from "@chakra-ui/react";
 import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 const TeacherWallet = () => {
   const [walletLoading, wallet] = GitTeacherWallet();
-  {
-    walletLoading ? null : console.log("wallet", wallet);
-  }
+
   if (walletLoading) {
     return (
       <div className="" style={{ minHeight: "60vh" }}>

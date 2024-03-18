@@ -54,9 +54,7 @@ export default function Nav() {
     window.location.href = "/login";
     // يمكنك إضافة أي إجراءات إضافية هنا، على سبيل المثال إعادة توجيه المستخدم إلى صفحة تسجيل الدخول
   };
-  console.log(student);
-  console.log(isTeacher);
-  console.log("admin", isAdmin);
+
   return (
     <>
       <Box

@@ -40,7 +40,6 @@ const useAddExam = () => {
       toast.success("تم   اضافة الامتحان  بنجاح    "); // "Video uploaded successfully"
       console.log(response);
     } catch (error) {
-      console.error(error);
       toast.error("An error occurred. Please try again later.");
     } finally {
       setLoading(false);

@@ -10,8 +10,6 @@ const LecturDetails = () => {
 
   const videosToMap = lectures.videos || lecturesT.videos || [];
 
-  console.log("lectr", lecturesT);
-
   return (
     <div className="mt-[150px]">
       <LectureDetailsBase

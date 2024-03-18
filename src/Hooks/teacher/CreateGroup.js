@@ -30,7 +30,6 @@ const useCreateGroup = () => {
         localStorage.setItem("code", JSON.stringify(response.data));
         toast.success("تم  انشاء المجموعة   بنجاح");
       } catch (error) {
-        console.error("Error logging in:", error);
         toast.error("فشل  انشاء المجموعة  ");
       } finally {
         setLoading(false);

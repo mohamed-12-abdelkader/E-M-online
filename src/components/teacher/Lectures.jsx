@@ -38,9 +38,6 @@ const Lectures = () => {
     lectureLoading,
     lectureCenterLoading,
   ] = GitTeacherLecture({ id });
-  {
-    lectureCenterLoading || lectureLoading ? null : console.log(mergedLectures);
-  }
 
   if (lectureLoading || lectureCenterLoading) {
     return (
@@ -56,7 +53,7 @@ const Lectures = () => {
       </div>
     );
   }
-  console.log(mergedLectures);
+
   return (
     <div>
       <div className="mt-8">

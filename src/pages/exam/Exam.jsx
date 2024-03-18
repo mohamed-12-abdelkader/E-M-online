@@ -109,7 +109,6 @@ const Exam = () => {
     );
   }
 
-  console.log(questions);
   if (!Array.isArray(examquestions)) {
     return <div>Error: Invalid data format</div>;
   }

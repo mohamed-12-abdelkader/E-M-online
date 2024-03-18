@@ -25,7 +25,6 @@ const DeleateStudentGroup = ({ group_id }) => {
         window.location.reload();
       }, 500);
     } catch (error) {
-      console.error("Error deleting student:", error);
       toast.error("فشل حذف الطالب");
     } finally {
       setDeleteStudentLoading(false);

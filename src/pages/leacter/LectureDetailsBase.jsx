@@ -55,8 +55,6 @@ const LectureDetailsBase = ({
     );
   }
 
-  console.log(lectures);
-
   return (
     <div style={{ minHeight: "60vh" }}>
       <div className="w-[90%] m-auto md:flex justify-between items-center ">

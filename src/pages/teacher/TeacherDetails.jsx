@@ -45,7 +45,6 @@ const TeacherDetails = () => {
       </Stack>
     );
   }
-  console.log("lecture", lectures);
   if (!teacher || teacher.length === 0) {
     return (
       <div className="mt-[150px] text-center" style={{ minHeight: "70vh" }}>

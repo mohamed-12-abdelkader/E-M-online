@@ -29,9 +29,13 @@ const OpenPhone = () => {
       console.log(response);
       toast.success("تم     فتح جهاز اخر بنجاح ");
     } catch (error) {
-      console.error("Error logging in:", error);
-      toast.error("فشل   فتح جهاز اخر  ");
+      if (error.response.data.msg == "User not found") {
+        toast.error("هذا الحساب غير موجود على المنصة ");
+      } else {
+        toast.error("فشل   فتح جهاز اخر  ");
+      }
     } finally {
+      setMail("");
       setLoading(false);
     }
   };

@@ -41,7 +41,6 @@ const CreateCode = () => {
         window.location.href = "/code";
       }, 500);
     } catch (error) {
-      console.error("Error logging in:", error);
       toast.error("فشل  انشاء الاكواد ");
     } finally {
       setLoading(false);

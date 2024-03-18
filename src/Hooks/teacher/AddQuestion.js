@@ -72,7 +72,6 @@ const useAddQuestion = () => {
       }
     } catch (error) {
       toast.error("حدث خطأ أثناء إضافة السؤال");
-      console.error(error);
     } finally {
       setLoading(false);
 

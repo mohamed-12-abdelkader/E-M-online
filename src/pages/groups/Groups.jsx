@@ -6,9 +6,7 @@ import { GoArrowLeft } from "react-icons/go";
 const Groups = () => {
   const { id } = useParams();
   const [groupsLoading, groups] = GitGroup({ id: id });
-  {
-    groupsLoading ? null : console.log(groups);
-  }
+
   if (groupsLoading) {
     return (
       <Stack className="w-[90%] m-auto my-9">

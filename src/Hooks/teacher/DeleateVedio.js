@@ -20,7 +20,6 @@ const DeleateVedio = () => {
         window.location.reload();
       }, 600);
     } catch (error) {
-      console.error("Error deleting teacher:", error);
       toast.error("فشل حذف الفيديو   ");
     } finally {
       setDeleteLoading(false);

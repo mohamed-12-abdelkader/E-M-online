@@ -16,7 +16,6 @@ const GitLectureCenterDetails = ({ id }) => {
         });
         setLecture(response.data);
       } catch (error) {
-        console.log(error);
         console.log("Error fetching data");
       } finally {
         setLoading(false);

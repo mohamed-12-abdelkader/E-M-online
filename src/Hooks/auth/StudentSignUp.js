@@ -93,7 +93,6 @@ const StudentSignUp = () => {
     } catch (error) {
       // يمكنك إظهار رسالة خطأ باستخدام toast
 
-      console.error("Error logging in:", error);
       if (
         error.response.data.msg ===
         'duplicate key value violates unique constraint "usersip_pkey"'

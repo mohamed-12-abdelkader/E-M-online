@@ -23,8 +23,7 @@ import DeleateStudentGroup from "../../Hooks/teacher/DeleateStudentGroup";
 import { Select } from "@chakra-ui/react";
 import GitClasses from "../../Hooks/teacher/GitClasses";
 import GitTeacherLecture from "../../Hooks/teacher/GitTeacherLecture";
-import { toast } from "react-toastify";
-import baseUrl from "../../api/baseUrl";
+
 import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 import OpenLectureToGroup from "../../Hooks/groups/OpenLecture";
 const GroupDetails = () => {

@@ -16,7 +16,6 @@ const GitQuistion = ({ id }) => {
         });
         setQuistions(response.data);
       } catch (error) {
-        console.log(error);
         console.log("Error fetching data");
         if (
           error.response.data.msg ==

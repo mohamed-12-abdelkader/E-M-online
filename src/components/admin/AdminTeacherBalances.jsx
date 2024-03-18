@@ -21,8 +21,6 @@ const AdminTeacherBalances = () => {
     );
   }
 
-  console.log(mange);
-
   return (
     <div>
       {mange && mange.length > 0 ? (

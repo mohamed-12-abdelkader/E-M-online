@@ -1,6 +1,7 @@
 import { Button, Skeleton, Stack } from "@chakra-ui/react";
 import GitClasses from "../../Hooks/teacher/GitClasses";
 import { Link, Outlet } from "react-router-dom";
+import ScrollToTop from "../scollToTop/ScrollToTop";
 
 const TeacherLecture = () => {
   const [classesLoading, classes] = GitClasses();
@@ -14,6 +15,7 @@ const TeacherLecture = () => {
           <Skeleton height="20px" />
           <Skeleton height="20px" />
           <Skeleton height="20px" />
+          <ScrollToTop />
         </Stack>
       </div>
     );
@@ -46,6 +48,7 @@ const TeacherLecture = () => {
         </div>
         <Outlet />
       </div>
+      <ScrollToTop />
     </div>
   );
 };

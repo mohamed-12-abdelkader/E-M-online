@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import DeleateLecture from "../../Hooks/teacher/DeleateLecture";
+import ScrollToTop from "../scollToTop/ScrollToTop";
 const Lectures = () => {
   const { id } = useParams();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -50,6 +51,7 @@ const Lectures = () => {
           <Skeleton height="20px" />
           <Skeleton height="20px" />
           <Skeleton height="20px" />
+          <ScrollToTop />
         </Stack>
       </div>
     );
@@ -194,6 +196,7 @@ const Lectures = () => {
           )}
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

@@ -30,7 +30,7 @@ const GitVedio = ({ id }) => {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
   return [vedioLoading, vdiourl];
 };
 

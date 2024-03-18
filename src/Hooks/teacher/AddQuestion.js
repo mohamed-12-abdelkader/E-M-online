@@ -75,7 +75,7 @@ const useAddQuestion = () => {
       console.error(error);
     } finally {
       setLoading(false);
-      setImage("");
+
       setDegree("");
       setAnswer1("");
       setAnswer2("");

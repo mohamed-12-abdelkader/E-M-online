@@ -30,7 +30,7 @@ const GitVediot = ({ id }) => {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
   return [vedioLoadingt, vdiourlt];
 };
 

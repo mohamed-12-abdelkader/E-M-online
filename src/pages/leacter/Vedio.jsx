@@ -5,6 +5,7 @@ import GitVedio from "../../Hooks/student/GitVedio";
 
 import "react-html5video/dist/styles.css";
 import GitVediot from "../../Hooks/teacher/GitVediot";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 const Vedio = () => {
   const { videoId } = useParams();
 
@@ -20,20 +21,22 @@ const Vedio = () => {
           <Skeleton height="20px" />
           <Skeleton height="20px" />
           <Skeleton height="20px" />
+          <ScrollToTop />
         </Stack>
       </div>
     );
   }
 
   return (
-    <div className="w-100% my-[50px]">
+    <div className="w-100% my-[50px] mt-[100px]">
       <iframe
         src={vdiourl.video || vdiourlt.video}
         loading="lazy"
-        className="w-[70%] m-auto h-[500px]"
+        className="w-[90%] h-[80vh] m-auto md:h-[110vh]"
         allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
         allowfullscreen="true"
       ></iframe>
+      <ScrollToTop />
     </div>
   );
 };

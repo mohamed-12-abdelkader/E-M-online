@@ -110,15 +110,13 @@ const AppRouter = () => {
           <Route path="/group/:id" element={<GroupDetails />} />
         </Route>
         <Route element={<ProtectedRoute auth={isTeacher || student} />}>
-          <Route path="/lecture/:id/" element={<LecturDetails />}>
-            <Route path="video/:videoId" element={<Vedio />} />
-          </Route>
+          <Route path="/lecture/:id/" element={<LecturDetails />}></Route>
+          <Route path="/video/:videoId" element={<Vedio />} />
           <Route
             path="/lecture_center/:lectureId/"
             element={<LectureCenterDetails />}
-          >
-            <Route path="video/:videoId" element={<Vedio />} />
-          </Route>
+          ></Route>
+          <Route path="/video/:videoId" element={<Vedio />} />
         </Route>
         {""}
       </Routes>

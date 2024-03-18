@@ -91,7 +91,7 @@ const LectureDetailsBase = ({
               >
                 <h1 className="font-bold"> {video.v_name} </h1>
                 <div className="md:flex">
-                  <Link to={`video/${video.id}`}>
+                  <Link to={`/video/${video.id}`}>
                     <Button
                       colorScheme="blue"
                       variant="outline"

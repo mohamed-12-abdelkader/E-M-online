@@ -96,11 +96,11 @@ const Wallet = () => {
                 </h1>
                 <h1 className="flex font-bold m-2 my-5">
                   <IoLogoWhatsapp className="m-1 text-green-600" />
-                  01111272393
+                  01282602134
                 </h1>
                 <h1 className="flex font-bold m-2 my-5">
                   <IoLogoWhatsapp className="m-1 text-green-600" />
-                  01111272393
+                  0128260287
                 </h1>
               </div>
               <div>

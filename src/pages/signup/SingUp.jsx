@@ -89,7 +89,7 @@ const SingUp = () => {
               style={{ direction: "ltr" }}
             >
               <option value={1}> الصف الاول الثانوى </option>
-              <option value={3}> الصف الثانى الثانوى </option>
+              <option value={2}> الصف الثانى الثانوى </option>
               <option value={3}> الصف الثالث الثانوى </option>
             </Select>
           </div>

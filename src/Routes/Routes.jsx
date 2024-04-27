@@ -19,8 +19,7 @@ import CreateGroup from "../components/admin/teacher/CreateGroup";
 import AddStudent from "../components/admin/teacher/AddStudent";
 import AddExam from "../components/admin/teacher/AddExam";
 import AddQuestion from "../components/admin/teacher/AddQuestion";
-import TeacherLecture from "../components/teacher/TeacherCourses";
-import Lectures from "../components/teacher/AllCourses";
+
 import TeacherWallet from "../pages/wallet/TeacherWallet";
 import MyGroups from "../pages/groups/MyGroups";
 import Groups from "../pages/groups/Groups";
@@ -40,7 +39,7 @@ import OpenPhone from "../components/admin/OpenPhone";
 import LoginPage from "../pages/login/LoginPage";
 import TeacherLogin from "../pages/login/TeacerLogin";
 import AdminLogin from "../pages/login/AdminLogin";
-import Pdf from "../pages/pdf/Pdf";
+
 import AddPdf from "../components/admin/teacher/AddPdf";
 import AddMonth from "../components/admin/teacher/AddMonth";
 import AddLectureToMonth from "../components/admin/teacher/AddLectureToMonth";
@@ -97,7 +96,7 @@ const AppRouter = () => {
         />
 
         <Route path="*" element={<NotFound />} />
-        <Route path="/pdf" element={<Pdf />} />
+
         <Route path="/verify_code" element={<VerifyCode />} />
         <Route path="/rest_pass" element={<ResetPassword />} />
 

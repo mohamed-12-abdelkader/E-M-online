@@ -53,7 +53,7 @@ const AllResult = () => {
               <div className="flex flex-wrap">
                 {exams.map((exam) => (
                   <Link key={exam.id} to={`all_result/${exam.id}`}>
-                    <div className=" w-[150px] border shadow flex justify-center items-center m-2">
+                    <div className="  border shadow flex justify-center items-center m-2">
                       <h1 className="font-bold m-2">{exam.name}</h1>
                     </div>
                   </Link>

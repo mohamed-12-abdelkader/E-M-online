@@ -8,7 +8,7 @@ const Profile = () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
   return (
-    <div className="mt-[150px]">
+    <div className="mt-[150px] flex items-center" style={{ height: "90vh" }}>
       <div className="w-[90%] m-auto border shadow p-5">
         <div className="flex justify-center my-5">
           <div className="ribbon">

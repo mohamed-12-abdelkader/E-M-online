@@ -2,7 +2,7 @@ import { FaFacebookSquare, FaTelegramPlane, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="flex items-center justify-center h-[250px] mt-[50px]  bg-blue-500">
+    <div className="header2 flex items-center justify-center h-[250px] mt-[50px]  ">
       <div>
         <div className="text-center">
           <h1 className="font-bold text-white md:text-xl">

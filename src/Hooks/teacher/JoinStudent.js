@@ -5,12 +5,12 @@ import { useState } from "react";
 const JoinStudent = () => {
   const token = localStorage.getItem("token");
   const [loading, setLoading] = useState(false);
-  const [mail, setMail] = useState("");
+  const [id, setMail] = useState("");
   const [grad_id, setGrad] = useState("");
   const [group_id, setGroup] = useState("");
   const handleAddStudent = async (e) => {
     e.preventDefault();
-    if (!grad_id || !mail || !group_id) {
+    if (!grad_id || !id || !group_id) {
       toast.warn("يجب ادخال جميع البيانات ");
     } else {
       try {
@@ -18,8 +18,8 @@ const JoinStudent = () => {
 
         // Pass the token in the headers
         const response = await baseUrl.post(
-          `api/groups/join`,
-          { group_id, mail },
+          `api/groups/joinbyid`,
+          { group_id, id },
           {
             headers: {
               token: token,
@@ -43,12 +43,12 @@ const JoinStudent = () => {
         console.log(error);
       } finally {
         setLoading(false);
-        setGrad("");
+
         setMail("");
       }
     }
   };
-  return [loading, mail, setMail, grad_id, setGrad, setGroup, handleAddStudent];
+  return [loading, id, setMail, grad_id, setGrad, setGroup, handleAddStudent];
 };
 
 export default JoinStudent;

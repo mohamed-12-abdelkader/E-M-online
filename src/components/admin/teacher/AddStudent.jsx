@@ -1,7 +1,5 @@
 import { Button, Input, Select, Spinner } from "@chakra-ui/react";
-import { toast } from "react-toastify";
-import baseUrl from "../../../api/baseUrl";
-import { useState } from "react";
+
 import GitClasses from "../../../Hooks/teacher/GitClasses";
 import GitGroup from "../../../Hooks/groups/GitGroup";
 import JoinStudent from "../../../Hooks/teacher/JoinStudent";
@@ -9,23 +7,23 @@ import JoinStudent from "../../../Hooks/teacher/JoinStudent";
 const AddStudent = () => {
   const [classesLoading, classes] = GitClasses();
 
-  const [loading, mail, setMail, grad_id, setGrad, setGroup, handleAddStudent] =
+  const [loading, id, setMail, grad_id, setGrad, setGroup, handleAddStudent] =
     JoinStudent();
 
   const [groupsLoading, groups] = GitGroup({ id: grad_id });
 
-  console.log(groups);
   return (
     <div>
       <div className="text-center">
         <h1 className="font-bold text-xl"> اضافة طالب للمجموعة </h1>
       </div>
       <div className="my-9">
-        <h1 className="my-3 font-bold"> ادخل ايميل الطالب </h1>
+        <h1 className="my-3 font-bold"> ادخل كود الطالب </h1>
         <Input
-          placeholder=" ايميل الطالب   "
+          type="number"
+          placeholder=" كود  الطالب   "
           size="lg"
-          value={mail}
+          value={id}
           onChange={(e) => {
             setMail(e.target.value);
           }}

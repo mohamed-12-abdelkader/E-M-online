@@ -10,7 +10,7 @@ const GitLecturTdetails = ({ id }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await baseUrl.get(`api/lecture/lectureonlinet/${id}`, {
+        const response = await baseUrl.get(`api/lecture/lecturegroupt/${id}`, {
           headers: { token: token },
         });
         setLecture(response.data);

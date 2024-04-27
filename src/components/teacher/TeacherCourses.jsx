@@ -3,7 +3,7 @@ import GitClasses from "../../Hooks/teacher/GitClasses";
 import { Link, Outlet } from "react-router-dom";
 import ScrollToTop from "../scollToTop/ScrollToTop";
 
-const TeacherLecture = () => {
+const TeacherCourses = () => {
   const [classesLoading, classes] = GitClasses();
 
   if (classesLoading) {
@@ -30,11 +30,11 @@ const TeacherLecture = () => {
                 return (
                   <Link
                     key={classe.id}
-                    to={`lectures/${classe.id}`}
+                    to={`courses/${classe.id}`}
                     className=""
                   >
                     <Button colorScheme="blue" className="m-2">
-                      محاضرات الصف {classe.name}
+                      كورسات الصف {classe.name}
                     </Button>
                   </Link>
                 );
@@ -53,4 +53,4 @@ const TeacherLecture = () => {
   );
 };
 
-export default TeacherLecture;
+export default TeacherCourses;

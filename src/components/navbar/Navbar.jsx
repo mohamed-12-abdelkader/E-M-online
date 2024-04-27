@@ -13,6 +13,7 @@ import {
   Center,
   Spinner,
 } from "@chakra-ui/react";
+import logo from "../../img/e-m megmg.png";
 import { FaMoon, FaSun } from "react-icons/fa"; // استخدمت react-icons بدلاً من @chakra-ui/icons
 import { Link } from "react-router-dom";
 import { CiLogin } from "react-icons/ci";
@@ -25,6 +26,8 @@ import { GrGroup } from "react-icons/gr";
 import { FaVideo } from "react-icons/fa6";
 import MyWallet from "../../Hooks/student/MyWallet";
 import { PiVideoFill } from "react-icons/pi";
+import { CgProfile } from "react-icons/cg";
+import { RiLockPasswordFill } from "react-icons/ri";
 const NavLink = () => {
   return (
     <Box
@@ -75,7 +78,7 @@ export default function Nav() {
           className="mt-1"
         >
           <Link to="/">
-            <Box className="big-font md:text-xl ">E-M online</Box>
+            <img src={logo} className="h-[60px] w-[100px] my-2" />
           </Link>
 
           <Flex alignItems={"center"}>
@@ -93,10 +96,9 @@ export default function Nav() {
                     cursor={"pointer"}
                     minW={0}
                   >
-                    <Avatar
-                      size={"sm"}
-                      src={"https://avatars.dicebear.com/api/male/username.svg"}
-                    />
+                    <Button colorScheme="teal" variant="outline">
+                      <IoPerson className="m-1 text-xl text-blue-500" />
+                    </Button>
                   </MenuButton>
                   <MenuList alignItems={"center"} style={{ direction: "rtl" }}>
                     <MenuItem className="font-bold">
@@ -120,16 +122,16 @@ export default function Nav() {
                       </div>
                     ) : isTeacher ? (
                       <div>
-                        <Link to="admin/create_lecture">
+                        <Link to="/admin/add_month">
                           <MenuItem className="font-bold">
                             <MdAdminPanelSettings className="m-1 text-xl text-blue-500" />
-                            صفحة الادمن
+                            لوحة التحكم
                           </MenuItem>
                         </Link>
-                        <Link to="/teacher_lecture">
+                        <Link to="/teacher_courses">
                           <MenuItem className="font-bold">
                             <FaVideo className="m-1 text-xl text-blue-500" />
-                            محاضراتى
+                            كورساتى
                           </MenuItem>
                         </Link>
                         <Link to="/my_groups">
@@ -156,7 +158,7 @@ export default function Nav() {
                         <Link to="/my_lecture">
                           <MenuItem className="font-bold">
                             <PiVideoFill className="m-1 text-xl text-blue-500" />
-                            محاضراتى
+                            كورساتى
                           </MenuItem>
                         </Link>
 
@@ -188,18 +190,22 @@ export default function Nav() {
               ) : (
                 <div className="flex">
                   <Link to="/login">
-                    <Button colorScheme="blue" className="m-1">
-                      {" "}
-                      login{" "}
+                    <Button
+                      className="m-1 w-[120px] md:w-[150px]"
+                      colorScheme="teal"
+                      variant="outline"
+                    >
+                      تسجيل دخول
+                      <RiLockPasswordFill className="m-1 " />
                     </Button>
                   </Link>
                   <Link to="/singup">
                     <Button
-                      colorScheme="blue"
-                      className="m-1"
-                      variant="outline"
+                      className="m-1 w-[120px] md:w-[150px]"
+                      colorScheme="red"
                     >
-                      singup{" "}
+                      ! انشئ حسابك
+                      <CgProfile className="m-1" />
                     </Button>
                   </Link>
                 </div>

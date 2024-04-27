@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import GitTeacherLecture from "../../Hooks/teacher/GitTeacherLecture";
+
 import {
   Button,
   Card,
@@ -18,28 +18,22 @@ import {
   AlertDialogOverlay,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import DeleateLecture from "../../Hooks/teacher/DeleateLecture";
+
 import ScrollToTop from "../scollToTop/ScrollToTop";
-const Lectures = () => {
+import GitTeacherMonth from "../../Hooks/teacher/GitTeacherMonth";
+import DeleatMonth from "../../Hooks/teacher/DeleatMonth";
+const AllCourses = () => {
   const { id } = useParams();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
   const [selectedLecture, setSelectedLecture] = useState(null);
-  const [
-    deleteOnlineLoading,
-    deleteOnlineLecture,
-    deleteCenterLoading,
-    deleteCenterLecture,
-  ] = DeleateLecture();
-  const [
-    mergedLectures,
-    lecturesCenter,
-    lecturesOnline,
-    lectureLoading,
-    lectureCenterLoading,
-  ] = GitTeacherLecture({ id });
 
-  if (lectureLoading || lectureCenterLoading) {
+  const [deleteMonthLoading, deleteMonth] = DeleatMonth();
+
+  const [monthes, monthesLoading, lectureCenterLoading, mergedLectures] =
+    GitTeacherMonth({ id });
+
+  if (monthesLoading || lectureCenterLoading) {
     return (
       <div style={{ minHeight: "60vh" }} className="flex items-center">
         <Stack className="w-[90%] m-auto ">
@@ -54,6 +48,7 @@ const Lectures = () => {
     );
   }
 
+  console.log(monthes);
   return (
     <div>
       <div className="mt-8">
@@ -61,20 +56,20 @@ const Lectures = () => {
           <div className="ribbon2">
             <h1 className="font-bold text-white m-2 ">
               {id == 1
-                ? "محاضرات الصف الاول الثانوى "
+                ? "كرسات  الصف الاول الثانوى "
                 : id == 2
-                ? "محاضرات الصف الثانى الثانوى "
+                ? "كورسات الصف الثانى الثانوى "
                 : id == 3
-                ? " محاضرات الصف الثالث الثانوى "
+                ? " كورسات الصف الثالث الثانوى "
                 : ""}
             </h1>
           </div>
         </div>
         <div className=" my-5 flex justify-center">
           {mergedLectures && mergedLectures.length > 0 ? (
-            <div className="flex flex-wrap m-auto">
+            <div className=" w-[90%]  flex flex-wrap m-auto">
               {mergedLectures.map((lectre) => (
-                <Card key={lectre.id} className="w-[90%] md:w-[330px] m-3">
+                <Card key={lectre.id} className="w-[90%] md:w-[320px] m-3">
                   <CardBody>
                     <img
                       src={lectre.image}
@@ -96,16 +91,10 @@ const Lectures = () => {
                   <hr />
 
                   <div className="my-3 flex justify-center">
-                    <Link
-                      to={
-                        lectre.price || lectre.price == 0
-                          ? `/lecture/${lectre.id}`
-                          : `/lecture_center/${lectre.id}`
-                      }
-                    >
+                    <Link to={`/month/${lectre.id}`}>
                       <Button className="m-2" colorScheme="blue">
                         {" "}
-                        دخول المحاضرة{" "}
+                        دخول للكورس{" "}
                       </Button>
                     </Link>
                     <Button
@@ -117,7 +106,7 @@ const Lectures = () => {
                       }}
                     >
                       {" "}
-                      حذف المحاضرة{" "}
+                      حذف الكورس{" "}
                     </Button>
                     <AlertDialog
                       isOpen={isOpen}
@@ -127,7 +116,7 @@ const Lectures = () => {
                       <AlertDialogOverlay>
                         <AlertDialogContent>
                           <AlertDialogHeader fontSize="lg" fontWeight="bold">
-                            حذف محاضرة
+                            حذف الكورس
                           </AlertDialogHeader>
                           <div className="p-3">
                             {selectedLecture ? (
@@ -155,20 +144,10 @@ const Lectures = () => {
                               ml={3}
                               className="mx-2"
                               onClick={() => {
-                                if (selectedLecture) {
-                                  if (selectedLecture.price) {
-                                    deleteOnlineLecture(selectedLecture.id);
-                                  } else {
-                                    deleteCenterLecture(selectedLecture.id);
-                                  }
-                                }
+                                deleteMonth(selectedLecture.id);
                               }}
                             >
-                              {deleteOnlineLoading || deleteCenterLoading ? (
-                                <Spinner />
-                              ) : (
-                                " نعم حذف"
-                              )}
+                              {deleteMonthLoading ? <Spinner /> : "نعم حذف"}
                             </Button>
                           </AlertDialogFooter>
                         </AlertDialogContent>
@@ -182,10 +161,10 @@ const Lectures = () => {
             <div>
               <div className=" m-auto border shadow ">
                 <h1 className="font-bold m-5 flex">
-                  لا يوجد محاضرات لهذا الصف{" "}
+                  لا يوجد كورسات لهذا الصف{" "}
                   <GoArrowLeft className="m-1 font-bold text-xl" />
-                  <Link to="/admin/create_lecture">
-                    <spun className="text-red-500"> اضف محاضراتك !</spun>
+                  <Link to="/admin/add_month">
+                    <spun className="text-red-500"> اضف كورساتك !</spun>
                   </Link>
                 </h1>
               </div>
@@ -198,4 +177,4 @@ const Lectures = () => {
   );
 };
 
-export default Lectures;
+export default AllCourses;

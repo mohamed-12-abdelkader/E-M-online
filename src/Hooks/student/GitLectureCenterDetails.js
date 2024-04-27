@@ -11,7 +11,7 @@ const GitLectureCenterDetails = ({ id }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await baseUrl.get(`api/lecture/lecturegroup/${id}`, {
+        const response = await baseUrl.get(`api/lecture/lecturemonth/${id}`, {
           headers: { token: token },
         });
         setLecture(response.data);

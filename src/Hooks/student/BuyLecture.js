@@ -34,7 +34,35 @@ const BuyLecture = () => {
     }
   };
 
-  return [buyLoading, buyLecture];
+  const buyMonth = async (id) => {
+    try {
+      setBuyLoading(true);
+      await baseUrl.put(
+        `api/user/buymonth`,
+        { m_id: id },
+        {
+          headers: {
+            token: token,
+          },
+        }
+      );
+
+      toast.success("تم  شراء المحاضرة  بنجاح ");
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    } catch (error) {
+      console.error("Error deleting teacher:", error);
+      if (error.response.data.msg == "Insufficient funds") {
+        toast.error(" رصيدك غير كافى لشراء هذة المحاضرة  ");
+      }
+    } finally {
+      setBuyLoading(false);
+    }
+  };
+
+  return [buyLoading, buyLecture, buyMonth];
 };
 
 export default BuyLecture;

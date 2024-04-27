@@ -1,19 +1,30 @@
-import img from "../../img/download.png";
-
+import img from "../../img/طالب 2.png";
+import { Fade, Zoom } from "react-awesome-reveal";
 const SectionFour = () => {
   return (
     <div
-      className="bg-blue-500  my-9 p-3"
-      style={{ borderTopLeftRadius: "100px", borderBottomLeftRadius: "100px" }}
+      className=" header2 my-9 p-3 bg-blue-500 "
+      style={{
+        borderTopLeftRadius: "100px",
+        borderBottomLeftRadius: "100px",
+        backgroundColor: "#69c1cf",
+      }}
     >
       <div className="w-[95%] h-[350px] m-auto md:flex justify-between items-center">
         <div>
-          <img src={img} />
+          <Zoom>
+            <img
+              src="Rectangle.a433f53cf185268fb6f4.png"
+              className="h-[300px] m-auto"
+            />
+          </Zoom>
         </div>
         <div className="text-center">
-          <h1 className="big-font   md:text-3xl text-white">
-            Study with E-M Online
-          </h1>
+          <Fade bottom>
+            <h1 className="big-font md:text-3xl text-white">
+              Study with E-M Online
+            </h1>
+          </Fade>
         </div>
       </div>
     </div>

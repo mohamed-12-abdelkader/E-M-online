@@ -2,6 +2,7 @@ import { Button, Input, Spinner } from "@chakra-ui/react";
 import useLogin from "../../Hooks/auth/useLogin";
 import { Link } from "react-router-dom";
 import ScrollToTop from "../../components/scollToTop/ScrollToTop";
+import studentLogin from "../../Hooks/student/Login";
 
 const Login = () => {
   const [
@@ -13,13 +14,13 @@ const Login = () => {
     userType,
     setUserType,
     loading,
-  ] = useLogin();
+  ] = studentLogin();
   return (
     <div
       style={{ minHeight: "80vh" }}
-      className="flex justify-center items-center mt-[100px]"
+      className="login_page flex justify-center items-center mt-[100px]"
     >
-      <div className="w-[90%]  shadow border p-5 md:w-[60%]">
+      <div className="login w-[90%]  shadow border p-5 md:w-[60%]">
         <div>
           <div className="text-center">
             <h1 className="font-bold text-xl"> تسجيل الدخول </h1>
@@ -49,29 +50,7 @@ const Login = () => {
             هل نسيت كلمة السر ؟
           </Link>
         </div>
-        <div className="flex justify-between">
-          <div className="flex ">
-            <input
-              type="checkbox"
-              onChange={() => setUserType("admin")}
-              checked={userType === "admin"}
-            />
-            <h1 className="m-1 font-bold"> ادمن </h1>
-          </div>
-          <div className="flex ">
-            <input type="checkbox" />
-            <h1 className="m-1 font-bold"> طالب </h1>
-          </div>
 
-          <div className="flex ">
-            <input
-              type="checkbox"
-              onChange={() => setUserType("teacher")}
-              checked={userType === "teacher"}
-            />
-            <h1 className="m-1 font-bold"> مدرس </h1>
-          </div>
-        </div>
         <div className="text-center my-3">
           <Button
             colorScheme="blue"

@@ -10,12 +10,12 @@ const GitTeacherDetails = ({ id }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await baseUrl.get(`api/teacher/teacher/${id}`, {
+        const response = await baseUrl.get(`api/month/teacher/${id}`, {
           headers: { token: token },
         });
         setTeacher(response.data);
       } catch (error) {
-        console.log("Error fetching data");
+        console.log(error);
       } finally {
         setLoading(false);
       }

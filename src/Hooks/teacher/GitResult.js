@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import baseUrl from "../../api/baseUrl";
 
 const GitResult = ({ id }) => {

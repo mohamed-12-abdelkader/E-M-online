@@ -19,15 +19,15 @@ import CreateGroup from "../components/admin/teacher/CreateGroup";
 import AddStudent from "../components/admin/teacher/AddStudent";
 import AddExam from "../components/admin/teacher/AddExam";
 import AddQuestion from "../components/admin/teacher/AddQuestion";
-import TeacherLecture from "../components/teacher/TeacherLecture";
-import Lectures from "../components/teacher/Lectures";
+import TeacherLecture from "../components/teacher/TeacherCourses";
+import Lectures from "../components/teacher/AllCourses";
 import TeacherWallet from "../pages/wallet/TeacherWallet";
 import MyGroups from "../pages/groups/MyGroups";
 import Groups from "../pages/groups/Groups";
 import GroupDetails from "../pages/groups/GroupDetails";
 import AddTeacher from "../components/admin/AddTeacher";
 import LecturDetails from "../pages/leacter/LecturDetails";
-import LectureCenterDetails from "../pages/leacter/LectureCenterDetails";
+
 import Vedio from "../pages/leacter/Vedio";
 import Exam from "../pages/exam/Exam";
 import AllResult from "../components/admin/teacher/AllResult";
@@ -37,6 +37,17 @@ import UserType from "../Hooks/auth/userType";
 import ProtectedRoute from "../components/protectedRoute/ProtectedRoute";
 import ProtectedLogin from "../components/protectedRoute/ProtectedLogin";
 import OpenPhone from "../components/admin/OpenPhone";
+import LoginPage from "../pages/login/LoginPage";
+import TeacherLogin from "../pages/login/TeacerLogin";
+import AdminLogin from "../pages/login/AdminLogin";
+import Pdf from "../pages/pdf/Pdf";
+import AddPdf from "../components/admin/teacher/AddPdf";
+import AddMonth from "../components/admin/teacher/AddMonth";
+import AddLectureToMonth from "../components/admin/teacher/AddLectureToMonth";
+import Month from "../pages/month/Month";
+import TeacherCourses from "../components/teacher/TeacherCourses";
+import AllCourses from "../components/teacher/AllCourses";
+import NotFound from "../components/not found/NotFound";
 
 const AppRouter = () => {
   const [userData, isAdmin, isTeacher, student] = UserType();
@@ -48,11 +59,45 @@ const AppRouter = () => {
           path="/login"
           element={
             <ProtectedLogin auth={isAdmin || student || isTeacher}>
+              <LoginPage />
+            </ProtectedLogin>
+          }
+        />
+        <Route
+          path="/student_login"
+          element={
+            <ProtectedLogin auth={isAdmin || student || isTeacher}>
               <Login />
             </ProtectedLogin>
           }
         />
-        <Route path="/singup" element={<SingUp />} />
+        <Route
+          path="/teacher_login"
+          element={
+            <ProtectedLogin auth={isAdmin || student || isTeacher}>
+              <TeacherLogin />
+            </ProtectedLogin>
+          }
+        />
+        <Route
+          path="/admin_login"
+          element={
+            <ProtectedLogin auth={isAdmin || student || isTeacher}>
+              <AdminLogin />
+            </ProtectedLogin>
+          }
+        />
+        <Route
+          path="/singup"
+          element={
+            <ProtectedLogin auth={isAdmin || student || isTeacher}>
+              <SingUp />
+            </ProtectedLogin>
+          }
+        />
+
+        <Route path="*" element={<NotFound />} />
+        <Route path="/pdf" element={<Pdf />} />
         <Route path="/verify_code" element={<VerifyCode />} />
         <Route path="/rest_pass" element={<ResetPassword />} />
 
@@ -74,9 +119,12 @@ const AppRouter = () => {
           <Route element={<ProtectedRoute auth={isTeacher} />}>
             <Route path="create_lecture" element={<CreateLecture />} />
             <Route path="add_video" element={<AddVideo />} />
+            <Route path="add_month" element={<AddMonth />} />
+            <Route path="add_lecture_month" element={<AddLectureToMonth />} />
             <Route path="create_group" element={<CreateGroup />} />
             <Route path="add_student" element={<AddStudent />} />
             <Route path="addexam" element={<AddExam />} />
+            <Route path="add_pdf" element={<AddPdf />} />
             <Route path="add_question" element={<AddQuestion />} />
             <Route path="result/" element={<AllResult />}>
               <Route path="all_result/:resId" element={<StudentResult />} />
@@ -101,8 +149,8 @@ const AppRouter = () => {
         <Route element={<ProtectedRoute auth={isTeacher} />}>
           <Route path="/teacher_wallet" element={<TeacherWallet />} />
           <Route path="/teacher_exam/:examId" element={<ExamTeacher />} />
-          <Route path="/teacher_lecture/*" element={<TeacherLecture />}>
-            <Route path="lectures/:id" element={<Lectures />} />
+          <Route path="/teacher_courses/*" element={<TeacherCourses />}>
+            <Route path="courses/:id" element={<AllCourses />} />
           </Route>
           <Route path="/my_groups" element={<MyGroups />}>
             <Route path="group/:id" element={<Groups />} />
@@ -111,11 +159,9 @@ const AppRouter = () => {
         </Route>
         <Route element={<ProtectedRoute auth={isTeacher || student} />}>
           <Route path="/lecture/:id/" element={<LecturDetails />}></Route>
+          <Route path="/month/:id/" element={<Month />}></Route>
           <Route path="/video/:videoId" element={<Vedio />} />
-          <Route
-            path="/lecture_center/:lectureId/"
-            element={<LectureCenterDetails />}
-          ></Route>
+
           <Route path="/video/:videoId" element={<Vedio />} />
         </Route>
         {""}

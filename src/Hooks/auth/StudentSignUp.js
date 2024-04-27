@@ -62,7 +62,7 @@ const StudentSignUp = () => {
     var generatedString = generateString();
 
     if (localStorage.getItem("ip")) {
-      toast.error("هذا الجهاز له حساب من قبل");
+      console.log("");
     } else {
       var generatedString = generateString(); // تأكد من تعريف الدالة generateString()
       localStorage.setItem("ip", generatedString); // استخدم generatedString بدلاً من generateString

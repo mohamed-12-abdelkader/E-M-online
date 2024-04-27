@@ -11,7 +11,7 @@ const GitVedio = ({ id }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await baseUrl.get(`api/lecture/video/${id}`, {
+        const response = await baseUrl.get(`api/lecture/videom/${id}`, {
           headers: { token: token },
         });
         setVedio(response.data);

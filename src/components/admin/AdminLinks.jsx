@@ -37,15 +37,26 @@ const AdminLinks = ({ currentLink, setCurrentLink }) => {
 
   const teacherLinks = [
     // Add teacher-specific links here
+
     {
       id: Math.random(),
-      link: "اضافة محاضرة  ",
-      path: "/admin/create_lecture",
+      link: "انشاء شهر ",
+      path: "/admin/add_month",
+    },
+    {
+      id: Math.random(),
+      link: "اضافة  محاضرة للشهر  ",
+      path: "/admin/add_lecture_month",
     },
     {
       id: Math.random(),
       link: "اضافة فيديوهات المحاضرات ",
       path: "/admin/add_video",
+    },
+    {
+      id: Math.random(),
+      link: "اضافة  pdf ",
+      path: "/admin/add_pdf",
     },
     {
       id: Math.random(),

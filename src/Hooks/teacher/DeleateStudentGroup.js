@@ -8,7 +8,6 @@ const DeleateStudentGroup = ({ group_id }) => {
   const deleteStudent = async (std_id) => {
     try {
       setDeleteStudentLoading(true);
-
       await baseUrl.delete(`api/groups/remove`, {
         headers: {
           token: token,
@@ -18,9 +17,7 @@ const DeleateStudentGroup = ({ group_id }) => {
           std_id: std_id,
         },
       });
-
       toast.success("تم حذف الطالب بنجاح");
-
       setTimeout(() => {
         window.location.reload();
       }, 500);
@@ -29,6 +26,7 @@ const DeleateStudentGroup = ({ group_id }) => {
     } finally {
       setDeleteStudentLoading(false);
     }
+    console.log(std_id);
   };
   return [deleteStudentLoading, deleteStudent];
 };

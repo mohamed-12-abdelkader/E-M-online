@@ -27,12 +27,13 @@ const Vedio = () => {
     );
   }
 
+  console.log(vdiourlt.video);
   return (
-    <div className="w-100% my-[50px] mt-[100px]">
+    <div className="w-100% my-[50px] ">
       <iframe
         src={vdiourl.video || vdiourlt.video}
         loading="lazy"
-        className="w-[90%] h-[80vh] m-auto md:h-[110vh]"
+        className="w-[100%] h-[120vh] m-auto border"
         allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
         allowfullscreen="true"
       ></iframe>

@@ -3,6 +3,8 @@ import { useState } from "react";
 import GitClasses from "../../../Hooks/teacher/GitClasses";
 import GitTeacherLecture from "../../../Hooks/teacher/GitTeacherLecture";
 import useAddExam from "../../../Hooks/teacher/AddExam";
+import GitTeacherMonth from "../../../Hooks/teacher/GitTeacherMonth";
+import GitLecturMonth from "../../../Hooks/teacher/GitLecturMonth";
 
 const AddExam = () => {
   const [
@@ -16,15 +18,18 @@ const AddExam = () => {
     setNamber,
   ] = useAddExam();
   const [grad, setGrad] = useState("");
-  const [
-    mergedLectures,
-    lecturesCenter,
-    lecturesOnline,
-    lectureLoading,
-    lectureCenterLoading,
-  ] = GitTeacherLecture({ id: grad });
+  const [m_id, setM_id] = useState("");
+  //const [
+  //  mergedLectures,
+  //  lecturesCenter,
+  //  lecturesOnline,
+  //  lectureLoading,
+  //  lectureCenterLoading,
+  //] = GitTeacherLecture({ id: grad });
   const [classesLoading, classes] = GitClasses();
-
+  const [monthes, monthesLoading, lectureCenterLoading, mergedLectures] =
+    GitTeacherMonth({ id: grad });
+  const [months, monthLoading] = GitLecturMonth({ id: m_id });
   return (
     <div>
       <div className="text-center">
@@ -54,56 +59,45 @@ const AddExam = () => {
             <option disabled> لا يوجد صفوف دراسية متاحة </option>
           )}
         </Select>
-        <h1 className="text-red-500 my-2">
-          {" "}
-          - يجب اختيار محاضرة واحدة بحد ادنى للامتحان
-        </h1>
-        <h1 className="my-3 font-bold"> اختر المحاضر (سنتر ) </h1>
+        <h1 className="font-bold my-2"> اختر شهر المحاضرة </h1>
         <Select
-          onChange={(e) => {
-            setLg_id(e.target.value);
-          }}
           className="my-2"
           placeholder={
-            lectureCenterLoading
-              ? "جار تحميل المحاضرات ..."
-              : " اختر  المحاضرة   "
+            lectureCenterLoading || monthesLoading
+              ? "جار تحميل الشهور ..."
+              : " اختر شهر المحاضرة "
           }
           size="lg"
           style={{ direction: "ltr" }}
-          disabled={lectureCenterLoading}
+          onChange={(e) => setM_id(e.target.value)}
+          disabled={lectureCenterLoading || monthesLoading}
         >
-          {lectureCenterLoading ? (
-            <option disabled>Loading...</option>
-          ) : lecturesCenter.length > 0 ? (
-            lecturesCenter.map((lecture) => (
-              <option key={lecture.id} value={lecture.id}>
-                {lecture.description}
+          {mergedLectures && mergedLectures.length > 0 ? (
+            mergedLectures.map((classItem) => (
+              <option key={classItem.id} value={classItem.id}>
+                {classItem.description}
               </option>
             ))
           ) : (
-            <option disabled> لا يوجد محاضرات متاحة </option>
+            <option disabled> لا يوجد شهور دراسية متاحة </option>
           )}
         </Select>
-        <h1 className="my-3 font-bold"> اختر المحاضر (اونلاين ) </h1>
+
+        <h1 className="font-bold my-2"> اختر المحاضرة </h1>
         <Select
-          onChange={(e) => {
-            setLo_id(e.target.value);
-          }}
           className="my-2"
           placeholder={
-            lectureLoading ? "جار تحميل المحاضرات ..." : " اختر  المحاضرة   "
+            monthLoading ? "جار تحميل المحاضرات..." : " اختر المحاضرة "
           }
           size="lg"
           style={{ direction: "ltr" }}
-          disabled={lectureLoading}
+          onChange={(e) => setLg_id(e.target.value)}
+          disabled={monthLoading}
         >
-          {lectureLoading ? (
-            <option disabled>Loading...</option>
-          ) : lecturesOnline.length > 0 ? (
-            lecturesOnline.map((lecture) => (
-              <option key={lecture.id} value={lecture.id}>
-                {lecture.description}
+          {months && months.monthcontent && months.monthcontent.length > 0 ? (
+            months.monthcontent.map((classItem) => (
+              <option key={classItem.id} value={classItem.id}>
+                {classItem.description}
               </option>
             ))
           ) : (

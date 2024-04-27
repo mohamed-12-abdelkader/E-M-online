@@ -2,6 +2,20 @@ body {
   direction: rtl;
 }
 
+.header2 {
+  background-image: url(../public/back.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hover-effect {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-effect:hover {
+  transform: translateY(-10px); /* Adjust the value as needed */
+}
+
 /* HTML: <div class="ribbon">Your text content</div> */
 .ribbon {
   color: white;
@@ -43,7 +57,7 @@ body {
     0 100%,
     var(--c) calc(50% + var(--d) / 2)
   );
-  background-color: #3b82f6; /* the main color */
+  background-color: #69c1cf; /* the main color */
   width: fit-content;
 }
 
@@ -137,7 +151,7 @@ body {
     0 0.25em
   );
   background: radial-gradient(0.2em 50% at right, #000a, #0000) border-box,
-    #2699dc padding-box; /* the color  */
+    #3b82f6 padding-box; /* the color  */
   width: fit-content;
 }
 
@@ -157,7 +171,10 @@ body {
   .container-aitem {
     display: block;
   }
-
+  .caard {
+    width: 280px !important
+    ;
+  }
   .links-container {
     width: 250px !important;
     margin: auto !important;
@@ -175,4 +192,8 @@ body {
   border-radius: 5px; /* لتحديد شكل حواف الزر */
   cursor: pointer;
   z-index: 1000; /* لضمان ظهور الزر فوق العناصر الأخرى */
+}
+
+.login {
+  opacity: 1 !important;
 }

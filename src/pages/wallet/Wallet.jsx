@@ -85,7 +85,7 @@ const Wallet = () => {
               <h1 className="font-bold md:text-xl">
                 تواصل معنا من خلال هذة الارقام على الواتساب لشحن المحفظة{" "}
               </h1>
-              <div className="flex">
+              <div className="flex flex-wrap">
                 <h1 className="flex font-bold m-2 my-5">
                   <IoLogoWhatsapp className="m-1 text-green-600 " />
                   01111272393

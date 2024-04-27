@@ -6,16 +6,14 @@ const OpenLectureToGroup = ({ id }) => {
   const token = localStorage.getItem("token");
   const [loadingOpen, setLoading] = useState(false);
   const [g_id, setGrad] = useState("");
-  const [l_id, setL_id] = useState("");
+  const [m_id, setm_id] = useState("");
   const handleOpenLecture = async (e) => {
     e.preventDefault();
     setLoading(true);
-
     try {
-      // Pass the token in the headers
       const response = await baseUrl.post(
-        `api/groups/openlecture/group`,
-        { g_id: id, l_id },
+        `api/groups/openmonth/group`,
+        { g_id: id, m_id },
         {
           headers: {
             token: token,
@@ -23,15 +21,13 @@ const OpenLectureToGroup = ({ id }) => {
           },
         }
       );
-
       localStorage.setItem("code", JSON.stringify(response.data));
-      toast.success("تم   فتح المحاضرة   بنجاح");
+      toast.success("تم   فتح الكورس   بنجاح");
     } catch (error) {
       console.error("Error logging in:", error);
-
       if (
         error.response.data.msg ==
-        'duplicate key value violates unique constraint "groupslecture_pkey"'
+        'duplicate key value violates unique constraint "groupsmonths_pkey"'
       ) {
         toast.error("هذة المحاضرة مفتوحة لهذة المجموعة من قبل");
       }
@@ -39,7 +35,7 @@ const OpenLectureToGroup = ({ id }) => {
       setLoading(false);
     }
   };
-  return [handleOpenLecture, l_id, setL_id, g_id, setGrad, loadingOpen];
+  return [handleOpenLecture, m_id, setm_id, g_id, setGrad, loadingOpen];
 };
 
 export default OpenLectureToGroup;

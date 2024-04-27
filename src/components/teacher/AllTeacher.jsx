@@ -47,7 +47,7 @@ const AllTeacher = () => {
         <div className="flex flex-wrap w-[85%] m-auto my-5 ">
           {teachers.map((teacher) => (
             <Zoom key={teacher.id}>
-              <Card className="w-[320px] border m-2">
+              <Card className="w-[320px] mx-[10px] border m-2">
                 <CardBody>
                   <img
                     src={teacher.image}

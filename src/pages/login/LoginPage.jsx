@@ -5,7 +5,7 @@ const LoginPage = () => {
   return (
     <div
       style={{ height: "80vh" }}
-      className=" flex  items-center justify-center"
+      className=" flex  items-center justify-center mt-[150px]"
     >
       <div className="flex flex-wrap items-center justify-center">
         <Link to="/teacher_login">

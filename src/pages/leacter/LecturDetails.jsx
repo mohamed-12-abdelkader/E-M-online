@@ -64,17 +64,17 @@ const LecturDetails = () => {
   console.log(lectures);
   return (
     <div className="mt-[150px]">
-      <div className="w-[90%] m-auto md:flex justify-between items-center">
+      <div className="w-[90%] m-auto md:flex justify-between items-center h-[400px] p-3 month-content">
         <div>
           <img
             src={lecturesT.image || lectures.image}
-            className="w-[430px] h-[300px]"
+            className="w-[430px] h-[300px] m-auto"
             style={{ borderRadius: "20px" }}
           />
         </div>
         <div className="flex justify-center my-3">
-          <div className="ribbon2 h-[60px]">
-            <h1 className="font-bold m-2 mx-4 text-white">
+          <div className=" h-[60px]">
+            <h1 className="fonts font-bold text-xl  text-white md:text-4xl ">
               {lecturesT.description || lectures.description}
             </h1>
           </div>
@@ -122,7 +122,7 @@ const LecturDetails = () => {
                         }}
                         className="m-2"
                       >
-                        <MdOutlineDeleteOutline />
+                        حذف الفيديو
                       </Button>
                       <AlertDialog
                         isOpen={isOpen}
@@ -222,7 +222,7 @@ const LecturDetails = () => {
                         }}
                         className="m-2"
                       >
-                        <MdOutlineDeleteOutline />
+                        حذف ال PDF
                       </Button>
                       <AlertDialog
                         isOpen={isOpen}
@@ -312,7 +312,7 @@ const LecturDetails = () => {
                       deleteExamsG(id);
                     }}
                   >
-                    {deleteGLoading ? <Spinner /> : <MdOutlineDeleteOutline />}
+                    {deleteGLoading ? <Spinner /> : "حذف الامتحان "}
                   </Button>
                 </div>
               ) : null}

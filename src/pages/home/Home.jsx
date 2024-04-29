@@ -6,6 +6,7 @@ import AllTeacher from "../../components/teacher/AllTeacher";
 import UserType from "../../Hooks/auth/userType";
 import LoginHome from "../../components/home/LoginHome";
 import ScrollToTop from "../../components/scollToTop/ScrollToTop";
+import Subject from "../../components/subject/Subject";
 
 const Home = () => {
   const [userData, isAdmin, isTeacher, student] = UserType();
@@ -21,6 +22,7 @@ const Home = () => {
           {" "}
           <SectionTwo />
           <SectionThree />
+          <Subject />
           <SectionFour />
           <AllTeacher />
         </div>

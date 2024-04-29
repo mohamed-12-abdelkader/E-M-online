@@ -55,20 +55,28 @@ const Month = () => {
   console.log(months.monthcontent);
   return (
     <div className="mt-[120px]" style={{ minHeight: "80vh" }}>
-      <div className=" w-[90%] m-auto  md:flex justify-between">
-        <div className="flex justify-center">
-          {/* التأكد من تعريف months.monthData.image */}
-          {months.monthData.image && (
-            <img
-              src={months.monthData.image}
-              className="h-[250px] w-[300px]"
-              alt="Image"
-            />
-          )}
+      <div className=" w-[90%] m-auto h-[400px]  md:flex justify-between p-3 month-content ">
+        <div className="flex items-center justify-center h">
+          <div>
+            <div className="flex text-xl my-2">
+              <MdCollections className="text-red-500 m-2" />
+              <h1 className="font-bold text-white ">
+                عدد المحاضرات: ({months.monthData.noflecture})
+              </h1>
+            </div>
+            {months.monthData.image && (
+              <img
+                src={months.monthData.image}
+                className="h-[250px] w-[400px]"
+                alt="Image"
+              />
+            )}
+          </div>
         </div>
+
         <div className="flex justify-center my-3 items-center ">
-          <div className="ribbon2">
-            <h1 className="m-2 font-bold mx-4 text-white">
+          <div className="">
+            <h1 className="fonts font-bold text-xl  text-white md:text-4xl">
               {months.monthData.description}
             </h1>
           </div>
@@ -84,9 +92,9 @@ const Month = () => {
         </div>
 
         {months.monthcontent && months.monthcontent.length > 0 ? (
-          <div className="flex flex-wrap  my-3 w-[90%] m-auto">
+          <div className="flex flex-wrap justify-center  my-3 w-[98%] m-auto">
             {months.monthcontent.map((lecture) => (
-              <Card key={lecture.id} className=" caard w-[320px] m-2 ">
+              <Card key={lecture.id} className=" caard w-[300px] m-2 ">
                 <CardBody>
                   <img
                     src={lecture.image}
@@ -106,17 +114,17 @@ const Month = () => {
                   </div>
                 </CardBody>
                 <hr />
-                <div className="">
+                <div className="w-[100%]">
                   {isTeacher ? (
                     <div className="my-3 text-center flex">
                       <Link
                         to={`/lecture/${lecture.id}`}
-                        className="w-[46%] mx-1 m-auto"
+                        className="w-[50%] mx-1 m-auto"
                       >
                         <Button
                           colorScheme="blue"
                           variant="outline"
-                          className="m-auto"
+                          className="m-auto mx-1"
                         >
                           دخول للمحاضرة
                         </Button>
@@ -124,7 +132,7 @@ const Month = () => {
                       <Button
                         colorScheme="red"
                         variant="outline"
-                        className="w-[46%] mx-1 m-auto"
+                        className="w-[50%] mx-1 m-auto"
                         onClick={() => {
                           setSelectedLecture(lecture);
                           onOpen();

@@ -8,6 +8,12 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.month-content {
+  background-image: url(../public/start3.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .hover-effect {
   transition: transform 0.3s ease-in-out;
 }

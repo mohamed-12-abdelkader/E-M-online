@@ -56,7 +56,7 @@ const AllCourses = () => {
           <div className="ribbon2">
             <h1 className="font-bold text-white m-2 ">
               {id == 1
-                ? "كرسات  الصف الاول الثانوى "
+                ? "كورسات  الصف الاول الثانوى "
                 : id == 2
                 ? "كورسات الصف الثانى الثانوى "
                 : id == 3
@@ -67,9 +67,9 @@ const AllCourses = () => {
         </div>
         <div className=" my-5 flex justify-center">
           {mergedLectures && mergedLectures.length > 0 ? (
-            <div className=" w-[90%]  flex flex-wrap m-auto">
+            <div className=" w-[98%]  flex justify-center flex-wrap m-auto">
               {mergedLectures.map((lectre) => (
-                <Card key={lectre.id} className="w-[90%] md:w-[320px] m-3">
+                <Card key={lectre.id} className="w-[300px] m-3">
                   <CardBody>
                     <img
                       src={lectre.image}

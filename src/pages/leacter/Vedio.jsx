@@ -14,7 +14,7 @@ const Vedio = () => {
 
   if (vedioLoading || vedioLoadingt) {
     return (
-      <div style={{ minHeight: "60vh" }} className="flex items-center">
+      <div style={{ minHeight: "70vh" }} className="flex items-center">
         <Stack className="w-[90%] m-auto ">
           <Skeleton height="20px" className="mt-5" />
           <Skeleton height="20px" />

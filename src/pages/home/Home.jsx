@@ -21,7 +21,6 @@ const Home = () => {
         <div>
           {" "}
           <SectionTwo />
-          <SectionThree />
           <Subject />
           <SectionFour />
           <AllTeacher />

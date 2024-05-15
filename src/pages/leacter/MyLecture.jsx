@@ -6,13 +6,8 @@ import Lectures from "../../components/lecture/Lectures";
 
 const MyLecture = () => {
   return (
-    <div className="mt-[150px]">
+    <div className="mt-[150px]" style={{ minHeight: "60vh" }}>
       <div className="w-[90%] m-auto border shadow">
-        <div className="flex justify-center my-5">
-          <div className="ribbon">
-            <h1 className="font-bold m-2 big-font">my lecture </h1>
-          </div>
-        </div>
         <Lectures />
       </div>
       <ScrollToTop />

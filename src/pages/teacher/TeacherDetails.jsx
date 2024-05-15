@@ -108,9 +108,9 @@ const TeacherDetails = () => {
           </g>
         </svg>
       </div>
-      <div className="w-[95%] m-auto mx-auto">
+      <div className=" m-auto mx-auto">
         <div className="text-center m-auto md:flex justify-between my-[50px]">
-          <div className="flex justify-center m-auto md:w-[50%]">
+          <div className="flex justify-center m-auto w-[80%]  md:w-[50%]">
             <Zoom>
               <img
                 src={teacher.teacher.image}
@@ -123,7 +123,7 @@ const TeacherDetails = () => {
             <div className="">
               <h1 className="fonts font-bold">{teacher.teacher.description}</h1>
             </div>
-            <div className="flex my-2 flex-wrap justify-center">
+            <div className="flex my-2 flex-wrap justify-center ">
               <Zoom>
                 <div className="h-[50px] border w-[220px] m-2 flex  items-center p-2">
                   <img
@@ -146,20 +146,26 @@ const TeacherDetails = () => {
           </div>
         </div>
 
-        <div className="  m-auto border shadow p-5">
-          <div>
-            <h1 className="font-bold flex text-xl">
+        <div className="  m-auto border shadow p-5 bg-[#00204a]">
+          <div className="my-5">
+            <h1 className="font-bold flex text-xl text-white">
               <FaFileVideo className="m-1 text-red-500" />
               كل الكورسات
             </h1>
           </div>
           <div className="">
             {teacher.months && teacher.months.length > 0 ? (
-              <div className="flex flex-wrap my-3">
+              <div
+                className="flex flex-wrap my-3 bg-white w-[95%] m-auto p-3"
+                style={{ borderRadius: "20px" }}
+              >
                 {teacher.months.map((lectre) => {
                   return (
                     <Zoom key={lectre.id}>
-                      <Card className="w-[320px] mx-auto my-3">
+                      <Card
+                        className="  my-3 mx-2 md:w-[320px]"
+                        style={{ border: "solid 2px #ccc" }}
+                      >
                         <CardBody>
                           <img
                             src={lectre.image}
@@ -284,7 +290,10 @@ const TeacherDetails = () => {
               </div>
             ) : (
               <div>
-                <div className="h-[300px] flex justify-center items-center">
+                <div
+                  className="h-[200px] flex justify-center items-center bg-white"
+                  style={{ borderRadius: "20px" }}
+                >
                   <h1 className="font-bold flex text-xl ">
                     <MdCancelPresentation className="text-red-500 m-2" />
                     لا يوجد كورسات الان سوف يتم اضافتها فى اقرب وقت ممكن{" "}

@@ -23,10 +23,13 @@ const SingUp = () => {
   ] = StudentSignUp();
   return (
     <div
-      className=" mt-[150px] mb-10 grid justify-center  md:flex justify-between items-center "
-      style={{ direction: "ltr", minHeight: "80vh" }}
+      className=" mt-[70px] mb-10 grid justify-center bg-[#00204a] p-3  md:flex justify-between items-center "
+      style={{ direction: "ltr", minHeight: "90vh" }}
     >
-      <div className="md:w-[70%]">
+      <div
+        className="md:w-[70%] bg-white p-3 mt-[50px]"
+        style={{ borderRadius: "20px" }}
+      >
         <div>
           <div className="text-center">
             <h1 className="fonts font-bold text-xl"> انشاء حساب جديد</h1>

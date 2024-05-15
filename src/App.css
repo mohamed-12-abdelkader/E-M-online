@@ -3,10 +3,17 @@ body {
 }
 
 .header2 {
-  background-image: url(../public/back.jpg);
+  background-image: url(../public/hero-bg.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.book {
+  background-image: url(../public/banner-item-01.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
 }
 .month-content {
   background-image: url(../public/start3.png);
@@ -63,7 +70,7 @@ body {
     0 100%,
     var(--c) calc(50% + var(--d) / 2)
   );
-  background-color: #69c1cf; /* the main color */
+  background-color: #00204a; /* the main color */
   width: fit-content;
 }
 

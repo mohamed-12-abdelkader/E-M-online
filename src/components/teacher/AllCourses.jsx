@@ -54,7 +54,7 @@ const AllCourses = () => {
       <div className="mt-8">
         <div className="flex justify-center">
           <div className="ribbon2">
-            <h1 className="font-bold text-white m-2 ">
+            <h1 className="text-white m-2 font-bold mx-4">
               {id == 1
                 ? "كورسات  الصف الاول الثانوى "
                 : id == 2

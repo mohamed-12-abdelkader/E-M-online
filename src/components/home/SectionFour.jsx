@@ -1,13 +1,11 @@
-import img from "../../img/طالب 2.png";
 import { Fade, Zoom } from "react-awesome-reveal";
 const SectionFour = () => {
   return (
     <div
-      className=" header2 my-9 p-3 bg-blue-500 "
+      className="  my-9 p-3 bg-[#00204a] "
       style={{
         borderTopLeftRadius: "100px",
         borderBottomLeftRadius: "100px",
-        backgroundColor: "#69c1cf",
       }}
     >
       <div className="w-[95%] h-[350px] m-auto md:flex justify-between items-center">

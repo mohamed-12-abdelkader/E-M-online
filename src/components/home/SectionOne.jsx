@@ -3,9 +3,7 @@ import { useState } from "react";
 import { Zoom } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 import UserType from "../../Hooks/auth/userType";
-import { Button, ButtonGroup } from "@chakra-ui/react";
-import { FaVideo } from "react-icons/fa";
-import { MdAdminPanelSettings } from "react-icons/md";
+
 const SectionOne = () => {
   const [userData, isAdmin, isTeacher, student] = UserType();
   const [displayedName, setDisplayedName] = useState("");
@@ -23,8 +21,8 @@ const SectionOne = () => {
   }, [name, nameIndex]);
 
   return (
-    <div className="header " style={{ description: "rt" }}>
-      <div className="header2 mt-[70px] h-[700px]">
+    <div className=" " style={{ description: "rt" }}>
+      <div className="header2 my-[70px]   h-[820px] ">
         <div className="inner-header flex justify-center items-center ">
           <div className="w-[90%] m-auto md:flex items-center ">
             <div>
@@ -36,7 +34,14 @@ const SectionOne = () => {
               </Zoom>
             </div>
             <div className="md:mt-[100px] mx-5">
-              <h1 className="fonts font-bold text-xl  text-white md:text-4xl  ">
+              <h1 className="my-3 font-bold text-white  text-2xl flex">
+                اللهم انصر غزة واهلها 🤲🏻{" "}
+                <img
+                  src="th (13).jpeg"
+                  className="h-[20px] w-[30px] mt-2 mx-1"
+                />
+              </h1>
+              <h1 className="fonts font-bold text-xl  text-white md:text-3xl  ">
                 {displayedName}
               </h1>
 
@@ -63,44 +68,6 @@ const SectionOne = () => {
               )}
             </div>
           </div>
-        </div>
-
-        <div>
-          <svg
-            className="waves"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 24 150 28"
-            preserveAspectRatio="none"
-            shape-rendering="auto"
-          >
-            <defs>
-              <path
-                id="gentle-wave"
-                d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-              />
-            </defs>
-            <g className="parallax">
-              <use
-                xlinkHref="#gentle-wave"
-                x="48"
-                y="0"
-                fill="rgba(255,255,255,0.7)"
-              />
-              <use
-                xlinkHref="#gentle-wave"
-                x="48"
-                y="3"
-                fill="rgba(255,255,255,0.5)"
-              />
-              <use
-                xlinkHref="#gentle-wave"
-                x="48"
-                y="5"
-                fill="rgba(255,255,255,0.3)"
-              />
-              <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff" />
-            </g>
-          </svg>
         </div>
       </div>
     </div>

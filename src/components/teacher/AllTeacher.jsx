@@ -3,8 +3,7 @@ import GitAllTeacher from "../../Hooks/teacher/GitAllTeacher";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { Card, CardBody, Skeleton, Stack } from "@chakra-ui/react";
-import { Slide, Zoom } from "react-awesome-reveal";
-import Marquee from "react-fast-marquee";
+import { Zoom } from "react-awesome-reveal";
 const AllTeacher = () => {
   const [loading, teachers] = GitAllTeacher();
 
@@ -12,7 +11,7 @@ const AllTeacher = () => {
     return (
       <Stack className="w-[90%] m-auto">
         <div className="flex justify-center">
-          <div className="ribbon">
+          <div className="">
             <h1 className="big-font m-4 text-xl text-center">
               E-M online Teachers
             </h1>
@@ -28,10 +27,10 @@ const AllTeacher = () => {
   }
 
   return (
-    <div className="">
+    <div className=" bg-[#00204a] py-5">
       <div className="flex justify-center">
-        <div className="ribbon">
-          <h1 className="big-font m-4 text-xl text-center">
+        <div className="">
+          <h1 className="big-font m-4 text-xl text-center text-white">
             E-M online Teachers
           </h1>
         </div>
@@ -45,77 +44,76 @@ const AllTeacher = () => {
           </div>
         </div>
       ) : (
-        <div dir="ltr" className="flex w-full my-5 ">
-          <Marquee speed={20}>
-            <div className="flex justify-between items-center">
-              {teachers.map((teacher) => (
-                <div key={teacher.id}>
-                  <Card className="w-[300px] mx-[10px] border m-2">
-                    <CardBody>
-                      <img
-                        src={teacher.image}
-                        alt="Green double couch with wooden legs"
-                        className="h-[220px] w-[100%]"
-                      />
-                      <div className="flex justify-between ">
-                        <h1 color="blue.600" className="font-bold mt-2">
-                          {teacher.name}
-                        </h1>
-                        <h1 color="blue.600" className="font-bold mt-2">
-                          {teacher.subject}
-                        </h1>
-                      </div>
-                    </CardBody>
-                    <hr className="w-[90%] m-auto" />
-                    <div className="flex justify-center  my-3">
-                      <a href={teacher.facebook}>
-                        <FaFacebookSquare className="text-4xl text-blue-600 mx-2" />
-                      </a>
-                      <a href={teacher.tele}>
-                        <FaYoutube className="text-4xl text-red-500 mx-2" />
-                      </a>
-                      <a href={teacher.whats}>
-                        <FaTelegramPlane className="text-4xl text-blue-600 mx-2" />
-                      </a>
+        <div dir="rtl" className="flex w-full my-5 ">
+          <div
+            className="flex  items-center justify-center  bg-white w-[90%] m-auto"
+            style={{ borderRadius: "20px" }}
+          >
+            {loading ? (
+              <Stack className="w-[90%] m-auto">
+                <Skeleton height="20px" className="mt-5" />
+                <Skeleton height="20px" />
+                <Skeleton height="20px" />
+                <Skeleton height="20px" />
+                <Skeleton height="20px" />
+              </Stack>
+            ) : (
+              <div
+                className="flex  items-center flex-wrap  m-auto p-3 md:w-[90%]"
+                style={{ flexWrap: "wrap" }}
+              >
+                {teachers.map((teacher) => (
+                  <Zoom key={teacher.id}>
+                    <div className="w-[100%] m-auto my-2 md: w-[300px] mx-[10px]">
+                      <Card
+                        className="    border  bg-[#00204a]  md:w-[300px] mx-[10px] "
+                        style={{
+                          borderRadius: "10px",
+                          border: "solid 2px #ccc",
+                        }}
+                      >
+                        <CardBody>
+                          <div className="">
+                            <img
+                              src={teacher.image}
+                              alt="Green double couch with wooden legs"
+                              className="h-[230px] w-[100%] "
+                            />
+                          </div>
+                          <div className=" flex justify-between text-center">
+                            <h1
+                              color="blue.600"
+                              className="font-bold mt-2  my-2"
+                            >
+                              {teacher.name}
+                            </h1>
+                            <h1
+                              color="blue.600"
+                              className="font-bold mt-2  my-2"
+                            >
+                              {teacher.subject}
+                            </h1>
+                          </div>
+                        </CardBody>
+                        <hr className="w-[90%] m-auto" />
+                        <div className="flex justify-center  my-3">
+                          <a href={teacher.facebook}>
+                            <FaFacebookSquare className="text-4xl text-blue-600 mx-2" />
+                          </a>
+                          <a href={teacher.tele}>
+                            <FaYoutube className="text-4xl text-red-500 mx-2" />
+                          </a>
+                          <a href={teacher.whats}>
+                            <FaTelegramPlane className="text-4xl text-blue-600 mx-2" />
+                          </a>
+                        </div>
+                      </Card>
                     </div>
-                  </Card>
-                </div>
-              ))}
-              {teachers.map((teacher) => (
-                <div key={teacher.id}>
-                  <Card className="w-[320px] mx-[10px] border m-2">
-                    <CardBody>
-                      <img
-                        src={teacher.image}
-                        alt="Green double couch with wooden legs"
-                        className="h-[220px] w-[100%]"
-                      />
-                      <div className="flex justify-between ">
-                        <h1 color="blue.600" className="font-bold mt-2">
-                          {teacher.name}
-                        </h1>
-                        <h1 color="blue.600" className="font-bold mt-2">
-                          {teacher.subject}
-                        </h1>
-                      </div>
-                    </CardBody>
-                    <hr className="w-[90%] m-auto" />
-                    <div className="flex justify-center  my-3">
-                      <a href={teacher.facebook}>
-                        <FaFacebookSquare className="text-4xl text-blue-600 mx-2" />
-                      </a>
-                      <a href={teacher.tele}>
-                        <FaYoutube className="text-4xl text-red-500 mx-2" />
-                      </a>
-                      <a href={teacher.whats}>
-                        <FaTelegramPlane className="text-4xl text-blue-600 mx-2" />
-                      </a>
-                    </div>
-                  </Card>
-                </div>
-              ))}
-            </div>
-          </Marquee>
+                  </Zoom>
+                ))}
+              </div>
+            )}
+          </div>
                   
         </div>
       )}

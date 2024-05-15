@@ -29,19 +29,15 @@ const Subject = () => {
     { id: Math.random(), imgYrl: img12 },
   ];
   return (
-    <div>
+    <div className=" bg-[#00204a] py-5">
       <div className="flex justify-center">
         <div>
-          <h1 className="font-bold text-2xl">المواد الدراسية</h1>
-          <p
-            className="h-2 w-[155px] bg-blue-400 my-3"
-            style={{ borderRadius: "5px" }}
-          ></p>
+          <h1 className="font-bold text-2xl text-white">المواد الدراسية</h1>
         </div>
       </div>
 
-      <div dir="ltr" className="flex w-full my-5 ">
-        <Marquee speed={20}>
+      <div dir="ltr" className="flex w-full my-5 bg-[#00204a] py-5 ">
+        <Marquee>
           {subjects.map((sub) => {
             return (
               <Card key={sub.id} className="w-[200px] mx-[10px] border m-2 p-2">

@@ -17,10 +17,13 @@ const Login = () => {
   ] = studentLogin();
   return (
     <div
-      style={{ minHeight: "80vh" }}
-      className="login_page flex justify-center items-center mt-[100px]"
+      style={{ minHeight: "90vh" }}
+      className=" flex justify-center items-center mt-[70px] bg-[#00204a]"
     >
-      <div className="login w-[90%]  shadow border p-5 md:w-[60%]">
+      <div
+        className="login w-[90%]  shadow border bg-white p-5 md:w-[60%]"
+        style={{ borderRadius: "20px" }}
+      >
         <div>
           <div className="text-center">
             <h1 className="font-bold text-xl"> تسجيل الدخول </h1>

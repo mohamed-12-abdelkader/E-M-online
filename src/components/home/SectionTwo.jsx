@@ -1,7 +1,7 @@
 import { PiExamLight } from "react-icons/pi";
 import { GiTeacher } from "react-icons/gi";
 import { GiBookmarklet } from "react-icons/gi";
-import { Fade, Zoom } from "react-awesome-reveal";
+import { Zoom } from "react-awesome-reveal";
 const SectionTwo = () => {
   return (
     <div className="my-[50px] mx-5 ">
@@ -18,9 +18,12 @@ const SectionTwo = () => {
               <PiExamLight className="text-white text-5xl" />
             </div>
             <div className="mt-[80px] p-2">
-              <h1 className="font-bold text-xl"> - امتحانات دورية ومستمرة </h1>
+              <h1 className="font-bold text-xl text-black">
+                {" "}
+                - امتحانات دورية ومستمرة{" "}
+              </h1>
               <div className="mt-[30px]">
-                <h1 className="font-bold">
+                <h1 className="font-bold text-black">
                   اختبر مستواك من خلال امتحانات دورية مستمرة على كل كورس او على
                   كل محاضرة
                 </h1>
@@ -40,9 +43,12 @@ const SectionTwo = () => {
               <GiTeacher className="text-white text-5xl" />
             </div>
             <div className="mt-[80px] p-2">
-              <h1 className="font-bold text-xl"> - نخبة من اكفاء المدرسين </h1>
+              <h1 className="font-bold text-xl text-black">
+                {" "}
+                - نخبة من اكفاء المدرسين{" "}
+              </h1>
               <div className="mt-[30px]">
-                <h1 className="font-bold">
+                <h1 className="font-bold text-black">
                   المنصة بتوفرلك مجموعة من اكفاء وافضل المدرسين على مستوى
                   الجمهورية فى كل مواد الثانوية العامة
                 </h1>
@@ -62,9 +68,12 @@ const SectionTwo = () => {
               <GiBookmarklet className="text-white text-5xl" />
             </div>
             <div className="mt-[80px] p-2">
-              <h1 className="font-bold text-xl"> - كتب و pdf لكل المواد </h1>
+              <h1 className="font-bold text-xl text-black">
+                {" "}
+                - كتب و pdf لكل المواد{" "}
+              </h1>
               <div className="mt-[30px]">
-                <h1 className="font-bold">
+                <h1 className="font-bold text-black">
                   متاح لكل محاضرة ال pdf الخاص بها او تقدر تطلب الكتاب الخاص
                   بالمدرس وهيجيلك شحن لحد البيت{" "}
                 </h1>

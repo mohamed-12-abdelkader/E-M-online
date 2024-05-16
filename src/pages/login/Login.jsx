@@ -32,7 +32,7 @@ const Login = () => {
             <h1 className="font-bold my-2 text-black">ادخل الايميل </h1>
             <Input
               style={{ border: "solid 2px #ccc" }}
-              className=""
+              className="text-black"
               placeholder="ادخل الايميل "
               size="lg"
               value={mail}
@@ -41,7 +41,7 @@ const Login = () => {
             <h1 className="font-bold mt-5 mb-2 text-black">ادخل كلمة السر </h1>
             <Input
               style={{ border: "solid 2px #ccc" }}
-              className=""
+              className="text-black"
               type="password"
               placeholder="ادخل كلمة السر  "
               size="lg"

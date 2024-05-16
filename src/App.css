@@ -181,6 +181,16 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .teacher-card {
+    width: 47% !important;
+  }
+  .teacher-card-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .manth-card {
+    width: 290px !important;
+  }
   .container-aitem {
     display: block;
   }
@@ -209,4 +219,13 @@ body {
 
 .login {
   opacity: 1 !important;
+}
+
+@media screen and (max-width: 740px) {
+  .teacher-card {
+    width: 45% !important;
+  }
+  .manth-card {
+    width: 45% !important;
+  }
 }

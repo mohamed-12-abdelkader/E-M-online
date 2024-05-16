@@ -59,12 +59,12 @@ const AllTeacher = () => {
               </Stack>
             ) : (
               <div
-                className="flex  items-center flex-wrap  m-auto p-3 md:w-[90%]"
+                className="flex  items-center flex-wrap  m-auto p-3 md:w-[98%]"
                 style={{ flexWrap: "wrap" }}
               >
                 {teachers.map((teacher) => (
                   <Zoom key={teacher.id}>
-                    <div className="w-[100%] m-auto my-2 md: w-[300px] mx-[10px]">
+                    <div className="w-[100%] teachers m-auto my-2 md: w-[300px] mx-[10px]">
                       <Card
                         className="    border  bg-[#00204a]  md:w-[300px] mx-[10px] "
                         style={{

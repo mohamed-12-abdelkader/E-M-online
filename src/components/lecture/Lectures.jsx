@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 import GitMyMonthes from "../../Hooks/student/GitMyMonthes";
 
 const Lectures = () => {
-  const mood = localStorage.getItem("chakra-ui-color-mode");
   const [myMonth, myMonthLoading] = GitMyMonthes();
-
-  console.log(mood);
 
   return (
     <div className="bg-[#00204a] p-5 w-[100%]">
@@ -21,9 +18,7 @@ const Lectures = () => {
         </h1>
       </div>
       <div
-        className={`w-[95%] m-auto ${
-          mood === "dark" ? `bg-[#1a202c]` : `bg-white`
-        } p-3`}
+        className={`w-[95%] m-auto bg-white p-3`}
         style={{ borderRadius: "20px" }}
       >
         {myMonthLoading ? (
@@ -41,7 +36,7 @@ const Lectures = () => {
             {myMonth.map((lectre) => (
               <Card
                 key={lectre.id}
-                className="w-[320px] m-3"
+                className="w-[320px] m-3 manth-card"
                 style={{ border: "1px solid #ccc" }}
               >
                 <CardBody>

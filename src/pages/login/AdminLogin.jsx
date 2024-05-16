@@ -33,7 +33,7 @@ const AdminLogin = () => {
           <div className="w-[100%] my-7">
             <h1 className="font-bold my-2 text-black">ادخل الايميل </h1>
             <Input
-              className=""
+              className="text-black"
               placeholder="ادخل الايميل "
               size="lg"
               value={mail}
@@ -42,7 +42,7 @@ const AdminLogin = () => {
             />
             <h1 className="font-bold mt-5 mb-2 text-black">ادخل كلمة السر </h1>
             <Input
-              className=""
+              className="text-black"
               type="password"
               placeholder="ادخل كلمة السر  "
               size="lg"

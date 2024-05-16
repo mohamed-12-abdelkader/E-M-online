@@ -47,7 +47,7 @@ const SingUp = () => {
               <Input
                 placeholder="الاسم الاول  "
                 size="lg"
-                className="m-2 w-[90%] mx-auto md:w-[48%]"
+                className="m-2 w-[90%] mx-auto md:w-[48%] text-black"
                 value={fName}
                 onChange={handleFnameChange}
                 style={{ border: "solid 2px #ccc" }}
@@ -58,7 +58,7 @@ const SingUp = () => {
               <Input
                 placeholder="الاسم الاخير "
                 size="lg"
-                className="m-2 w-[90%] mx-auto md:w-[48%]"
+                className="m-2 w-[90%] mx-auto md:w-[48%] text-black"
                 value={lName}
                 onChange={handleLnameChange}
                 style={{ border: "solid 2px #ccc" }}
@@ -70,7 +70,7 @@ const SingUp = () => {
                 type="number"
                 placeholder="رقم الهاتف "
                 size="lg"
-                className="m-2 w-[90%] mx-auto md:w-[48%] border "
+                className="m-2 w-[90%] mx-auto md:w-[48%] border text-black "
                 style={{ border: "solid 2px #ccc" }}
                 value={phone}
                 onChange={handlePhoneChange}
@@ -81,7 +81,7 @@ const SingUp = () => {
               <Input
                 placeholder=" ادخل الايميل  "
                 size="lg"
-                className="m-2 w-[90%] mx-auto md:w-[48%]"
+                className="m-2 w-[90%] mx-auto md:w-[48%] text-black"
                 value={mail}
                 onChange={handleMailChange}
                 style={{ border: "solid 2px #ccc" }}
@@ -93,7 +93,7 @@ const SingUp = () => {
                 type="password"
                 placeholder="كلمة السر "
                 size="lg"
-                className="m-2 w-[90%] mx-auto md:w-[48%]"
+                className="m-2 w-[90%] mx-auto md:w-[48%] text-black"
                 value={pass}
                 onChange={handlePassChange}
                 style={{ border: "solid 2px #ccc" }}
@@ -108,14 +108,14 @@ const SingUp = () => {
                 type="password"
                 placeholder="تاكيد كلمة السر "
                 size="lg"
-                className="m-2 w-[90%] mx-auto md:w-[48%]"
+                className="m-2 w-[90%] mx-auto md:w-[48%] text-black"
                 value={passCon}
                 onChange={handlePassConChange}
                 style={{ border: "solid 2px #ccc" }}
               />
             </div>
             <div className="m-2 w-[94%]">
-              <h1 className="fonts font-bold m-2 text-black"> اختر الصف </h1>
+              <h1 className="fonts font-bold m-2 text-black "> اختر الصف </h1>
               <Select
                 value={grad}
                 onChange={handleGradeChange}

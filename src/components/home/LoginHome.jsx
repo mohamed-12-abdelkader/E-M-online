@@ -47,12 +47,12 @@ const LoginHome = () => {
               </h1>
             </div>
             <div
-              className="w-[95%] m-auto bg-white p-3 flex md:flex flex-wrap"
+              className="w-[95%] m-auto teacher-card-content bg-white p-3 flex md:flex flex-wrap"
               style={{ borderRadius: "20px" }}
             >
               {teachers.map((teacher) => (
                 <Link
-                  className="w-[100%] md:w-[320px] m-2"
+                  className="w-[100%] teacher-card m-1 md:w-[320px] m-2"
                   key={teacher.id}
                   to={`teacher/${teacher.id}`}
                 >

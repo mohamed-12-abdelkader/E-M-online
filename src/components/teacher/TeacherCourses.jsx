@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Skeleton, Stack, Box } from "@chakra-ui/react";
+import { Skeleton, Stack, Box } from "@chakra-ui/react";
 import GitClasses from "../../Hooks/teacher/GitClasses";
 import { Link, Outlet } from "react-router-dom";
 import ScrollToTop from "../scollToTop/ScrollToTop";

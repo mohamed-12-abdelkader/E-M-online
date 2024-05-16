@@ -22,7 +22,7 @@ const SectionOne = () => {
 
   return (
     <div className=" " style={{ description: "rt" }}>
-      <div className="header2 my-[70px]   h-[820px] ">
+      <div className="header2 my-[70px]   h-[850px] ">
         <div className="inner-header flex justify-center items-center ">
           <div className="w-[90%] m-auto md:flex items-center ">
             <div>

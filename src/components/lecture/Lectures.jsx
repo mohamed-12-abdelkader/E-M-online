@@ -17,10 +17,7 @@ const Lectures = () => {
           كورساتي
         </h1>
       </div>
-      <div
-        className={`w-[95%] m-auto bg-white p-3`}
-        style={{ borderRadius: "20px" }}
-      >
+      <div>
         {myMonthLoading ? (
           <Stack className="w-[90%] m-auto my-5">
             <Skeleton height="20px" className="mt-5" />
@@ -32,11 +29,14 @@ const Lectures = () => {
             <Skeleton height="20px" />
           </Stack>
         ) : myMonth && myMonth.length > 0 ? (
-          <div className="flex flex-wrap my-3">
+          <div
+            className="w-[95%] m-auto teacher-card-content bg-white p-3 flex md:flex flex-wrap"
+            style={{ borderRadius: "20px" }}
+          >
             {myMonth.map((lectre) => (
               <Card
                 key={lectre.id}
-                className="w-[320px] m-3 manth-card"
+                className=" w-[300px] my-3 mx-2 md:w-[320px] m-2"
                 style={{ border: "1px solid #ccc" }}
               >
                 <CardBody>

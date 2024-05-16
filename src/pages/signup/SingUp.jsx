@@ -32,7 +32,10 @@ const SingUp = () => {
       >
         <div>
           <div className="text-center">
-            <h1 className="fonts font-bold text-xl"> انشاء حساب جديد</h1>
+            <h1 className="fonts font-bold text-xl text-black">
+              {" "}
+              انشاء حساب جديد
+            </h1>
           </div>
 
           <div
@@ -40,48 +43,52 @@ const SingUp = () => {
             style={{ direction: "rtl" }}
           >
             <div className="m-2 w-[100%] md:w-[45%]">
-              <h1 className="fonts font-bold m-2"> الاسم الاول </h1>
+              <h1 className="fonts font-bold m-2 text-black"> الاسم الاول </h1>
               <Input
                 placeholder="الاسم الاول  "
                 size="lg"
                 className="m-2 w-[90%] mx-auto md:w-[48%]"
                 value={fName}
                 onChange={handleFnameChange}
+                style={{ border: "solid 2px #ccc" }}
               />
             </div>
             <div className="m-2 w-[100%] md:w-[45%]">
-              <h1 className="fonts font-bold m-2"> الاسم الاخير </h1>
+              <h1 className="fonts font-bold m-2 text-black"> الاسم الاخير </h1>
               <Input
                 placeholder="الاسم الاخير "
                 size="lg"
                 className="m-2 w-[90%] mx-auto md:w-[48%]"
                 value={lName}
                 onChange={handleLnameChange}
+                style={{ border: "solid 2px #ccc" }}
               />
             </div>
             <div className="m-2 w-[100%] md:w-[45%]">
-              <h1 className="fonts font-bold m-2"> رقم الهاتف </h1>
+              <h1 className="fonts font-bold m-2 text-black"> رقم الهاتف </h1>
               <Input
                 type="number"
                 placeholder="رقم الهاتف "
                 size="lg"
-                className="m-2 w-[90%] mx-auto md:w-[48%]"
+                className="m-2 w-[90%] mx-auto md:w-[48%] border "
+                style={{ border: "solid 2px #ccc" }}
                 value={phone}
                 onChange={handlePhoneChange}
               />
             </div>
             <div className="m-2 w-[100%] md:w-[45%]">
-              <h1 className="fonts font-bold m-2"> الايميل </h1>
+              <h1 className="fonts font-bold m-2 text-black"> الايميل </h1>
               <Input
                 placeholder=" ادخل الايميل  "
                 size="lg"
                 className="m-2 w-[90%] mx-auto md:w-[48%]"
                 value={mail}
                 onChange={handleMailChange}
+                style={{ border: "solid 2px #ccc" }}
               />
             </div>
             <div className="m-2 w-[100%] md:w-[45%]">
-              <h1 className="fonts font-bold m-2"> كلمة السر </h1>
+              <h1 className="fonts font-bold m-2 text-black"> كلمة السر </h1>
               <Input
                 type="password"
                 placeholder="كلمة السر "
@@ -89,10 +96,14 @@ const SingUp = () => {
                 className="m-2 w-[90%] mx-auto md:w-[48%]"
                 value={pass}
                 onChange={handlePassChange}
+                style={{ border: "solid 2px #ccc" }}
               />
             </div>
             <div className="m-2 w-[100%] md:w-[45%]">
-              <h1 className="fonts font-bold m-2"> تاكيد كلمة السر </h1>
+              <h1 className="fonts font-bold m-2 text-black">
+                {" "}
+                تاكيد كلمة السر{" "}
+              </h1>
               <Input
                 type="password"
                 placeholder="تاكيد كلمة السر "
@@ -100,16 +111,18 @@ const SingUp = () => {
                 className="m-2 w-[90%] mx-auto md:w-[48%]"
                 value={passCon}
                 onChange={handlePassConChange}
+                style={{ border: "solid 2px #ccc" }}
               />
             </div>
             <div className="m-2 w-[94%]">
-              <h1 className="fonts font-bold m-2"> اختر الصف </h1>
+              <h1 className="fonts font-bold m-2 text-black"> اختر الصف </h1>
               <Select
                 value={grad}
                 onChange={handleGradeChange}
                 placeholder="اختر الصف الدراسى "
+                className="text-black"
                 size="lg"
-                style={{ direction: "ltr" }}
+                style={{ direction: "ltr", border: "solid 2px #ccc" }}
               >
                 <option value={1}> الصف الاول الثانوى </option>
                 <option value={2}> الصف الثانى الثانوى </option>

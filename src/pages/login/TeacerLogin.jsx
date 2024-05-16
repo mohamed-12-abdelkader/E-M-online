@@ -27,19 +27,21 @@ const TeacherLogin = () => {
       >
         <div className="">
           <div className="text-center">
-            <h1 className="font-bold text-xl"> تسجيل الدخول </h1>
+            <h1 className="font-bold text-xl text-black"> تسجيل الدخول </h1>
           </div>
           <div className="w-[100%] my-7">
-            <h1 className="font-bold my-2">ادخل الايميل </h1>
+            <h1 className="font-bold my-2 text-black">ادخل الايميل </h1>
             <Input
+              style={{ border: "solid 2px #ccc" }}
               className=""
               placeholder="ادخل الايميل "
               size="lg"
               value={mail}
               onChange={mailChange}
             />
-            <h1 className="font-bold mt-5 mb-2">ادخل كلمة السر </h1>
+            <h1 className="font-bold mt-5 mb-2 text-black">ادخل كلمة السر </h1>
             <Input
+              style={{ border: "solid 2px #ccc" }}
               className=""
               type="password"
               placeholder="ادخل كلمة السر  "

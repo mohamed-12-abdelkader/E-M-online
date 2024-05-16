@@ -28,18 +28,19 @@ const AdminLogin = () => {
       >
         <div>
           <div className="text-center">
-            <h1 className="font-bold text-xl"> تسجيل الدخول </h1>
+            <h1 className="font-bold text-xl text-black"> تسجيل الدخول </h1>
           </div>
           <div className="w-[100%] my-7">
-            <h1 className="font-bold my-2">ادخل الايميل </h1>
+            <h1 className="font-bold my-2 text-black">ادخل الايميل </h1>
             <Input
               className=""
               placeholder="ادخل الايميل "
               size="lg"
               value={mail}
               onChange={mailChange}
+              style={{ border: "solid 2px #ccc" }}
             />
-            <h1 className="font-bold mt-5 mb-2">ادخل كلمة السر </h1>
+            <h1 className="font-bold mt-5 mb-2 text-black">ادخل كلمة السر </h1>
             <Input
               className=""
               type="password"
@@ -47,6 +48,7 @@ const AdminLogin = () => {
               size="lg"
               value={pass}
               onChange={passChange}
+              style={{ border: "solid 2px #ccc" }}
             />
           </div>
         </div>

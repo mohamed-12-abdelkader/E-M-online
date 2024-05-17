@@ -100,7 +100,7 @@ const Wallet = () => {
                 </h1>
                 <h1 className="flex font-bold m-2 my-5">
                   <IoLogoWhatsapp className="m-1 text-green-600" />
-                  0128260287
+                  01282602857
                 </h1>
               </div>
               <div>

@@ -71,10 +71,13 @@ const AllTeacherLogin = () => {
             </div>
           </div>
         ) : (
-          <div className="text-center py-5">
+          <div
+            className="text-center py-5 bg-white h-[200px] flex justify-center items-center"
+            style={{ borderRadius: "20px" }}
+          >
             <h1 className="font-bold flex justify-center text-black">
               <MdCancelPresentation className="m-1 text-red-500" />
-              انت لست مشترك فى كورسات الان
+              لا يوجد مدرسين الان
             </h1>
           </div>
         )}

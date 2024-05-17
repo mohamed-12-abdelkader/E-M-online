@@ -163,7 +163,7 @@ const TeacherDetails = () => {
                   return (
                     <Zoom key={lectre.id}>
                       <Card
-                        className="  my-3 mx-2 md:w-[320px] manth-card"
+                        className=" w-[300px] my-3 mx-2 md:w-[320px] m-2"
                         style={{ border: "solid 2px #ccc" }}
                       >
                         <CardBody>
@@ -294,7 +294,7 @@ const TeacherDetails = () => {
                   className="h-[200px] flex justify-center items-center bg-white"
                   style={{ borderRadius: "20px" }}
                 >
-                  <h1 className="font-bold flex text-xl ">
+                  <h1 className="font-bold flex text-xl text-black">
                     <MdCancelPresentation className="text-red-500 m-2" />
                     لا يوجد كورسات الان سوف يتم اضافتها فى اقرب وقت ممكن{" "}
                   </h1>

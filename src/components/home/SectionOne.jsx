@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Zoom } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 import UserType from "../../Hooks/auth/userType";
-
+import { GoArrowDown } from "react-icons/go";
 const SectionOne = () => {
   const [userData, isAdmin, isTeacher, student] = UserType();
   const [displayedName, setDisplayedName] = useState("");

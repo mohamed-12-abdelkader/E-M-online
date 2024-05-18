@@ -7,7 +7,7 @@ import Lectures from "../../components/lecture/Lectures";
 const MyLecture = () => {
   return (
     <div className="mt-[150px]" style={{ minHeight: "60vh" }}>
-      <div className="w-[90%] m-auto border shadow">
+      <div className="w-[90%] m-auto border shadow ">
         <Lectures />
       </div>
       <ScrollToTop />

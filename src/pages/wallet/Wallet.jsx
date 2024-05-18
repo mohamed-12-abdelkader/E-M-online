@@ -16,7 +16,7 @@ const Wallet = () => {
   const cancelRef = React.useRef();
 
   return (
-    <div className="mt-[150px]">
+    <div className="mt-[150px]" style={{ minHeight: "70vh" }}>
       <div className="w-[90%] m-auto border shadow p-5">
         <div className="flex justify-center ">
           <div className="ribbon">

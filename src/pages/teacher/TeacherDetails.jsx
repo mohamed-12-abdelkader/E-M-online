@@ -156,14 +156,14 @@ const TeacherDetails = () => {
           <div className="">
             {teacher.months && teacher.months.length > 0 ? (
               <div
-                className="flex flex-wrap my-3  bg-white w-[95%] m-auto p-3"
+                className="flex flex-wrap justify-center my-3  bg-white w-[95%] m-auto p-3 md:justify-start flex-wrap"
                 style={{ borderRadius: "20px" }}
               >
                 {teacher.months.map((lectre) => {
                   return (
                     <Zoom key={lectre.id}>
                       <Card
-                        className=" w-[300px] my-3 mx-2 md:w-[320px] m-2"
+                        className=" w-[300px] my-3  md:mx-7 w-[320px] m-2 "
                         style={{ border: "solid 2px #ccc" }}
                       >
                         <CardBody>

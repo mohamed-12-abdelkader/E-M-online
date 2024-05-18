@@ -73,9 +73,12 @@ const Month = () => {
         </div>
         <div>
           {months.monthcontent && months.monthcontent.length > 0 ? (
-            <div className="flex flex-wrap px-auto  my-3 w-[98%] m-auto ">
+            <div className="flex flex-wrap justify-center px-auto  my-3 w-[98%] m-auto md:justify-start  ">
               {months.monthcontent.map((lecture) => (
-                <Card key={lecture.id} className=" caard w-[300px] m-2 ">
+                <Card
+                  key={lecture.id}
+                  className=" w-[300px] my-3  md:mx-7 w-[320px] m-2 "
+                >
                   <CardBody>
                     <img
                       src={lecture.image}

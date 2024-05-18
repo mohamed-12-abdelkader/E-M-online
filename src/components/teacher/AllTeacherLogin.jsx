@@ -34,39 +34,38 @@ const AllTeacherLogin = () => {
             className="w-[95%] m-auto teacher-card-content bg-white p-3 flex md:flex  flex-wrap"
             style={{ borderRadius: "20px" }}
           >
-            <div className="flex md:flex  flex-wrap ">
+            <div className="flex justify-center card-content  flex-wrap md:justify-start   ">
               {teachers.map((teacher) => (
-                <Zoom key={teacher.id}>
-                  <Card
-                    className=" w-[300px] my-3 mx-2 md:w-[320px] m-2"
-                    style={{ border: "1px solid #ccc" }}
-                  >
-                    <Link to={`teacher/${teacher.id}`}>
-                      <CardBody>
-                        <img
-                          src={teacher.image}
-                          className="h-[220px] w-[100%]"
-                          alt="Course"
-                        />
-                        <div className="flex justify-between">
-                          <h1 color="blue.600" className="font-bold mt-2">
-                            {teacher.name}
-                          </h1>
-                          <h1 color="blue.600" className="font-bold mt-2">
-                            {teacher.subject}
-                          </h1>
-                        </div>
-                      </CardBody>
-                      <hr className="w-[90%] m-auto" />
-                      <div className="px-5 my-3">
-                        <h1 className="font-bold flex">
-                          <FaVideo className="m-2 text-red-500" />
-                          {teacher.description}
+                <Card
+                  key={teacher.id}
+                  className=" w-[300px] my-3   md:mx-10 w-[320px] m-2 "
+                  style={{ border: "1px solid #ccc" }}
+                >
+                  <Link to={`teacher/${teacher.id}`}>
+                    <CardBody>
+                      <img
+                        src={teacher.image}
+                        className="h-[220px] w-[100%]"
+                        alt="Course"
+                      />
+                      <div className="flex justify-between">
+                        <h1 color="blue.600" className="font-bold mt-2">
+                          {teacher.name}
+                        </h1>
+                        <h1 color="blue.600" className="font-bold mt-2">
+                          {teacher.subject}
                         </h1>
                       </div>
-                    </Link>
-                  </Card>
-                </Zoom>
+                    </CardBody>
+                    <hr className="w-[90%] m-auto" />
+                    <div className="px-5 my-3">
+                      <h1 className="font-bold flex">
+                        <FaVideo className="m-2 text-red-500" />
+                        {teacher.description}
+                      </h1>
+                    </div>
+                  </Link>
+                </Card>
               ))}
             </div>
           </div>

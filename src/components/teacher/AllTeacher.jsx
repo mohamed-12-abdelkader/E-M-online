@@ -59,12 +59,12 @@ const AllTeacher = () => {
               </Stack>
             ) : (
               <div
-                className="flex  items-center flex-wrap  m-auto p-3 md:w-[98%]"
+                className="flex justify-center card-content  flex-wrap md:justify-start   "
                 style={{ flexWrap: "wrap" }}
               >
                 {teachers.map((teacher) => (
                   <Zoom key={teacher.id}>
-                    <div className="w-[100%] teachers m-auto my-2 md: w-[300px] mx-[10px]">
+                    <div className=" chakra-card w-[300px] my-3   md:mx-10 w-[320px] m-2 ">
                       <Card
                         className="    border  bg-[#00204a]  md:w-[300px] mx-[10px] "
                         style={{

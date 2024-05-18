@@ -195,13 +195,13 @@ body {
   }
 }
 
-@media screen and (min-width: 451px) and (max-width: 785px) {
+@media screen and (min-width: 451px) and (max-width: 850px) {
   .card-content {
     justify-content: start !important;
   }
   .chakra-card {
     margin: 10px 25px !important;
-    width: 280px !important;
+    width: 300px !important;
   }
   .teacher-card {
     width: 47% !important;

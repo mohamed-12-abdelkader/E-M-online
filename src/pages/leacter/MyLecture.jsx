@@ -1,6 +1,3 @@
-import { Button, Card, CardBody, Skeleton, Stack } from "@chakra-ui/react";
-import GitMyLecture from "../../Hooks/student/GitMyLecture";
-import { Link } from "react-router-dom";
 import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 import Lectures from "../../components/lecture/Lectures";
 

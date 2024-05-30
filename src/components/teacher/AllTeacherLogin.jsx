@@ -45,7 +45,8 @@ const AllTeacherLogin = () => {
                     <CardBody>
                       <img
                         src={teacher.image}
-                        className="h-[220px] w-[100%]"
+                        className="h-[210px] w-[100%] border "
+                        style={{ borderRadius: "10px" }}
                         alt="Course"
                       />
                       <div className="flex justify-between">

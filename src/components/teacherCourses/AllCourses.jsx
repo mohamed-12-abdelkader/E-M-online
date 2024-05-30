@@ -4,9 +4,7 @@ import {
   Button,
   Card,
   CardBody,
-  Skeleton,
   Spinner,
-  Stack,
   useDisclosure,
 } from "@chakra-ui/react";
 import { GoArrowLeft } from "react-icons/go";
@@ -22,6 +20,7 @@ import React, { useState } from "react";
 import ScrollToTop from "../scollToTop/ScrollToTop";
 import GitTeacherMonth from "../../Hooks/teacher/GitTeacherMonth";
 import DeleatMonth from "../../Hooks/teacher/DeleatMonth";
+import Loading from "../loading/Loading";
 const AllCourses = () => {
   const { id } = useParams();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -36,14 +35,7 @@ const AllCourses = () => {
   if (monthesLoading || lectureCenterLoading) {
     return (
       <div style={{ minHeight: "60vh" }} className="flex items-center">
-        <Stack className="w-[90%] m-auto ">
-          <Skeleton height="20px" className="mt-5" />
-          <Skeleton height="20px" />
-          <Skeleton height="20px" />
-          <Skeleton height="20px" />
-          <Skeleton height="20px" />
-          <ScrollToTop />
-        </Stack>
+        <Loading />
       </div>
     );
   }

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Button,
   AlertDialog,
@@ -12,6 +11,7 @@ import { Spinner } from "@chakra-ui/react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 
 const AlertDialogComponent = ({
+  Loading,
   isOpen,
   onClose,
   onConfirm,
@@ -27,13 +27,19 @@ const AlertDialogComponent = ({
       <AlertDialogContent>
         <AlertDialogHeader fontSize="lg" fontWeight="bold">
           {selectedItem
-            ? `حذف ${selectedItem.v_name || selectedItem.pdf_name}`
+            ? `حذف ${
+                selectedItem.v_name ||
+                selectedItem.pdf_name ||
+                selectedItem.exam_name
+              }`
             : ""}
         </AlertDialogHeader>
         <AlertDialogBody>
           {selectedItem
             ? `هل بالتاكيد تريد حذف ${
-                selectedItem.v_name || selectedItem.pdf_name
+                selectedItem.v_name ||
+                selectedItem.pdf_name ||
+                selectedItem.exam_name
               }؟`
             : ""}
         </AlertDialogBody>
@@ -42,7 +48,7 @@ const AlertDialogComponent = ({
             إلغاء
           </Button>
           <Button colorScheme="red" onClick={onConfirm} ml={3} className="mx-1">
-            <MdOutlineDeleteOutline />
+            {Loading ? <Spinner /> : <MdOutlineDeleteOutline />}
           </Button>
         </AlertDialogFooter>
       </AlertDialogContent>

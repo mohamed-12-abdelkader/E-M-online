@@ -19,9 +19,9 @@ const LectureDetails = () => {
   const [lectureLoading, lectures] = GitLectureCenterDetails({ id });
   const [lectureTLoading, lecturesT] = GitLecturTdetails({ id });
   const [userData, isAdmin, isTeacher] = UserType();
-  const [deleteVideoCenter] = DeleateCenterVedio();
-  const [deleteExamsG] = DeleateExamG();
-  const [deletePdf] = DeleatPdf();
+  const [deleteVedioCenterLoading, deletVedioCenter] = DeleateCenterVedio();
+  const [deleteGLoading, deleteExamsG] = DeleateExamG();
+  const [deletePdfLoading, deletPdf] = DeleatPdf();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = useRef();
   const [selectedItem, setSelectedItem] = useState(null);
@@ -42,13 +42,19 @@ const LectureDetails = () => {
     onOpen();
   };
 
+  const handleDeleteExam = (exam) => {
+    setSelectedItem(exam);
+    onOpen();
+  };
+
   const handleConfirmDelete = () => {
     if (selectedItem?.v_name) {
-      deleteVideoCenter(selectedItem.id);
+      deletVedioCenter(selectedItem.id);
     } else if (selectedItem?.pdf_name) {
-      deletePdf(selectedItem.id);
+      deletPdf(selectedItem.id);
+    } else if (selectedItem?.exam_name) {
+      deleteExamsG(selectedItem.id);
     }
-    onClose();
   };
 
   if (lectureLoading || lectureTLoading) {
@@ -73,27 +79,42 @@ const LectureDetails = () => {
               />
             </div>
           </Zoom>
-          <div className="md:flex">
-            <div
-              className="h-50px p-3 bg-yellow-500 m-2"
-              style={{ borderRadius: "20px" }}
-            >
-              <h1 className="font-bold text-white">
-                {lecturesT?.description || lectures?.description}
-              </h1>
-            </div>
-            <div
-              className="h-50px p-3 bg-red-500 m-2"
-              style={{ borderRadius: "20px" }}
-            >
-              <h1 className="font-bold text-white">
-                عدد الفيديوهات: {videosToMap.length}
-              </h1>
-            </div>
+          <div className="my-5">
+            <Zoom>
+              <div
+                className="h-50px p-3 bg-yellow-500 m-2"
+                style={{ borderRadius: "20px" }}
+              >
+                <h1 className="font-bold text-white">
+                  {lecturesT?.description || lectures?.description}
+                </h1>
+              </div>
+            </Zoom>
+            <Zoom>
+              <div
+                className="h-50px p-3 bg-red-500 m-2"
+                style={{ borderRadius: "20px" }}
+              >
+                <h1 className="font-bold text-white">
+                  عدد الفيديوهات: {videosToMap.length}
+                </h1>
+              </div>
+            </Zoom>
+            <Zoom>
+              <div
+                className="h-50px p-3 bg-green-500  m-2"
+                style={{ borderRadius: "20px" }}
+              >
+                <h1 className="font-bold text-white">
+                  عدد الملفات : {pdfsToMap.length}
+                </h1>
+              </div>
+            </Zoom>
           </div>
         </div>
 
         <LectureContent
+          Loading={deleteGLoading}
           videos={videosToMap}
           pdfs={pdfsToMap}
           isTeacher={isTeacher}
@@ -102,13 +123,16 @@ const LectureDetails = () => {
           examName={examName}
           examId={examId}
           lastResult={lastResult}
-          onDeleteExam={() => deleteExamsG(id)}
+          onDeleteExam={() =>
+            handleDeleteExam({ id: examId, exam_name: examName })
+          }
         />
 
         <ScrollToTop />
       </div>
 
       <AlertDialogComponent
+        Loading={deleteGLoading || deleteVedioCenterLoading || deletePdfLoading}
         isOpen={isOpen}
         onClose={onClose}
         onConfirm={handleConfirmDelete}

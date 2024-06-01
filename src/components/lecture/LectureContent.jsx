@@ -8,7 +8,7 @@ import { PiExamFill } from "react-icons/pi";
 import { RiLogoutBoxRFill } from "react-icons/ri";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { Button } from "@chakra-ui/react";
+import { Button, Spinner } from "@chakra-ui/react";
 
 const LectureContent = ({
   videos,
@@ -20,6 +20,7 @@ const LectureContent = ({
   examId,
   lastResult,
   onDeleteExam,
+  Loading,
 }) => (
   <div
     className="w-[90%] border shadow my-[70px] m-auto p-3"
@@ -70,32 +71,34 @@ const LectureContent = ({
       ))}
 
     {examName && (
-      <div className="w-[100%] border shadow h-[80px] my-5 p-3 flex justify-between items-center">
-        <div>
-          <h1 className="font-bold my-2 flex">
-            <PiExamFill className="m-1 text-red-500 text-xl" />
-            {examName}
-          </h1>
-          {lastResult && (
-            <h1 className="font-bold m-2">- درجتك: {lastResult}</h1>
-          )}
+      <Zoom>
+        <div className="w-[100%] border shadow h-[80px] my-5 p-3 flex justify-between items-center">
+          <div>
+            <h1 className="font-bold my-2 flex">
+              <PiExamFill className="m-1 text-red-500 text-xl" />
+              {examName}
+            </h1>
+            {lastResult && (
+              <h1 className="font-bold m-2">- درجتك: {lastResult}</h1>
+            )}
+          </div>
+          <div className="flex">
+            <Link
+              to={isTeacher ? `/teacher_exam/${examId}` : `/exam/${examId}`}
+              className="mx-1"
+            >
+              <Button colorScheme="green" variant="outline">
+                <RiLogoutBoxRFill />
+              </Button>
+            </Link>
+            {isTeacher && (
+              <Button colorScheme="red" className="mx-1" onClick={onDeleteExam}>
+                {Loading ? <Spinner /> : <MdOutlineDeleteOutline />}
+              </Button>
+            )}
+          </div>
         </div>
-        <div className="flex">
-          <Link
-            to={isTeacher ? `/teacher_exam/${examId}` : `/exam/${examId}`}
-            className="mx-1"
-          >
-            <Button colorScheme="green" variant="outline">
-              <RiLogoutBoxRFill />
-            </Button>
-          </Link>
-          {isTeacher && (
-            <Button colorScheme="red" className="mx-1" onClick={onDeleteExam}>
-              <MdOutlineDeleteOutline />
-            </Button>
-          )}
-        </div>
-      </div>
+      </Zoom>
     )}
   </div>
 );

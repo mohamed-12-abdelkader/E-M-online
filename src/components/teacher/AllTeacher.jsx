@@ -27,7 +27,7 @@ const AllTeacher = () => {
   }
 
   return (
-    <div className=" bg-[#00204a] py-5">
+    <div className=" bg-[#00204a] py-5 mb-[50px]">
       <div className="flex justify-center">
         <div className="">
           <h1 className="big-font m-4 text-xl text-center text-white">

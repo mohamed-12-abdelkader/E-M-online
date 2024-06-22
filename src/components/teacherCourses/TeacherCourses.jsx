@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {  Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import GitClasses from "../../Hooks/teacher/GitClasses";
 import { Link, Outlet } from "react-router-dom";
 import ScrollToTop from "../scollToTop/ScrollToTop";
@@ -11,8 +11,11 @@ const TeacherCourses = () => {
 
   if (classesLoading) {
     return (
-      <div style={{ minHeight: "70vh" }} className="flex items-center">
-        <Loading/>
+      <div
+        style={{ minHeight: "70vh" }}
+        className="flex items-center mb-[50px]"
+      >
+        <Loading />
       </div>
     );
   }
@@ -23,7 +26,7 @@ const TeacherCourses = () => {
   };
 
   return (
-    <div className="mt-[150px]" style={{ minHeight: "60vh" }}>
+    <div className="mt-[150px] mb-[50px]" style={{ minHeight: "60vh" }}>
       <div className="w-[90%] m-auto border shadow">
         <div>
           {classes ? (

@@ -49,9 +49,9 @@ const GroupDetails = () => {
   }
 
   return (
-    <div className="mt-[150px]" style={{ minHeight: "60vh" }}>
+    <div className="mt-[150px] mb-[50px]" style={{ minHeight: "60vh" }}>
       <div className="w-[90%] m-auto border shadow p-5">
-        <div className="w-[95%] m-auto flex justify-between my-9">
+        <div className="w-[95%] m-auto   my-9 md:flex justify-between">
           <div className="ribbon2">
             <h1 className="font-bold m-2 text-white">{students.group_name}</h1>
           </div>

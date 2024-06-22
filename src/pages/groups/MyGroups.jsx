@@ -31,7 +31,7 @@ const MyGroups = () => {
   };
 
   return (
-    <div className="mt-[150px]" style={{ minHeight: "50vh" }}>
+    <div className="mt-[150px]" style={{ minHeight: "60vh" }}>
       <div className="border shadow w-[90%] m-auto">
         <div className="flex justify-center my-5">
           <div className="ribbon">

@@ -15,7 +15,6 @@ const StudentList = ({ students, onDeleteStudentClick }) => (
             <h1 className="font-bold">
               اسم الطالب: {student.fname} {student.lname}
             </h1>
-            <h1 className="font-bold">ايميل الطالب: {student.mail}</h1>
           </div>
           <div>
             <MdDelete

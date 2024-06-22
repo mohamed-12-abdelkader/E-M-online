@@ -8,7 +8,7 @@ const Admin = () => {
 
   return (
     <div>
-      <div className=" border shadow mt-[150px] w-[90%] m-auto">
+      <div className=" border shadow mt-[150px] w-[90%] m-auto mb-[50px]">
         <div className=" row">
           <div className="flex justify-center my-3">
             <div className="ribbon">

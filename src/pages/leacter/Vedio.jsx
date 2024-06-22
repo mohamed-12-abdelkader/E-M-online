@@ -29,7 +29,7 @@ const Vedio = () => {
 
   console.log(vdiourlt.video);
   return (
-    <div className="w-100% my-[50px] ">
+    <div className="w-100% mt-[50px] ">
       <iframe
         src={vdiourl.video || vdiourlt.video}
         loading="lazy"

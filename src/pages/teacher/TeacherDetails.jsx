@@ -20,6 +20,7 @@ import TeacherHeader from "../../components/teacher/TeacherHeader";
 import TeacherInfo from "../../components/teacher/TeacherInfo";
 import LectureCard from "../../components/teacher/LectureCard";
 import PurchaseAlert from "../../components/modal/PurchaseAlert";
+import Loading from "../../components/loading/Loading";
 
 const TeacherDetails = () => {
   const { id } = useParams();
@@ -32,18 +33,7 @@ const TeacherDetails = () => {
   const [selectedLecture, setSelectedLecture] = useState(null);
 
   if (teacherLoading || lectureLoading || monthesLoading) {
-    return (
-      <Stack className="w-[90%] m-auto mt-[150px]" style={{ height: "60vh" }}>
-        <Skeleton height="20px" className="mt-5" />
-        <Skeleton height="20px" />
-        <Skeleton height="20px" />
-        <Skeleton height="20px" />
-        <Skeleton height="20px" />
-        <Skeleton height="20px" />
-        <Skeleton height="20px" />
-        <ScrollToTop />
-      </Stack>
-    );
+    return <Loading />;
   }
 
   if (!teacher || teacher.teacher.length === 0) {

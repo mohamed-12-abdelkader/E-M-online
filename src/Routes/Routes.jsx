@@ -44,8 +44,8 @@ import AddPdf from "../components/admin/teacher/AddPdf";
 import AddMonth from "../components/admin/teacher/AddMonth";
 import AddLectureToMonth from "../components/admin/teacher/AddLectureToMonth";
 import Month from "../pages/month/Month";
-import TeacherCourses from "../components/teacherCourses/TeacherCourses";
-import AllCourses from "../components/teacherCourses/AllCourses";
+import TeacherCourses from "../pages/teacherCourses/TeacherCourses";
+import AllCourses from "../pages/teacherCourses/AllCourses";
 import NotFound from "../components/not found/NotFound";
 
 const AppRouter = () => {

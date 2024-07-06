@@ -17,10 +17,10 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 
-import ScrollToTop from "../scollToTop/ScrollToTop";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 import GitTeacherMonth from "../../Hooks/teacher/GitTeacherMonth";
 import DeleatMonth from "../../Hooks/teacher/DeleatMonth";
-import Loading from "../loading/Loading";
+import Loading from "../../components/loading/Loading";
 const AllCourses = () => {
   const { id } = useParams();
   const { isOpen, onOpen, onClose } = useDisclosure();

@@ -7,7 +7,7 @@ import {
   AlertDialogOverlay,
 } from "@chakra-ui/react";
 import React from "react";
-import WalletModal from "../../components/modal/WalletModal";
+import WalletModal from "../../ui/modal/WalletModal";
 import MyWallet from "../../Hooks/student/MyWallet";
 import ScrollToTop from "../../components/scollToTop/ScrollToTop";
 const Wallet = () => {
@@ -16,7 +16,7 @@ const Wallet = () => {
   const cancelRef = React.useRef();
 
   return (
-    <div className="mt-[150px]" style={{ minHeight: "70vh" }}>
+    <div className="mt-[150px] mb-[50px]" style={{ minHeight: "70vh" }}>
       <div className="w-[90%] m-auto border shadow p-5">
         <div className="flex justify-center ">
           <div className="ribbon">

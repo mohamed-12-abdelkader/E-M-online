@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Zoom } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 import UserType from "../../Hooks/auth/userType";
-import { GoArrowDown } from "react-icons/go";
+
 const SectionOne = () => {
   const [userData, isAdmin, isTeacher, student] = UserType();
   const [displayedName, setDisplayedName] = useState("");
@@ -21,10 +21,10 @@ const SectionOne = () => {
   }, [name, nameIndex]);
 
   return (
-    <div className=" " style={{ description: "rt" }}>
-      <div className="header2 my-[70px]   h-[850px] ">
+    <div className=" header bg-blue-500 " style={{ description: "rt" }}>
+      <div className="  mt-[80px]   h-[650px] ">
         <div className="inner-header flex justify-center items-center ">
-          <div className="w-[90%] m-auto md:flex items-center ">
+          <div className="w-[90%] m-auto md:flex  ">
             <div>
               <Zoom>
                 <img
@@ -45,14 +45,16 @@ const SectionOne = () => {
                 {displayedName}
               </h1>
 
-              <p className="h-1 w-[200px] bg-white m-2 my-5"></p>
+              <p className="h-1 w-[200px] bg-white m-2 my-2"></p>
               {isTeacher ? (
                 <div className="grid justify-start"> </div>
               ) : student ? (
-                <div className="flex justify-start">
-                  <h1 className="fonts font-bold text-xl  text-white md:text-4xl  ">
-                    كود الطالب : {userData.id}
-                  </h1>
+                <div className=" my-4">
+                  <div className="flex justify-start">
+                    <h1 className="fonts font-bold text-xl  text-white md:text-2xl  ">
+                      كود الطالب : {userData.id}
+                    </h1>
+                  </div>
                 </div>
               ) : isAdmin ? (
                 <div></div>
@@ -70,6 +72,41 @@ const SectionOne = () => {
           </div>
         </div>
       </div>
+      <svg
+        className="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          />
+        </defs>
+        <g className="parallax">
+          <use
+            xlinkHref="#gentle-wave"
+            x="48"
+            y="0"
+            fill="rgba(255,255,255,0.7"
+          />
+          <use
+            xlinkHref="#gentle-wave"
+            x="48"
+            y="3"
+            fill="rgba(255,255,255,0.5)"
+          />
+          <use
+            xlinkHref="#gentle-wave"
+            x="48"
+            y="5"
+            fill="rgba(255,255,255,0.3)"
+          />
+          <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
     </div>
   );
 };

@@ -27,7 +27,7 @@ const LectureContent = ({
     style={{ borderRadius: "20px" }}
   >
     <div
-      className="flex font-bold text-xl bg-[#0e0558] w-[230px] p-2"
+      className="flex font-bold text-xl bg-blue-500 w-[230px] p-2"
       style={{ borderRadius: "20px" }}
     >
       <FaFileVideo className="text-red-500 m-2" />

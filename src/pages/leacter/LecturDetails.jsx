@@ -66,7 +66,7 @@ const LectureDetails = () => {
     <div className="mt-[150px]">
       <div className="mt-[120px]" style={{ minHeight: "80vh" }}>
         <div
-          className="w-[90%] m-auto h-[400px] bg-[#0e0558] md:flex justify-between items-center p-10"
+          className="w-[90%] m-auto h-[400px] bg-blue-500 md:flex justify-between items-center p-10"
           style={{ borderRadius: "20px" }}
         >
           <Zoom>

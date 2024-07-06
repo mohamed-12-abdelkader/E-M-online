@@ -10,7 +10,7 @@ import {
 import { MdCancelPresentation } from "react-icons/md";
 import { FaFileVideo } from "react-icons/fa6";
 import { Zoom } from "react-awesome-reveal";
-
+import PurchaseAlert from "../../ui/modal/PurchaseAlert";
 import GitTeacherDetails from "../../Hooks/teacher/GitTeacherDetails";
 import GitLecture from "../../Hooks/student/GitLecture";
 import BuyLecture from "../../Hooks/student/BuyLecture";
@@ -19,7 +19,7 @@ import GitMonthes from "../../Hooks/student/GitMonths";
 import TeacherHeader from "../../components/teacher/TeacherHeader";
 import TeacherInfo from "../../components/teacher/TeacherInfo";
 import LectureCard from "../../components/teacher/LectureCard";
-import PurchaseAlert from "../../components/modal/PurchaseAlert";
+
 import Loading from "../../components/loading/Loading";
 
 const TeacherDetails = () => {
@@ -54,9 +54,9 @@ const TeacherDetails = () => {
       />
       <div className="m-auto mx-auto mb-[50px]">
         <TeacherInfo teacher={teacher.teacher} />
-        <div className="m-auto border shadow p-5 bg-[#00204a]">
+        <div className="m-auto border shadow w-[95%] m-auto">
           <div className="my-5">
-            <h1 className="font-bold flex text-xl text-white">
+            <h1 className="font-bold flex text-xl ">
               <FaFileVideo className="m-1 text-red-500" />
               كل الكورسات
             </h1>

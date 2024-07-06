@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Box } from "@chakra-ui/react";
 import GitClasses from "../../Hooks/teacher/GitClasses";
 import { Link, Outlet } from "react-router-dom";
-import ScrollToTop from "../scollToTop/ScrollToTop";
-import Loading from "../loading/Loading";
+import ScrollToTop from "../../components/scollToTop/ScrollToTop";
+import Loading from "../../components/loading/Loading";
 
 const TeacherCourses = () => {
   const [classesLoading, classes] = GitClasses();
@@ -48,9 +48,9 @@ const TeacherCourses = () => {
                       px={5}
                       py={3}
                       className="m-2"
-                      bg={isSelected ? "#00204a" : "white"} // تغيير لون الخلفية إذا كان الصف مختارًا
+                      bg={isSelected ? "#3b82f6" : "white"} // تغيير لون الخلفية إذا كان الصف مختارًا
                       color={isSelected ? "white" : "black"} // تغيير لون النص إذا كان الصف مختارًا
-                      borderColor={isSelected ? "#00204a" : "gray.300"} // تغيير لون الإطار إذا كان الصف مختارًا
+                      borderColor={isSelected ? "#3b82f6" : "gray.300"} // تغيير لون الإطار إذا كان الصف مختارًا
                     >
                       كورسات الصف {classe.name}
                     </Box>

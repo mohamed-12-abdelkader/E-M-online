@@ -8,11 +8,11 @@ const SectionTwo = () => {
       <div className="w-[90%] m-auto flex  flex-wrap justify-between">
         <Zoom>
           <div
-            className="h-[320px] my-[30px] w-[270px] bg-[#f1f0fe] relative shadow border md:m-5 "
+            className="h-[320px] my-[40px] w-[270px] bg-[#f1f0fe] relative shadow border md:m-5 "
             style={{ borderRadius: "20px" }}
           >
             <div
-              className="bg-[#00204a] h-[120px] w-[120px] absolute top-[-15%] right-[-10%] flex justify-center items-center md:right-[-15%]"
+              className="bg-blue-500 h-[120px] w-[120px] absolute top-[-15%] right-[-10%] flex justify-center items-center md:right-[-15%]"
               style={{ borderRadius: "50%" }}
             >
               <PiExamLight className="text-white text-5xl" />
@@ -33,11 +33,11 @@ const SectionTwo = () => {
         </Zoom>
         <Zoom>
           <div
-            className="h-[320px] my-[30px] w-[270px] bg-[#f1f0fe] relative shadow border md:m-5 "
+            className="h-[320px] my-[40px] w-[270px] bg-[#f1f0fe] relative shadow border md:m-5 "
             style={{ borderRadius: "20px" }}
           >
             <div
-              className="bg-[#00204a] h-[120px] w-[120px] absolute top-[-15%] right-[-10%] flex justify-center items-center md:right-[-15%]"
+              className="bg-blue-500 h-[120px] w-[120px] absolute top-[-15%] right-[-10%] flex justify-center items-center md:right-[-15%]"
               style={{ borderRadius: "50%" }}
             >
               <GiTeacher className="text-white text-5xl" />
@@ -58,11 +58,11 @@ const SectionTwo = () => {
         </Zoom>
         <Zoom>
           <div
-            className="h-[320px] my-[30px] w-[270px] bg-[#f1f0fe] relative shadow border md:m-5 "
+            className="h-[320px] my-[40px] w-[270px] bg-[#f1f0fe] relative shadow border md:m-8 "
             style={{ borderRadius: "20px" }}
           >
             <div
-              className="bg-[#00204a] h-[120px] w-[120px] absolute top-[-15%] right-[-10%] flex justify-center items-center md:right-[-15%]"
+              className="bg-blue-500 h-[120px] w-[120px] absolute top-[-15%] right-[-10%] flex justify-center items-center md:right-[-15%]"
               style={{ borderRadius: "50%" }}
             >
               <GiBookmarklet className="text-white text-5xl" />

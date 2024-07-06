@@ -8,10 +8,10 @@ import GitTeacherByToken from "../../Hooks/student/GitTeacherByToken";
 const AllTeacherLogin = () => {
   const [loading, teachers] = GitTeacherByToken();
   return (
-    <div className="bg-[#00204a] p-5 w-[100%] my-[50px]">
+    <div className=" p-5 w-[100%] my-[50px]">
       <div className="p-5">
         <h1
-          className="fonts font-bold text-3xl flex text-white my-3"
+          className="fonts font-bold text-3xl flex text-blue-500 my-3"
           style={{ fontWeight: "bold", fontSize: "50px" }}
         >
           <PiChalkboardTeacherBold className="m-1 mx-2 text-red-500" />
@@ -31,14 +31,14 @@ const AllTeacherLogin = () => {
           </Stack>
         ) : teachers && teachers.length > 0 ? (
           <div
-            className="w-[95%] m-auto teacher-card-content bg-white p-3 flex md:flex  flex-wrap"
+            className="w-[95%] m-auto teacher-card-content   flex md:flex  flex-wrap"
             style={{ borderRadius: "20px" }}
           >
-            <div className="flex justify-center card-content  flex-wrap md:justify-start   ">
+            <div className="flex justify-center card-content p-3 flex-wrap md:justify-start   ">
               {teachers.map((teacher) => (
                 <Card
                   key={teacher.id}
-                  className=" w-[300px] my-3   md:mx-10 w-[320px] m-2 "
+                  className=" w-[300px] my-3  md:mx-7 w-[330px] m-2 "
                   style={{ border: "1px solid #ccc" }}
                 >
                   <Link to={`teacher/${teacher.id}`}>

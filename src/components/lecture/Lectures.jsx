@@ -7,10 +7,10 @@ const Lectures = () => {
   const [myMonth, myMonthLoading] = GitMyMonthes();
 
   return (
-    <div className="bg-[#00204a] p-5 w-[100%]">
+    <div className=" p-5 w-[100%]">
       <div className="p-5">
         <h1
-          className="fonts font-bold text-3xl flex text-white my-3"
+          className="fonts font-bold text-3xl flex text-blue-500 my-3"
           style={{ fontWeight: "bold", fontSize: "50px" }}
         >
           <MdOutlineVideoLibrary className="m-1 mx-2 text-red-500" />
@@ -30,13 +30,13 @@ const Lectures = () => {
           </Stack>
         ) : myMonth && myMonth.length > 0 ? (
           <div
-            className="w-[95%] m-auto card-content  bg-white p-3 flex justify-center md:justify-start flex-wrap"
+            className="w-[95%] m-auto card-content  bg- p-3 flex justify-center md:justify-start flex-wrap"
             style={{ borderRadius: "20px" }}
           >
             {myMonth.map((lectre) => (
               <Card
                 key={lectre.id}
-                className=" w-[300px] my-3  md:mx-7 w-[320px] m-2 "
+                className=" w-[300px] my-3  md:mx-7 w-[330px] m-2 "
                 style={{ border: "1px solid #ccc" }}
               >
                 <CardBody>
@@ -90,6 +90,7 @@ const Lectures = () => {
           </div>
         )}
       </div>
+      <p className="my-4 h-1 w-[90%] m-auto bg-[#ccc]"></p>
     </div>
   );
 };

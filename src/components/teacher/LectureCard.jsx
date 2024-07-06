@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const LectureCard = ({ lecture, onOpen, setSelectedLecture }) => (
   <Zoom key={lecture.id}>
     <Card
-      className="w-[300px] my-3 md:mx-7 m-2"
+      className="w-[330px] my-3 md:mx-5 m-2"
       style={{ border: "solid 2px #ccc" }}
     >
       <CardBody>

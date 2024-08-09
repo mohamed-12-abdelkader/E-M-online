@@ -25,7 +25,7 @@ const AdminMange = () => {
   const cancelRef = React.useRef();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedTeacher, setSelectedTeacher] = useState(null);
-
+  console.log(teachers);
   if (loading) {
     return (
       <Stack className="w-[90%] m-auto">

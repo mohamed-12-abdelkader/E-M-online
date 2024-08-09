@@ -18,13 +18,7 @@ const Home = () => {
           <LoginHome />
         </div>
       ) : (
-        <div>
-          {" "}
-          <SectionTwo />
-          <Subject />
-          <SectionFour />
-          <AllTeacher />
-        </div>
+        <div> </div>
       )}
       <ScrollToTop />
     </div>

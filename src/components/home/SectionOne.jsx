@@ -9,7 +9,7 @@ const SectionOne = () => {
   const [displayedName, setDisplayedName] = useState("");
   const [nameIndex, setNameIndex] = useState(0);
   const name = " منصة متخصصة فى جميع مواد الثانوية العامة ";
-  const description = "استمتع بدروس الثانوية العامة واحصل على دعم تعليمى مميز";
+  const description = "استمتع بدروس الثانوية العامة واحصل على دعم تعليمى ";
   useEffect(() => {
     if (nameIndex < name.length) {
       const timer = setTimeout(() => {

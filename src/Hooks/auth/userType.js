@@ -1,31 +1,33 @@
 import { useEffect, useState } from "react";
 
 const UserType = () => {
-  const [userData, setUserData] = useState(
-    JSON.parse(localStorage.getItem("user"))
-  );
-  const [isAdmin, setIsAdmin] = useState();
-  const [isTeacher, setIsTeacher] = useState();
-  const [student, setStudent] = useState();
+  const [userData, setUserData] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isTeacher, setIsTeacher] = useState(false);
+  const [isStudent, setIsStudent] = useState(false);
 
   useEffect(() => {
-    if (userData != null) {
-      if (userData.role === "teacher") {
-        setIsAdmin(false);
-        setStudent(false);
-        setIsTeacher(true);
-      } else if (userData.role === "admin") {
-        setIsAdmin(true);
-        setIsTeacher(false);
-        setStudent(false);
-      } else {
-        setIsAdmin(false);
-        setIsTeacher(false);
-        setStudent(true);
+    const storedUserData = localStorage.getItem("user");
+    if (storedUserData) {
+      try {
+        const parsedUserData = JSON.parse(storedUserData);
+        setUserData(parsedUserData);
+
+        // تعيين الحالة بناءً على الدور
+        if (parsedUserData.role === "teacher") {
+          setIsTeacher(true);
+        } else if (parsedUserData.role === "admin") {
+          setIsAdmin(true);
+        } else {
+          setIsStudent(true);
+        }
+      } catch (error) {
+        console.error("Error parsing user data:", error);
       }
     }
   }, []);
-  return [userData, isAdmin, isTeacher, student];
+
+  return [userData, isAdmin, isTeacher, isStudent];
 };
 
 export default UserType;

@@ -3,12 +3,12 @@ import { useState } from "react";
 import { Zoom } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 import UserType from "../../Hooks/auth/userType";
-
+import img from "../../img/00a63fa2-ddd3-4c8c-91c8-1eb74156bb2f-removebg-preview.png";
 const SectionOne = () => {
   const [userData, isAdmin, isTeacher, student] = UserType();
   const [displayedName, setDisplayedName] = useState("");
   const [nameIndex, setNameIndex] = useState(0);
-  const name = " منصة متخصصة فى جميع مواد الثانوية العامة ";
+  const name = "    الدكتور  / محمد على فى المواد الفلسفية  ";
   const description = "استمتع بدروس الثانوية العامة واحصل على دعم تعليمى مميز";
   useEffect(() => {
     if (nameIndex < name.length) {
@@ -28,19 +28,12 @@ const SectionOne = () => {
             <div>
               <Zoom>
                 <img
-                  src="Untitled-1.png"
+                  src={img}
                   className="m-auto mt-8 h-[300px] w-[300px] md:h-[400px] w-[400px] hover-effect"
                 />
               </Zoom>
             </div>
             <div className="md:mt-[100px] mx-5">
-              <h1 className="my-3 font-bold text-white  text-2xl flex">
-                اللهم انصر غزة واهلها 🤲🏻{" "}
-                <img
-                  src="th (13).jpeg"
-                  className="h-[20px] w-[30px] mt-2 mx-1"
-                />
-              </h1>
               <h1 className="fonts font-bold text-xl  text-white md:text-3xl  ">
                 {displayedName}
               </h1>

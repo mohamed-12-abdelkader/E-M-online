@@ -83,10 +83,6 @@ export default function Nav() {
 
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={2}>
-              <Button onClick={toggleColorMode}>
-                {colorMode === "light" ? <FaMoon /> : <FaSun />}{" "}
-                {/* استخدام react-icons بدلاً من @chakra-ui/icons */}
-              </Button>
               {user ? (
                 <Menu>
                   <MenuButton

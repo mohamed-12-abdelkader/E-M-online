@@ -77,9 +77,12 @@ const SingUp = () => {
               />
             </div>
             <div className="m-2 w-[100%] md:w-[45%]">
-              <h1 className="fonts font-bold m-2 text-black"> الايميل </h1>
+              <h1 className="fonts font-bold m-2 text-black">
+                {" "}
+                رقم ولى الامر{" "}
+              </h1>
               <Input
-                placeholder=" ادخل الايميل  "
+                placeholder=" ادخل رقم ولى الامر   "
                 size="lg"
                 className="m-2 w-[90%] mx-auto md:w-[48%] text-black"
                 value={mail}

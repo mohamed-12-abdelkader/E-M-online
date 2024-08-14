@@ -4,13 +4,11 @@ import {
   Box,
   Heading,
   Spinner,
-  Button,
   FormControl,
   Select,
   Image,
   Flex,
   Text,
-  VStack,
 } from "@chakra-ui/react";
 import { MdCancelPresentation } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -32,23 +30,20 @@ const AllTeacherLogin = () => {
 
   const filteredTeachers = Array.isArray(teachers)
     ? teachers.filter((teacher) => {
-        let isValid = true;
+        let isValid = teacher.id !== 25;
 
         if (selectedStream === "علمي") {
-          isValid = ![
-            "علم نفس واجتماع  ",
-            " فلسفة ومنطق   ",
-            "تاريخ",
-            "جغرافيا",
-          ].includes(teacher.subject);
+          isValid =
+            isValid &&
+            !["علم نفس واجتماع", "فلسفة ومنطق", "تاريخ", "جغرافيا"].includes(
+              teacher.subject.trim()
+            );
         } else if (selectedStream === "ادبي") {
-          isValid = ![
-            "فيزياء",
-            "كيمياء",
-            "احياء",
-            "جيولوجيا",
-            "رياضة",
-          ].includes(teacher.subject);
+          isValid =
+            isValid &&
+            !["فيزياء", "كيمياء", "احياء", "جيولوجيا", "رياضيات"].includes(
+              teacher.subject.trim()
+            );
         }
 
         if (selectedSubject) {
@@ -90,7 +85,7 @@ const AllTeacherLogin = () => {
             <option value="احياء ">احياء</option>
             <option value="جيولوجيا ">جيولوجيا</option>
             <option value="تاريخ">تاريخ</option>
-            <option value="جغرفيا ">جغرافيا</option>
+            <option value="جغرافيا ">جغرافيا</option>
             <option value=" فلسفة ومنطق ">فلسفة</option>
             <option value="علم نفس واجتماع ">علم نفس</option>
             <option value="رياضيات ">رياضيات</option>
@@ -118,18 +113,13 @@ const AllTeacherLogin = () => {
             p="5"
           >
             {filteredTeachers.map((teacher) => (
-              <Box
+              <div
                 key={teacher.id}
-                w="300px"
-                my="3"
-                mx={{ base: "2", md: "10" }}
-                borderWidth="1px"
-                borderRadius="lg"
-                overflow="hidden"
-                boxShadow="md"
+                className="w-[300px] border shadow m-2 p-2 h-auto"
+                style={{ height: "auto" }}
               >
                 <Link to={`teacher/${teacher.id}`}>
-                  <Box>
+                  <div>
                     <Image
                       src={teacher.image}
                       h="220px"
@@ -145,16 +135,16 @@ const AllTeacherLogin = () => {
                         {teacher.subject}
                       </Text>
                     </Flex>
-                  </Box>
+                  </div>
                   <hr className="w-[90%] m-auto" />
-                  <Box px="2" my="3">
-                    <Text fontWeight="bold" display="flex" alignItems="center">
-                      <FaVideo className="m-1 text-red-500" />
-                      {teacher.description}
-                    </Text>
-                  </Box>
+                  <div className="h-auto">
+                    <h1 fontWeight="bold" className="flex font-bold my-2">
+                      <FaVideo className="m-1 text-red-500" /> مدرس ال{" "}
+                      {teacher.subject} للثانوية العامة
+                    </h1>
+                  </div>
                 </Link>
-              </Box>
+              </div>
             ))}
           </Flex>
         ) : (

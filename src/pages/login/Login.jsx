@@ -29,7 +29,9 @@ const Login = () => {
             <h1 className="font-bold text-xl text-black"> تسجيل الدخول </h1>
           </div>
           <div className="w-[100%] my-7">
-            <h1 className="font-bold my-2 text-black">ادخل الايميل </h1>
+            <h1 className="font-bold my-2 text-black">
+              ادخل رقم الهاتف او (الايميل ){" "}
+            </h1>
             <Input
               style={{ border: "solid 2px #ccc" }}
               className="text-black"

@@ -9,7 +9,7 @@ const Profile = () => {
 
   return (
     <div className="mt-[150px] flex items-center">
-      <div className="w-[90%] m-auto border shadow p-5   ">
+      <div className="w-[90%] m-auto border shadow p-5  my-[50px]  ">
         <div className="flex justify-center my-5">
           <div className="ribbon">
             <h1 className="font-bold m-2 big-font">my profile </h1>

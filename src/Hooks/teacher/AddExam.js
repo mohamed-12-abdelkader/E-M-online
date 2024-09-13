@@ -10,6 +10,7 @@ const useAddExam = () => {
   const [lo_id, setLo_id] = useState("");
   const [lg_id, setLg_id] = useState("");
   const [name, setName] = useState("");
+  const [time, setTime] = useState("");
 
   const handleAddExam = async (e) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ const useAddExam = () => {
       const data = {
         number,
         name,
+        time,
       };
 
       // Conditionally add lo_id and lg_id to the request body
@@ -41,6 +43,7 @@ const useAddExam = () => {
       console.log(response);
     } catch (error) {
       toast.error("An error occurred. Please try again later.");
+      console.log(error);
     } finally {
       setLoading(false);
       setLg_id("");
@@ -55,6 +58,8 @@ const useAddExam = () => {
     handleAddExam,
     number,
     name,
+    time,
+    setTime,
     setLg_id,
     setLo_id,
     setName,

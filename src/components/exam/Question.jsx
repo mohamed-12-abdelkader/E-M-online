@@ -14,7 +14,7 @@ const Question = ({
 
   return (
     <div key={currentQuestion.id} className="my-5 w-[90%] m-auto">
-      <h1 className="font-bold text-3xl">
+      <h1 className="font-bold text-xl">
         {currentQuestionIndex + 1} - {currentQuestion.question}
       </h1>
       <div>

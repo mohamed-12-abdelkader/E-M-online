@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Skeleton,
   useDisclosure,
   Spinner,
   Stack,
+  Alert,
+  AlertIcon,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import GitQuistion from "../../Hooks/student/GitQuistion";
@@ -25,6 +27,46 @@ const Exam = () => {
   const [result, setResult] = useState("");
   const [userAnswers, setUserAnswers] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+  // استخدم قيمة افتراضية أثناء التحميل (60 دقيقة)
+  const [time, setTime] = useState(60 * 60); // 60 دقيقة
+
+  useEffect(() => {
+    // عند تحميل questions?.time، قم بتحديث الوقت بالقيمة الحقيقية
+    if (questions?.time) {
+      setTime(questions.time * 60); // تحويل الدقائق إلى ثواني
+    }
+  }, [questions?.time]);
+
+  const [warningVisible, setWarningVisible] = useState(false); // لإظهار الرسالة التحذيرية
+
+  useEffect(() => {
+    // إعداد العداد التنازلي
+    const intervalId = setInterval(() => {
+      setTime((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
+    }, 1000); // تحديث كل ثانية
+
+    // تنظيف العداد عند انتهاء المكون
+    return () => clearInterval(intervalId);
+  }, []);
+
+  useEffect(() => {
+    // عرض رسالة تحذيرية عند بقاء أقل من دقيقة
+    if (time <= 60 && time > 0) {
+      setWarningVisible(true);
+    } else {
+      setWarningVisible(false);
+    }
+
+    // تنفيذ الامتحان إذا انتهى الوقت
+    if (time === 0) {
+      handleSendExam();
+    }
+  }, [time]);
+
+  // حساب الدقائق والثواني
+  const minutes = Math.floor(time / 60);
+  const seconds = time % 60;
 
   const token = localStorage.getItem("token");
   const examQuestions = questions?.questions || [];
@@ -52,7 +94,7 @@ const Exam = () => {
   };
 
   const handleSendExam = async (e) => {
-    e.preventDefault();
+    if (e) e.preventDefault();
 
     try {
       setLoading(true);
@@ -122,10 +164,27 @@ const Exam = () => {
         result={result}
       />
 
+      {/* عرض رسالة تحذيرية إذا كان الوقت أقل من دقيقة */}
+      {warningVisible && (
+        <Alert status="warning" className="mb-4">
+          <AlertIcon />
+          تنبيه: أقل من دقيقة متبقية على انتهاء الامتحان!
+        </Alert>
+      )}
+
       {/* عرض عنوان الامتحان */}
       <div className="flex justify-center">
         <div className="ribbon2">
           <h1 className="font-bold mx-4 m-2 text-white">{questions.name}</h1>
+        </div>
+      </div>
+      <div className="flex justify-center">
+        <div className="my-5 h-[100px] w-[180px] border shadow p-3 text-center">
+          <h1 className="my-2 font-bold">وقت الامتحان </h1>
+          <hr />
+          <h1 className="font-bold my-3">
+            {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+          </h1>
         </div>
       </div>
 
@@ -142,24 +201,28 @@ const Exam = () => {
       )}
 
       {/* عرض الباجنيشن والتنقل بين الصفحات */}
-      <Pagination
-        currentQuestionIndex={currentQuestionIndex}
-        examQuestions={examQuestions}
-        handlePreviousQuestion={handlePreviousQuestion}
-        handleNextQuestion={handleNextQuestion}
-        handlePageChange={handlePageChange}
-      />
+      <div className="my-5">
+        <Pagination
+          currentQuestionIndex={currentQuestionIndex}
+          examQuestions={examQuestions}
+          handlePreviousQuestion={handlePreviousQuestion}
+          handleNextQuestion={handleNextQuestion}
+          handlePageChange={handlePageChange}
+        />
+      </div>
 
       {/* زر إرسال الامتحان */}
       {currentQuestionIndex === examQuestions.length - 1 && (
-        <Button
-          isDisabled={loading || userAnswers.length !== examQuestions.length}
-          onClick={handleSendExam}
-          colorScheme="blue"
-          className="mt-4"
-        >
-          {loading ? <Spinner /> : "انهاء الامتحان"}
-        </Button>
+        <div className="text-center my-3">
+          <Button
+            isDisabled={loading || userAnswers.length !== examQuestions.length}
+            onClick={handleSendExam}
+            colorScheme="blue"
+            className="mt-4"
+          >
+            {loading ? <Spinner /> : "انهاء الامتحان"}
+          </Button>
+        </div>
       )}
       <ScrollToTop />
     </div>

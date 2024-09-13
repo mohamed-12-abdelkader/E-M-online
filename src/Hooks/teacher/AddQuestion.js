@@ -45,7 +45,7 @@ const useAddQuestion = () => {
       formData.append("answer3", answer3);
       formData.append("answer4", answer4);
       formData.append("correctAnswer", correctAnswer);
-      formData.append("degree", degree);
+      formData.append("degree", 1);
 
       // Check if the user selected an image
       if (image !== avatar) {

@@ -175,16 +175,7 @@ const AddQuestion = () => {
             setCorrect(e.target.value);
           }}
         />
-        <h1 className="my-3 font-bold"> درجة السؤال </h1>
-        <Input
-          className="w-[25%] m-2"
-          placeholder="    درجة السؤال          "
-          size="lg"
-          value={degree}
-          onChange={(e) => {
-            setDegree(e.target.value);
-          }}
-        />
+
         <div className="my-3 text-center">
           <Button colorScheme="blue" onClick={handleSubmit}>
             {" "}

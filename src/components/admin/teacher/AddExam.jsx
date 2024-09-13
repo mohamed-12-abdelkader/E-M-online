@@ -12,6 +12,8 @@ const AddExam = () => {
     handleAddExam,
     number,
     name,
+    time,
+    setTime,
     setLg_id,
     setLo_id,
     setName,
@@ -120,6 +122,15 @@ const AddExam = () => {
           value={number}
           onChange={(e) => {
             setNamber(e.target.value);
+          }}
+        />
+        <h1 className="my-3 font-bold"> مدة الامتحان </h1>
+        <Input
+          placeholder="    مدة الامتحان      "
+          size="lg"
+          value={time}
+          onChange={(e) => {
+            setTime(e.target.value);
           }}
         />
 

@@ -2,37 +2,57 @@ import React from "react";
 import { Zoom } from "react-awesome-reveal";
 import { BiBook } from "react-icons/bi";
 
-const TeacherInfo = ({ teacher }) => (
-  <div className="text-center m-auto md:flex justify-between my-[50px]">
-    <div className="flex justify-center m-auto w-[80%] md:w-[50%]">
+const TeacherInfo = ({ teacher, number }) => (
+  <div className="max-w-7xl mx-auto px-4 mt-[80px] mb-[80px] h-[500px] flex items-center py-8 md:flex md:justify-between bg-gray-100 rounded-lg shadow-lg">
+    {/* الجزء الأول: صورة المدرس */}
+    <div className="flex justify-center items-center w-[95%] md:justify-center md:w-1/2 mb-6 md:mb-0">
       <Zoom>
         <img
           src={teacher.image}
-          className="h-[280px] w-[400px] m-3 m-auto"
-          style={{ borderRadius: "20px" }}
+          alt={`${teacher.name}`}
+          className="rounded-lg shadow-lg my-auto h-[350px] mx-4 w-[400px] object-cover"
         />
       </Zoom>
     </div>
-    <div className="mt-[50px] w-[80%]">
-      <div>
-        <h1 className="fonts font-bold">{teacher.description}</h1>
-      </div>
-      <div className="flex my-2 flex-wrap justify-center">
-        <Zoom>
-          <div className="h-[50px] border w-[220px] m-2 flex items-center p-2">
-            <img src={teacher.image} className="h-[30px] w-[30px] m-3" />
-            <h1 className="font-bold m-1">أ/{teacher.name}</h1>
+    {/* الجزء الثاني: معلومات المدرس */}
+    <div className="md:w-1/2 md:ml-8 flex flex-col justify-center items-center">
+      <Zoom>
+        <div className="text-center md:text-right w-full flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center space-y-4 w-full">
+            {/* بطاقة المعلومات الخاصة بالمدرس */}
+            <div className="flex items-center bg-white shadow-md rounded-lg p-4 w-[450px]">
+              <img
+                src={teacher.image}
+                alt="teacher"
+                className="h-10 w-10 mx-2 rounded-full object-cover border border-gray-300"
+              />
+              <h1 className="ml-4 text-xl font-bold text-gray-700">
+                أ/{teacher.name}
+              </h1>
+            </div>
+            {/* بطاقة المادة */}
+            <div className="flex items-center bg-white shadow-md rounded-lg p-4 w-full">
+              <BiBook className="text-blue-500 text-3xl mr-4" />
+              <h1 className="text-xl font-bold text-gray-700">
+                المادة: {teacher.subject}
+              </h1>
+            </div>
+            {/* عدد الكورسات */}
+            <div className="flex items-center bg-white shadow-md rounded-lg p-4 w-full">
+              <BiBook className="text-blue-500 text-3xl mr-4" />
+              <h1 className="text-xl font-bold text-gray-700">
+                عدد الكورسات : {number}
+              </h1>
+            </div>
+            {/* الوصف */}
+            <div className="flex justify-center items-center w-full">
+              <h1 className="text-xl font-semibold mb-4 text-gray-800 text-center md:text-right">
+                {teacher.description}
+              </h1>
+            </div>
           </div>
-        </Zoom>
-        <Zoom>
-          <div className="h-[50px] border w-[220px] m-2 flex items-center p-2">
-            <h1 className="font-bold flex">
-              <BiBook className="m-1 text-blue-500" />
-              المادة:{teacher.subject}
-            </h1>
-          </div>
-        </Zoom>
-      </div>
+        </div>
+      </Zoom>
     </div>
   </div>
 );

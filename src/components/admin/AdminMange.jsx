@@ -37,7 +37,7 @@ const AdminMange = () => {
       </Stack>
     );
   }
-
+  console.log(teachers);
   return (
     <div>
       {teachers.length === 0 ? (

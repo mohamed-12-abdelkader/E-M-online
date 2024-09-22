@@ -29,7 +29,7 @@ const AllTeacher = () => {
     <div className=" py-5 mb-5 w-full">
       <div className="flex justify-center">
         <div className="">
-          <h1 className="big-font m-2 text-xl text-center text-blue-500 ">
+          <h1 className="big-font m-2 text-xl text-center text-[#03a9f5] ">
             E-M online Teachers
           </h1>
         </div>

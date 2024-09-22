@@ -2,7 +2,7 @@ import { Fade, Zoom } from "react-awesome-reveal";
 const SectionFour = () => {
   return (
     <div
-      className="  my-9 p-3 bg-blue-500 "
+      className="  my-9 p-3 bg-[#03a9f5] "
       style={{
         borderTopLeftRadius: "100px",
         borderBottomLeftRadius: "100px",

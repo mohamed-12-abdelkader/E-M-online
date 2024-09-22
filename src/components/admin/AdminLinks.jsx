@@ -70,6 +70,16 @@ const AdminLinks = ({ currentLink, setCurrentLink }) => {
     },
     {
       id: Math.random(),
+      link: "   انشاء اكواد   ",
+      path: "/admin/create_codee",
+    },
+    {
+      id: Math.random(),
+      link: "   عرض  اكواد   ",
+      path: "/admin/all_codee",
+    },
+    {
+      id: Math.random(),
       link: "اضافة امتحان ",
       path: "/admin/addexam",
     },

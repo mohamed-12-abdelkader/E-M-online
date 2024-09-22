@@ -48,12 +48,11 @@ const TeacherDetails = () => {
 
   return (
     <div className="mt-[80px]">
-      <TeacherHeader
-        subject={teacher.teacher.subject}
-        name={teacher.teacher.name}
-      />
       <div className="m-auto mx-auto mb-[50px]">
-        <TeacherInfo teacher={teacher.teacher} />
+        <TeacherInfo
+          teacher={teacher.teacher}
+          number={teacher.months && teacher.months.length}
+        />
         <div className="m-auto border shadow w-[95%] m-auto">
           <div className="my-5">
             <h1 className="font-bold flex text-xl ">

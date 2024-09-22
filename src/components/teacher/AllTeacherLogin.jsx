@@ -9,6 +9,8 @@ import {
   Image,
   Flex,
   Text,
+  Skeleton,
+  Stack,
 } from "@chakra-ui/react";
 import { MdCancelPresentation } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -60,10 +62,10 @@ const AllTeacherLogin = () => {
       <Heading
         as="h1"
         fontSize="50px"
-        color="blue.500"
         display="flex"
         alignItems="center"
         mb="2"
+        className="text-[#03a9f5]"
       >
         <PiChalkboardTeacherBold className=" mx-2 text-red-500" />
         المدرسين
@@ -75,7 +77,7 @@ const AllTeacherLogin = () => {
             <option value="ادبي">ادبي</option>
           </Select>
         </FormControl>
-        <FormControl w="200px" m="2">
+        <FormControl w="200px" className="flex justify-between" m="2">
           <Select placeholder="اختر المادة" onChange={handleSubjectChange}>
             <option value="لغة عربية ">لغة عربية</option>
             <option value="English">لغة انجليزية</option>
@@ -94,23 +96,24 @@ const AllTeacherLogin = () => {
       </Flex>
       <Box>
         {loading ? (
-          <Flex w="90%" m="auto" my="5" justify="center" flexWrap="wrap">
-            <Spinner size="xl" color="primary" m="2" />
-            <Spinner size="xl" color="primary" m="2" />
-            <Spinner size="xl" color="primary" m="2" />
-            <Spinner size="xl" color="primary" m="2" />
-            <Spinner size="xl" color="primary" m="2" />
-            <Spinner size="xl" color="primary" m="2" />
-            <Spinner size="xl" color="primary" m="2" />
-          </Flex>
+          <Stack className="w-[90%] m-auto my-5">
+            <Skeleton height="20px" className="mt-5" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+          </Stack>
         ) : filteredTeachers.length > 0 ? (
           <Flex
             w="95%"
             m="auto"
             flexWrap="wrap"
-            justify={{ base: "center", md: "start" }}
+            justify={{ base: "center", md: "center" }}
             bg="white"
             p="5"
+            className="flex justify-center"
           >
             {filteredTeachers.map((teacher) => (
               <div

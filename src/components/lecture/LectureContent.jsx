@@ -23,7 +23,7 @@ const LectureContent = ({
   Loading,
 }) => (
   <div
-    className="w-[90%] border shadow my-[70px] m-auto p-3"
+    className="w-[100%] border shadow my-[70px] m-auto p-3"
     style={{ borderRadius: "20px" }}
   >
     <div

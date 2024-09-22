@@ -13,7 +13,7 @@ import {
   Center,
   Spinner,
 } from "@chakra-ui/react";
-import logo from "../../img/e-m megmg.png";
+
 import { FaMoon, FaSun } from "react-icons/fa"; // استخدمت react-icons بدلاً من @chakra-ui/icons
 import { Link } from "react-router-dom";
 import { CiLogin } from "react-icons/ci";
@@ -28,6 +28,7 @@ import MyWallet from "../../Hooks/student/MyWallet";
 import { PiVideoFill } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
 import { RiLockPasswordFill } from "react-icons/ri";
+import logo from "../../img/logo-removebg-preview.png";
 const NavLink = () => {
   return (
     <Box
@@ -78,7 +79,7 @@ export default function Nav() {
           className="mt-1"
         >
           <Link to="/">
-            <img src={logo} className="h-[60px] w-[100px] my-2" />
+            <img src={logo} className="h-[70px] w-[120px] my-2" />
           </Link>
 
           <Flex alignItems={"center"}>
@@ -184,25 +185,12 @@ export default function Nav() {
                   </MenuList>
                 </Menu>
               ) : (
-                <div className="flex">
+                <div className="flex -4">
                   <Link to="/login">
-                    <Button
-                      className="m-1 w-[120px] md:w-[150px]"
-                      colorScheme="teal"
-                      variant="outline"
-                    >
-                      تسجيل دخول
-                      <RiLockPasswordFill className="m-1 " />
-                    </Button>
+                    <img src="log in (1).png" className="h-[60px] w-[160px]" />
                   </Link>
                   <Link to="/singup">
-                    <Button
-                      className="m-1 w-[120px] md:w-[150px]"
-                      colorScheme="red"
-                    >
-                      ! انشئ حسابك
-                      <CgProfile className="m-1" />
-                    </Button>
+                    <img src="signup2.png" className="h-[60px] w-[160px]" />
                   </Link>
                 </div>
               )}

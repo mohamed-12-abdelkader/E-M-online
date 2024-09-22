@@ -5,6 +5,14 @@ import { Zoom } from "react-awesome-reveal";
 const SectionTwo = () => {
   return (
     <div className="my-[50px] mx-5 ">
+      <div className="my-5 text-center mb-[70px]">
+        <h1
+          className="fonts font-bold text-3xl  text-gray-700 my-3"
+          style={{ fontWeight: "bold", fontSize: "50px" }}
+        >
+          ماذا نقدم ؟{" "}
+        </h1>
+      </div>
       <div className="w-[90%] m-auto flex  flex-wrap justify-between">
         <Zoom>
           <div
@@ -12,7 +20,7 @@ const SectionTwo = () => {
             style={{ borderRadius: "20px" }}
           >
             <div
-              className="bg-blue-500 h-[120px] w-[120px] absolute top-[-15%] right-[-10%] flex justify-center items-center md:right-[-15%]"
+              className="bg-[#03a9f5] h-[120px] w-[120px] absolute top-[-15%] right-[-10%] flex justify-center items-center md:right-[-15%]"
               style={{ borderRadius: "50%" }}
             >
               <PiExamLight className="text-white text-5xl" />
@@ -37,7 +45,7 @@ const SectionTwo = () => {
             style={{ borderRadius: "20px" }}
           >
             <div
-              className="bg-blue-500 h-[120px] w-[120px] absolute top-[-15%] right-[-10%] flex justify-center items-center md:right-[-15%]"
+              className="bg-[#03a9f5] h-[120px] w-[120px] absolute top-[-15%] right-[-10%] flex justify-center items-center md:right-[-15%]"
               style={{ borderRadius: "50%" }}
             >
               <GiTeacher className="text-white text-5xl" />
@@ -62,7 +70,7 @@ const SectionTwo = () => {
             style={{ borderRadius: "20px" }}
           >
             <div
-              className="bg-blue-500 h-[120px] w-[120px] absolute top-[-15%] right-[-10%] flex justify-center items-center md:right-[-15%]"
+              className="bg-[#03a9f5] h-[120px] w-[120px] absolute top-[-15%] right-[-10%] flex justify-center items-center md:right-[-15%]"
               style={{ borderRadius: "50%" }}
             >
               <GiBookmarklet className="text-white text-5xl" />

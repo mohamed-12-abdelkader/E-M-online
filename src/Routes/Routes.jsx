@@ -47,6 +47,7 @@ import Month from "../pages/month/Month";
 import TeacherCourses from "../pages/teacherCourses/TeacherCourses";
 import AllCourses from "../pages/teacherCourses/AllCourses";
 import NotFound from "../components/not found/NotFound";
+import CreateCode from "../components/admin/teacher/CreateCode";
 
 const AppRouter = () => {
   const [userData, isAdmin, isTeacher, student] = UserType();
@@ -124,6 +125,7 @@ const AppRouter = () => {
             <Route path="add_student" element={<AddStudent />} />
             <Route path="addexam" element={<AddExam />} />
             <Route path="add_pdf" element={<AddPdf />} />
+            <Route path="create_codee" element={<CreateCode />} />
             <Route path="add_question" element={<AddQuestion />} />
             <Route path="result/" element={<AllResult />}>
               <Route path="all_result/:resId" element={<StudentResult />} />

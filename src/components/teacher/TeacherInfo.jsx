@@ -3,9 +3,9 @@ import { Zoom } from "react-awesome-reveal";
 import { BiBook } from "react-icons/bi";
 
 const TeacherInfo = ({ teacher, number }) => (
-  <div className="max-w-7xl mx-auto px-4 mt-[80px] mb-[80px] h-[500px] flex items-center py-8 md:flex md:justify-between bg-gray-100 rounded-lg shadow-lg">
+  <div className="teacherinfo max-w-7xl mx-auto px-4 mt-[80px] mb-[80px]   py-8 md:flex md:justify-between items-center bg-gray-100 rounded-lg shadow-lg">
     {/* الجزء الأول: صورة المدرس */}
-    <div className="flex justify-center items-center w-[95%] md:justify-center md:w-1/2 mb-6 md:mb-0">
+    <div className="  w-[95%]  md:w-1/2 flex justify-center items-center  mb-6 md:mb-0">
       <Zoom>
         <img
           src={teacher.image}
@@ -20,7 +20,7 @@ const TeacherInfo = ({ teacher, number }) => (
         <div className="text-center md:text-right w-full flex flex-col justify-center items-center">
           <div className="flex flex-col justify-center items-center space-y-4 w-full">
             {/* بطاقة المعلومات الخاصة بالمدرس */}
-            <div className="flex items-center bg-white shadow-md rounded-lg p-4 w-[450px]">
+            <div className="cart flex items-center bg-white shadow-md rounded-lg p-4 w-[350px] md:w-[300px]">
               <img
                 src={teacher.image}
                 alt="teacher"

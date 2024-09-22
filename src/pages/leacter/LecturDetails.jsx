@@ -66,7 +66,7 @@ const LectureDetails = () => {
     <div className="mt-[150px] w-[90%] m-auto">
       <div className="mt-[120px]" style={{ minHeight: "80vh" }}>
         <div className="max-w-7xl mx-auto px-4 mt-[80px] mb-[80px] h-auto  py-8 md:flex md:justify-between bg-gray-100 rounded-lg shadow-lg">
-          <div className="flex justify-center items-center w-full md:w-1/2 mb-6 md:mb-0">
+          <div className="flex justify-center items-center w-full md:[300px] mb-6 md:mb-0">
             <Zoom>
               <img
                 src={lecturesT?.image || lectures?.image}
@@ -77,21 +77,21 @@ const LectureDetails = () => {
           </div>
           <div className="md:w-1/2 flex flex-col justify-center items-center space-y-4">
             <Zoom>
-              <div className="flex items-center bg-yellow-500 shadow-md rounded-lg p-4 w-[300px] md:w-[400px]">
+              <div className="flex items-center bg-yellow-500 shadow-md rounded-lg p-4 w-[300px] w-[300px] md:w-[250px]">
                 <h1 className="text-xl font-bold text-white text-center w-full">
                   {lecturesT?.description || lectures?.description}
                 </h1>
               </div>
             </Zoom>
             <Zoom>
-              <div className="flex items-center bg-red-500 shadow-md rounded-lg p-4 w-[300px] md:w-[400px]]">
+              <div className="flex items-center bg-red-500 shadow-md rounded-lg p-4 w-[300px] md:w-[250px]">
                 <h1 className="text-xl font-bold text-white text-center w-full">
                   عدد الفيديوهات: {videosToMap.length}
                 </h1>
               </div>
             </Zoom>
             <Zoom>
-              <div className="flex items-center bg-green-500 shadow-md rounded-lg p-4 w-[300px] md:w-[400px]">
+              <div className="flex items-center bg-green-500 shadow-md rounded-lg p-4 w-[300px] w-[300px] md:w-[250px]">
                 <h1 className="text-xl font-bold text-white text-center w-full">
                   عدد الملفات : {pdfsToMap.length}
                 </h1>

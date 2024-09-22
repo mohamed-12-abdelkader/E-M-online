@@ -223,6 +223,12 @@ body {
     width: 250px !important;
     margin: auto !important;
   }
+  .teacherinfo {
+    display: block !important;
+  }
+  .cart {
+    width: 300px !important;
+  }
 }
 
 .fixed-button {
@@ -248,6 +254,9 @@ body {
   }
   .manth-card {
     width: 45% !important;
+  }
+  .cart {
+    width: 300px !important;
   }
 }
 

@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 
 const StudentList = ({ students, onDeleteStudentClick }) => (
   <div>
+    <div>
+      <h1 className="text-xl font-bold">
+        عدد طلاب المجموعة :{students && students.length}
+      </h1>
+    </div>
     {students && students.length > 0 ? (
       students.map((student) => (
         <div

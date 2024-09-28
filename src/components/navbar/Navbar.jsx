@@ -28,7 +28,7 @@ import MyWallet from "../../Hooks/student/MyWallet";
 import { PiVideoFill } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
 import { RiLockPasswordFill } from "react-icons/ri";
-import logo from "../../img/logo-removebg-preview.png";
+import logo from "../../img/Red_and_Blue_Badminton_Team_Sport_Logo__3_-removebg-preview.png";
 const NavLink = () => {
   return (
     <Box
@@ -79,7 +79,7 @@ export default function Nav() {
           className="mt-1"
         >
           <Link to="/">
-            <img src={logo} className="h-[70px] w-[120px] my-2" />
+            <img src={logo} className="h-[80px] w-[120px] my-2" />
           </Link>
 
           <Flex alignItems={"center"}>

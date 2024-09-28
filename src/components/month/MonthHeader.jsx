@@ -4,7 +4,7 @@ const MonthHeader = ({ image, description, noflecture }) => (
     <div className="flex justify-center items-center w-full p-3 md:w--[350px] mb-6 md:mb-0">
       <img
         src={image}
-        className="rounded-lg shadow-lg h-[300px] md:h-[400px] mx-3 object-cover"
+        className="rounded-lg  h-[300px] md:h-[400px] mx-3 object-contain" // هنا التعديل
         alt="Image"
       />
     </div>

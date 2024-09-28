@@ -11,7 +11,7 @@ const Lectures = () => {
       <div className="p-5">
         <h1
           className="fonts font-bold text-3xl flex text-[#03a9f5] my-3"
-          style={{ fontWeight: "bold", fontSize: "50px" }}
+          style={{ fontWeight: "bold", fontSize: "30px" }}
         >
           <MdOutlineVideoLibrary className="m-1 mx-2 text-red-500" />
           كورساتي

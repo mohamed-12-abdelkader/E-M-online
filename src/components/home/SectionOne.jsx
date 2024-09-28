@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Zoom } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 import UserType from "../../Hooks/auth/userType";
-import img from "../../img/logo-removebg-preview.png";
+import img from "../../img/Red and Blue Badminton Team Sport Logo (5).png";
 
 const SectionOne = () => {
   const [userData, isAdmin, isTeacher, student] = UserType();
@@ -39,7 +39,7 @@ const SectionOne = () => {
   }, []);
 
   return (
-    <div className="bg-gray-100 relative overflow-hidden">
+    <div className="bg-[#03a9f5] - relative overflow-hidden">
       {/* النقاط الخلفية */}
       <div className="absolute inset-0 bg-dots-pattern bg-dots opacity-10"></div>
 
@@ -50,15 +50,15 @@ const SectionOne = () => {
             <img
               src={img}
               alt="Logo"
-              className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] mb-3"
+              className="h-[300px] w-[300px] md:h-[350px] md:w-[350px] "
             />
           </Zoom>
           {/* نص متحرك */}
-          <h1 className="text-2xl md:text-3xl w-[60%] m-auto font-bold text-center mb-4">
+          <h1 className="text-2xl text-white w-[100%] m-auto md:text-3xl w-[65%] m-auto font-bold text-center mb-4">
             {displayedName}
           </h1>
           {/* خط فاصل */}
-          <div className="h-1 w-20 bg-[#03a9f5] mb-6"></div>
+          <div className="h-1 w-[150px] bg-[#ff6600] mb-6"></div>
           {/* حالة المستخدم */}
           {isTeacher ? (
             <div className="flex justify-center">
@@ -68,7 +68,7 @@ const SectionOne = () => {
             </div>
           ) : student ? (
             <div className="flex flex-col items-center my-4">
-              <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">
+              <h1 className="text-2xl text-black md:text-3xl font-bold text-center mb-4">
                 كود الطالب: {userData.id}
               </h1>
             </div>

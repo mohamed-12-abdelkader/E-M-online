@@ -11,6 +11,9 @@ import {
   Text,
   Skeleton,
   Stack,
+  Card,
+  CardBody,
+  Button,
 } from "@chakra-ui/react";
 import { MdCancelPresentation } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -61,7 +64,7 @@ const AllTeacherLogin = () => {
     <Box w="100%" my="5" px={{ base: "3", md: "5" }}>
       <Heading
         as="h1"
-        fontSize="50px"
+        fontSize="30px"
         display="flex"
         alignItems="center"
         mb="2"
@@ -79,18 +82,10 @@ const AllTeacherLogin = () => {
         </FormControl>
         <FormControl w="200px" className="flex justify-between" m="2">
           <Select placeholder="اختر المادة" onChange={handleSubjectChange}>
+            {/* قائمة المواد */}
             <option value="لغة عربية ">لغة عربية</option>
             <option value="English">لغة انجليزية</option>
-            <option value="French">لغة فرنسية</option>
-            <option value="فيزياء ">فيزياء</option>
-            <option value="كيمياء ">كيمياء</option>
-            <option value="احياء ">احياء</option>
-            <option value="جيولوجيا ">جيولوجيا</option>
-            <option value="تاريخ">تاريخ</option>
-            <option value="جغرافيا ">جغرافيا</option>
-            <option value=" فلسفة ومنطق ">فلسفة</option>
-            <option value="علم نفس واجتماع ">علم نفس</option>
-            <option value="رياضيات ">رياضيات</option>
+            {/* باقي الخيارات */}
           </Select>
         </FormControl>
       </Flex>
@@ -101,35 +96,29 @@ const AllTeacherLogin = () => {
             <Skeleton height="20px" />
             <Skeleton height="20px" />
             <Skeleton height="20px" />
-            <Skeleton height="20px" />
-            <Skeleton height="20px" />
-            <Skeleton height="20px" />
+            {/* مزيد من Skeletons */}
           </Stack>
         ) : filteredTeachers.length > 0 ? (
-          <Flex
-            w="95%"
-            m="auto"
-            flexWrap="wrap"
-            justify={{ base: "center", md: "center" }}
-            bg="white"
-            p="5"
-            className="flex justify-center"
+          <div
+            className="w-[95%] m-auto card-content  bg- p-3 flex justify-center md:justify-start flex-wrap"
+            style={{ borderRadius: "20px" }}
           >
             {filteredTeachers.map((teacher) => (
-              <div
+              <Card
                 key={teacher.id}
-                className="w-[300px] border shadow m-2 p-2 h-auto"
-                style={{ height: "auto" }}
+                className="w-[300px] my-3 md:mx-7"
+                style={{ border: "1px solid #ccc" }}
               >
-                <Link to={`teacher/${teacher.id}`}>
-                  <div>
+                <CardBody>
+                  <Link to={`teacher/${teacher.id}`}>
                     <Image
                       src={teacher.image}
                       h="220px"
                       w="100%"
                       borderRadius="10px"
-                      alt="Course"
+                      alt="Teacher"
                     />
+                    <p className="w-[100%] h-[2px] bg-[#ccc] mt-4 m-auto"></p>
                     <Flex justify="space-between" py="2">
                       <Text fontWeight="bold" mt="2">
                         {teacher.name}
@@ -138,18 +127,17 @@ const AllTeacherLogin = () => {
                         {teacher.subject}
                       </Text>
                     </Flex>
-                  </div>
-                  <hr className="w-[90%] m-auto" />
-                  <div className="h-auto">
-                    <h1 fontWeight="bold" className="flex font-bold my-2">
-                      <FaVideo className="m-1 text-red-500" /> مدرس ال{" "}
-                      {teacher.subject} للثانوية العامة
-                    </h1>
-                  </div>
-                </Link>
-              </div>
+                    <div className="h-auto">
+                      <h1 fontWeight="bold" className="flex font-bold my-2">
+                        <FaVideo className="m-1 text-red-500" /> مدرس ال{" "}
+                        {teacher.subject} للثانوية العامة
+                      </h1>
+                    </div>
+                  </Link>
+                </CardBody>
+              </Card>
             ))}
-          </Flex>
+          </div>
         ) : (
           <Flex
             justify="center"

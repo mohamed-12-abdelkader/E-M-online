@@ -47,7 +47,7 @@ const GroupDetails = () => {
   if (studentLoading) {
     return <Loading />;
   }
-
+  console.log(students);
   return (
     <div className="mt-[150px] mb-[50px]" style={{ minHeight: "60vh" }}>
       <div className="w-[90%] m-auto border shadow p-5">

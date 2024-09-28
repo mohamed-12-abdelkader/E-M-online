@@ -8,11 +8,13 @@ import Lectures from "../../components/lecture/Lectures";
 import { PiChalkboardTeacherLight } from "react-icons/pi";
 import SectionTwo from "./SectionTwo";
 import AllTeacherLogin from "../teacher/AllTeacherLogin";
+import FreeCourses from "./FreeCourses";
 
 const LoginHome = () => {
   return (
     <div className="mt-[50px]">
       <div className="m-auto">
+        <FreeCourses />
         <Lectures />
       </div>
 

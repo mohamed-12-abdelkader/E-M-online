@@ -28,7 +28,7 @@ import MyWallet from "../../Hooks/student/MyWallet";
 import { PiVideoFill } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
 import { RiLockPasswordFill } from "react-icons/ri";
-import logo from "../../img/Red_and_Blue_Badminton_Team_Sport_Logo__3_-removebg-preview.png";
+import logo from "../../img/Red_and_Blue_Badminton_Team_Sport_Logo__6_-removebg-preview.png";
 const NavLink = () => {
   return (
     <Box

@@ -62,7 +62,7 @@ const FreeCourses = () => {
             <Skeleton height="20px" />
           </Stack>
         ) : freeMonth && freeMonth.months.length > 0 ? (
-          <div dir="rtl" className="w-[100%] ">
+          <div dir="rtl" className="w-[100%]  ">
             <div
               className="w-[95%] m-auto card-content  bg- p-3 flex justify-center md:justify-start flex-wrap"
               style={{ borderRadius: "20px" }}

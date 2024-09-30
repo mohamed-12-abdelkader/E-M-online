@@ -3,7 +3,7 @@ import { Zoom } from "react-awesome-reveal";
 import { BiBook } from "react-icons/bi";
 
 const TeacherInfo = ({ teacher, number }) => (
-  <div className="teacherinfo max-w-7xl mx-auto px-4 mt-[80px] mb-[80px]   py-8 md:flex md:justify-between items-center bg-gray-100 rounded-lg shadow-lg">
+  <div className="teacherinfo bg-[#03a9f5] max-w-7xl mx-auto px-4 mt-[80px] mb-[80px]   py-8 md:flex md:justify-between items-center bg-gray-100 rounded-lg shadow-lg">
     {/* الجزء الأول: صورة المدرس */}
     <div className="  w-[95%]  md:w-1/2 flex justify-center items-center  mb-6 md:mb-0">
       <Zoom>
@@ -27,7 +27,7 @@ const TeacherInfo = ({ teacher, number }) => (
                 className="h-10 w-10 mx-2 rounded-full object-cover border border-gray-300"
               />
               <h1 className="ml-4 text-xl font-bold text-gray-700">
-                أ/{teacher.name}
+                {teacher.name}
               </h1>
             </div>
             {/* بطاقة المادة */}
@@ -46,7 +46,7 @@ const TeacherInfo = ({ teacher, number }) => (
             </div>
             {/* الوصف */}
             <div className="flex justify-center items-center w-full">
-              <h1 className="text-xl font-semibold mb-4 text-gray-800 text-center md:text-right">
+              <h1 className="text-xl font-semibold mb-4 text- text-center md:text-right">
                 {teacher.description}
               </h1>
             </div>

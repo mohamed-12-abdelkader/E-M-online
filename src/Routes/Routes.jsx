@@ -48,6 +48,7 @@ import TeacherCourses from "../pages/teacherCourses/TeacherCourses";
 import AllCourses from "../pages/teacherCourses/AllCourses";
 import NotFound from "../components/not found/NotFound";
 import CreateCode from "../components/admin/teacher/CreateCode";
+import AllCode from "../components/admin/teacher/AllCode";
 
 const AppRouter = () => {
   const [userData, isAdmin, isTeacher, student] = UserType();
@@ -127,6 +128,7 @@ const AppRouter = () => {
             <Route path="add_pdf" element={<AddPdf />} />
             <Route path="create_codee" element={<CreateCode />} />
             <Route path="add_question" element={<AddQuestion />} />
+            <Route path="all_codee" element={<AllCode />} />
             <Route path="result/" element={<AllResult />}>
               <Route path="all_result/:resId" element={<StudentResult />} />
             </Route>
@@ -149,6 +151,7 @@ const AppRouter = () => {
         </Route>
         <Route element={<ProtectedRoute auth={isTeacher} />}>
           <Route path="/teacher_wallet" element={<TeacherWallet />} />
+          <Route path="/all_codee" element={<AllCode />} />
           <Route path="/teacher_exam/:examId" element={<ExamTeacher />} />
           <Route path="/teacher_courses/*" element={<TeacherCourses />}>
             <Route path="courses/:id" element={<AllCourses />} />
